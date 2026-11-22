@@ -55,3 +55,26 @@
 - **Control Actions:**
   1. Proceed to Phase 5 (Area 3 — Muhammad Aun): author 6 use cases (2/member), automate all main/alt/exception flows in Playwright (Chromium), run task/error-guidance/keyboard tests, and run Lighthouse + `@axe-core/playwright` audits with 1-screen remediation.
   2. Proceed to Phase 6 (Area 3): execute Playwright >= 4 role checks, OWASP ZAP passive scan + 2 control reviews, `pip-audit`, Grafana k6 OSS benchmarks (1 & >= 5 VUs x 2 x 60s), and failure-and-recovery integration test.
+
+---
+
+### Week 3 Report (Phases 5–6 Execution — 2026-11-22)
+- **Planned Milestones:** Complete Phase 5 (Area 3A — 6 use cases = 2/member, full Playwright E2E suite, task/error-guidance/keyboard navigation tests, Lighthouse + `@axe-core/playwright` before/after 1-screen remediation) and Phase 6 (Area 3B — Attack surface & access matrix, >= 4 Playwright role checks, OWASP ZAP passive scan + >= 2 security control reviews, `pip-audit`, 4 comparable >= 60s Grafana k6 OSS runs, controlled failure-and-recovery integration test).
+- **Actual Progress:**
+  - **Phase 5 (Area 3A — Muhammad Aun):**
+    - Documented 6 complete Use Case specifications (`UC-01`..`UC-06`, 2 per member, each with preconditions, main flow, >= 2 alternative flows, >= 2 exception flows, and postconditions) in `docs/PHASE5_USE_CASES.md`.
+    - Automated all 30 executable Use Case flows in Playwright Chromium (`tests/team/e2e/use_cases.spec.mjs`) asserting both UI rendering and SQLite postconditions via `scripts/e2e_db_helper.py`.
+    - Automated 2 workflow usability tests (`USA-WF1-ERR-KBD`, `USA-WF2-TASK`) verifying business-rule error guidance, recovery, keyboard-only `Tab`/`ArrowDown`/`Enter` navigation & submission, and approval task completion.
+    - Ran `@axe-core/playwright` and Google Lighthouse across 4 key screens (`/login/`, `/user_requests/access/`, `/create_access_request/`, `/edit_access_request/<id>/`), prioritizing 7 unique findings (`UA-01`..`UA-07`), remediated `NEMO/templates/requests/access_requests/access_request.html` (fixing Serious `link-name` + Moderate `landmark-one-main`/`region`), and verified before/after improvement (`axe`: `4 -> 1` on Create/Review with `0` Serious/Critical; Lighthouse Accessibility: `90 -> 91` Create, `86 -> 91` Review).
+  - **Phase 6 (Area 3B — Muhammad Aun):**
+    - Mapped attack surface & 2-role access matrix and passed **8 / 8 Playwright role checks** (`SEC-RBAC-01`..`SEC-RBAC-08`).
+    - Executed OWASP ZAP (`ghcr.io/zaproxy/zaproxy:stable`) passive scan across 10 live Playwright workflow/security tests (`1` High `moment.js`, `15` Medium JS/CSP, `58` Low, `39` Informational; verified `sessionid` `HttpOnly` & `SameSite=Lax` + server-side role guards), and ran `pip-audit` across `82` Python distributions (`0` known CVEs).
+    - Executed 4 comparable `65s` Grafana k6 OSS runs (`1vu_run1`: `p95=38.421ms`, `1vu_run2`: `p95=136.413ms`, `5vu_run1`: `p95=225.470ms`, `5vu_run2`: `p95=227.656ms`, all `0.00%` failures vs `<= 500ms` & `< 1%` targets).
+    - Passed controlled `OperationalError` failure-and-recovery integration test (`tests/team/recovery/test_failure_and_recovery.py`) leaving `0` duplicate grant/request rows.
+- **Schedule Variance:** On track — Phases 1 through 6 completed (`24/32` total checklist items `[x]`).
+- **GQM Snapshot (Week 3):**
+  - **Defect Density (Confirmed Test Findings):** `9` API weaknesses (`W-API-01..09`) + `7` usability/a11y findings (`UA-01..07`, `UA-01`/`UA-02` remediated on `access_request.html`) + `5` ZAP/security findings (`SEC-ZAP-01..05`) + `6` SonarQube smells/`1` hotspot across `access_requests.py` & UI templates (`21` total unique findings logged prior to Phase 7 GitHub Issues triage & Pareto). *Interpretation:* Cross-layer verification (unit + API + E2E + a11y + passive security) exposed both API rule-parity gaps (`PR-01`) and legacy UI/JS hygiene gaps (`PR-05`, `PR-08`, `PR-10`), while confirming `0` critical runtime crashes or performance threshold breaches (`EC-03`).
+  - **Requirements Coverage:** **`100.0%` (`10 / 10` FRs)** verified across Unit (`74`), API (`154`), E2E (`30`), Usability (`2`), Security (`8`), and Recovery (`1`) = **`269` automated team tests**.
+  - **Reopen Rate:** **`0.0%` (`0 / 2` UI accessibility fixes `UA-01`/`UA-02` reopened after re-audit & full E2E regression)**.
+- **Control Actions:**
+  1. Proceed to Phase 7 (Area 1 & Shared): configure strict GitHub Actions PR quality gate (SonarQube + pytest + Playwright + Cosmic Ray, zero escape hatches), log all defects in GitHub Issues with triage, complete 2 major RCAs (`5 Whys` + `Fishbone`) & Pareto analysis, deliver 1 documented Fix PR + 1 pipeline-blocked PR, and finalize Test Completion Report (`Release or Hold`).

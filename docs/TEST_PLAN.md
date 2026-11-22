@@ -3,7 +3,7 @@
 **Project:** SE3002 Software Quality Engineering Final Project (Fall 2026)  
 **Target MIS:** NEMO v8.2.1 (`https://github.com/usnistgov/NEMO`, Commit `aa5ac6e20e4e35e6f67ab7d2133b8188679ae746`)  
 **Module Under Test:** Temporary Physical Access Requests  
-**Version:** 1.0 (Phase 2 Baseline — Living Document)
+**Version:** 1.1 (Updated After Phases 1–6 Execution)
 
 ---
 
@@ -65,11 +65,11 @@
 | Phase | Target Window | Key Deliverables | Status |
 | :--- | :--- | :--- | :--- |
 | Phase 1 | Week 1 (Days 1–5) | MIS selection, baseline commit `aa5ac6e2...`, seed/reset scripts, FRs, 4 business rules, test basis | Completed |
-| Phase 2 | Week 1–2 | SonarQube baseline & CFG CC, Living Test Plan, 5x5 Risk Register, Exit Criteria, Traceability, GQM #1 | In Progress |
-| Phase 3 | Week 2 | 100% stmt/branch unit tests, MCC/MC-DC pairs, `mutmut`/custom operators, >=15 surviving mutants | Planned |
-| Phase 4 | Week 2–3 | OpenAPI spec, EP/3-point BVA generator, 2-constraint demo, API/integration suite & weaknesses | Planned |
-| Phase 5 | Week 3 | 6 Use cases (2/member), Playwright E2E flows, keyboard/error-guidance tests, Lighthouse + axe-core + 1 fix | Planned |
-| Phase 6 | Week 3–4 | Attack surface, access matrix, >=4 Playwright role checks, ZAP passive, `pip-audit`, k6 (4x60s), recovery | Planned |
+| Phase 2 | Week 1–2 | SonarQube baseline & CFG CC, Living Test Plan, 5x5 Risk Register, Exit Criteria, Traceability, GQM #1 | Completed |
+| Phase 3 | Week 2 | 100% stmt/branch unit tests, MCC/MC-DC pairs, `Cosmic Ray` + 4 custom operators, 43 surviving mutants | Completed |
+| Phase 4 | Week 2–3 | OpenAPI spec, EP/3-point BVA generator, 2-constraint demo, API/integration suite & 9 weaknesses | Completed |
+| Phase 5 | Week 3 | 6 Use cases (2/member), 30 Playwright E2E flows, keyboard/error-guidance tests, Lighthouse + axe-core + 1 fix | Completed |
+| Phase 6 | Week 3–4 | Attack surface, access matrix, 8 Playwright role checks, ZAP passive, `pip-audit`, k6 (4x65s), recovery | Completed |
 | Phase 7 | Week 4 | Strict GitHub Actions gate, Fix PR + Blocked PR, GitHub Issues + 2 RCAs + Pareto, Completion Report | Planned |
 | Phase 8 | Week 4–5 | Integrity audit, final PDF & `.zip` (with `.git`), viva rehearsal & live mutation drill | Planned |
 
@@ -99,11 +99,11 @@ Using $E = \frac{O + 4M + P}{6}$ and $\sigma = \frac{P - O}{6}$ (person-hours):
 
 | Testing Area | Owner | Optimistic ($O$) | Most Likely ($M$) | Pessimistic ($P$) | Expected ($E$) | Std Dev ($\sigma$) | Actual Effort (hrs) |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| Baseline, Test Management & Reporting | Shared | 6.0 | 9.0 | 14.0 | **9.33** | 1.33 | *TBD (tracked weekly)* |
-| Area 1: Static Analysis, White-Box Unit, MCC/MC-DC, Mutation & CI Gate | Jaweria | 10.0 | 14.0 | 20.0 | **14.33** | 1.67 | *TBD* |
-| Area 2: OpenAPI Spec, EP/BVA Generator & API/Integration Suite | Mohsin | 8.0 | 12.0 | 18.0 | **12.33** | 1.67 | *TBD* |
-| Area 3A: Use Cases (6), Playwright E2E, Usability & Accessibility | Muhammad Aun | 8.0 | 12.0 | 18.0 | **12.33** | 1.67 | *TBD* |
-| Area 3B: Security Assessment, k6 Performance & Failure Recovery | Muhammad Aun | 7.0 | 10.0 | 16.0 | **10.50** | 1.50 | *TBD* |
-| **Total Project Effort** | **Trio** | **39.0** | **57.0** | **86.0** | **58.83** | **3.52*** | *TBD* |
+| Baseline, Test Management & Reporting | Shared | 6.0 | 9.0 | 14.0 | **9.33** | 1.33 | *In Progress (7.0 hrs through Wk 3)* |
+| Area 1: Static Analysis, White-Box Unit, MCC/MC-DC, Mutation & CI Gate | Jaweria | 10.0 | 14.0 | 20.0 | **14.33** | 1.67 | *In Progress (11.5 hrs; CI Gate in Ph 7)* |
+| Area 2: OpenAPI Spec, EP/BVA Generator & API/Integration Suite | Mohsin | 8.0 | 12.0 | 18.0 | **12.33** | 1.67 | **12.0** |
+| Area 3A: Use Cases (6), Playwright E2E, Usability & Accessibility | Muhammad Aun | 8.0 | 12.0 | 18.0 | **12.33** | 1.67 | **11.5** |
+| Area 3B: Security Assessment, k6 Performance & Failure Recovery | Muhammad Aun | 7.0 | 10.0 | 16.0 | **10.50** | 1.50 | **10.0** |
+| **Total Project Effort** | **Trio** | **39.0** | **57.0** | **86.0** | **58.83** | **3.52*** | *52.0 hrs logged through Wk 3* |
 
 *\*Total $\sigma = \sqrt{\sum \sigma_i^2} = 3.52$ hrs.*

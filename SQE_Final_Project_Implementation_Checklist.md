@@ -71,13 +71,13 @@
 ## Phase 5: Use Cases, Playwright E2E, Usability & Accessibility *(14 Marks · CLO2/CLO3 · Area 3)*
 *Specify and automate full browser user journeys, then audit, fix, and re-verify usability and accessibility.*
 
-- [ ] **Write Complete Use Case Specifications (2 Per Member)** *(3 Marks · CLO3)*  
+- [x] **Write Complete Use Case Specifications (2 Per Member)** *(3 Marks · CLO3)*  
   Derive 2 use cases per group member (4 for pairs, 6 for trios) from your functional requirements (from repo docs or written by you). Every use case must document preconditions, main flow, ≥ 2 alternative flows, ≥ 2 exception flows, and postconditions.
-- [ ] **Automate Every Use Case Flow in Playwright (Chromium)** *(6 Marks · CLO2)*  
+- [x] **Automate Every Use Case Flow in Playwright (Chromium)** *(6 Marks · CLO2)*  
   Automate every main, alternative, and exception flow in `Playwright` with `Chromium`. Assert both the visible UI outcome shown to the user and the underlying persisted postconditions. Count each executable case once within the E2E level.
-- [ ] **Automate Task Completion, Error-Guidance & Keyboard Navigation Tests** *(5 Marks w/ Audits · CLO3)*  
+- [x] **Automate Task Completion, Error-Guidance & Keyboard Navigation Tests** *(5 Marks w/ Audits · CLO3)*  
   Write 2 automated Playwright browser tests (1 per workflow, using test accounts; no human participants or manual walkthroughs required; may count toward use cases): open screen, complete task, assert confirmation. In one test, first submit a business-rule-rejected value, verify the error explains what to correct, then fix and succeed. In one test, simulate keyboard-only navigation asserting focus order through required fields + submit button and keyboard submission.
-- [ ] **Run Lighthouse + axe-core, Fix One Screen & Compare Before/After**  
+- [x] **Run Lighthouse + axe-core, Fix One Screen & Compare Before/After**  
   Run `Google Lighthouse` (accessibility, best practices, SEO via logged-in DevTools or Lighthouse CI with login script) and full `@axe-core/playwright` scans on each use case's key screen. Count overlapping issues once; interpret and prioritise each with element, user impact, proposed fix, root cause, severity, risk, and risk-register link. Fix 1 screen (in the MIS or your own HTML page), rerun both tools, compare before vs after, and archive scripts, Playwright report, and before/after Lighthouse & axe-core reports.
 
 ---
@@ -85,13 +85,13 @@
 ## Phase 6: Defensive Security, Performance & Failure Recovery *(11 Marks · CLO2 · Area 3)*
 *Validate authorization controls and dependencies defensively, benchmark p95 latency under load, and verify safe failure recovery.*
 
-- [ ] **Map Attack Surface, Access Matrix & Automate ≥ 4 Role Checks** *(6 Marks w/ ZAP & Deps · CLO2)*  
+- [x] **Map Attack Surface, Access Matrix & Automate ≥ 4 Role Checks** *(6 Marks w/ ZAP & Deps · CLO2)*  
   Assess security locally with synthetic data and test accounts. Document attack surface (routes & data in both workflows) and build an access matrix across your 2 test roles. Automate ≥ 4 access decisions in `Playwright` (including ≥ 1 allowed and ≥ 1 denied action), recording role, action, expected result, observed result, and evidence for every check.
-- [ ] **Run OWASP ZAP Passive Scan, Control Review & Dependency Audit**  
+- [x] **Run OWASP ZAP Passive Scan, Control Review & Dependency Audit**  
   Run `OWASP ZAP` in passive mode while Playwright executes both workflows. Review ≥ 2 relevant security controls (e.g. session cookie attributes, role checks) corroborated via source code or config. Run `OWASP Dependency-Check` or `pip-audit` (stack-appropriate) and list all checked packages/versions. For every finding report component, evidence, likely impact, fix, root cause, severity, risk, and risk-register link (documented verified controls also earn credit when 0 findings occur).
-- [ ] **Set Targets & Run Comparable Grafana k6 OSS Load Tests** *(5 Marks w/ Recovery · CLO2)*  
+- [x] **Set Targets & Run Comparable Grafana k6 OSS Load Tests** *(5 Marks w/ Recovery · CLO2)*  
   Select 1 operation from either workflow. BEFORE testing, set and justify a `p95` response-time limit (ms) and acceptable unexpected-failure % per workload. Run 1 `Grafana k6 OSS` script with `1 VU` and `≥ 5 VUs` concurrently — 2 runs per setup (4 runs total), measuring ≥ 60s per run after reaching target VUs on the exact same build, machine, and starting data. Report `p95` (ms), RPS, and unexpected failure % for each run; compare vs targets and link findings to the risk register.
-- [ ] **Automate Controlled Failure-and-Recovery Test for State Change**  
+- [x] **Automate Controlled Failure-and-Recovery Test for State Change**  
   Using your API/integration test runner, automate 1 controlled failure-and-recovery test on a state-changing operation (e.g. test double making a dependency unavailable before a write completes). Verify persisted state after failure, restore the dependency, retry, and assert the expected final state with zero duplicate records. Archive scripts, raw outputs, environment details, and target interpretation.
 
 ---
