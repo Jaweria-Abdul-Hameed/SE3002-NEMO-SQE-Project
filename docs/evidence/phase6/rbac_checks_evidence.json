@@ -1,0 +1,74 @@
+[
+  {
+    "id": "SEC-RBAC-01",
+    "role": "Lab User (lab_user)",
+    "action": "POST /create_access_request/ (create own request)",
+    "expected": "ALLOWED (persists PENDING request, redirects to /user_requests/access/)",
+    "observed": "ALLOWED (status=0, id=594)",
+    "status": "PASS",
+    "timestamp": "2026-11-22T16:14:44.412Z"
+  },
+  {
+    "id": "SEC-RBAC-02",
+    "role": "Lab User (lab_user)",
+    "action": "POST /edit_access_request/598/ with approve_request=Approve",
+    "expected": "DENIED approval transition (status remains PENDING=0, 0 grants)",
+    "observed": "DENIED approval (status=0, reviewer=null, grants=0)",
+    "status": "PASS",
+    "timestamp": "2026-11-22T16:14:51.469Z"
+  },
+  {
+    "id": "SEC-RBAC-03",
+    "role": "Lab User (other_requester)",
+    "action": "POST /edit_access_request/602/ owned by lab_user",
+    "expected": "DENIED with authorization error message; DB unchanged",
+    "observed": "DENIED (\"You are not allowed to edit this request.\"); DB unchanged",
+    "status": "PASS",
+    "timestamp": "2026-11-22T16:14:57.095Z"
+  },
+  {
+    "id": "SEC-RBAC-04",
+    "role": "Lab User (lab_user)",
+    "action": "GET /export_access_requests/",
+    "expected": "DENIED (hidden in UI; direct request redirected to /login/)",
+    "observed": "DENIED (HTTP 302 -> /login/?next=/export_access_requests/)",
+    "status": "PASS",
+    "timestamp": "2026-11-22T16:14:59.917Z"
+  },
+  {
+    "id": "SEC-RBAC-05",
+    "role": "Facility Manager / Area Reviewer (facility_reviewer)",
+    "action": "Approve /edit_access_request/609/ + GET /export_access_requests/",
+    "expected": "ALLOWED (status=APPROVED, 2 grants created, CSV HTTP 200)",
+    "observed": "ALLOWED (status=1, grants=2, export HTTP 200)",
+    "status": "PASS",
+    "timestamp": "2026-11-22T16:15:07.242Z"
+  },
+  {
+    "id": "SEC-RBAC-06",
+    "role": "Facility Manager / Area Reviewer (facility_reviewer)",
+    "action": "GET /delete_access_request/613/ owned by lab_user",
+    "expected": "DENIED (HTTP 400; deleted=false)",
+    "observed": "DENIED (HTTP 400; deleted=false)",
+    "status": "PASS",
+    "timestamp": "2026-11-22T16:15:12.048Z"
+  },
+  {
+    "id": "SEC-RBAC-07",
+    "role": "Area Reviewer (area_only_reviewer)",
+    "action": "Deny /edit_access_request/617/",
+    "expected": "ALLOWED (status=DENIED, 0 grants)",
+    "observed": "ALLOWED (status=2, reviewer=area_only_reviewer, grants=0)",
+    "status": "PASS",
+    "timestamp": "2026-11-22T16:15:21.679Z"
+  },
+  {
+    "id": "SEC-RBAC-08",
+    "role": "Anonymous (unauthenticated)",
+    "action": "GET /access_requests/",
+    "expected": "DENIED (HTTP 302 redirect to /login/)",
+    "observed": "DENIED (HTTP 302 -> /login/?next=/access_requests/)",
+    "status": "PASS",
+    "timestamp": "2026-11-22T16:15:24.638Z"
+  }
+]

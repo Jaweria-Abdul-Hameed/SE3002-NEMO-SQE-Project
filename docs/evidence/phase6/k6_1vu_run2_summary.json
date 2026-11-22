@@ -1,0 +1,151 @@
+{
+    "metrics": {
+        "http_reqs": {
+            "count": 375,
+            "rate": 5.758339755481699
+        },
+        "checks": {
+            "passes": 746,
+            "fails": 0,
+            "value": 1
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 1
+        },
+        "http_req_receiving": {
+            "med": 0.5442,
+            "max": 4.439,
+            "p(90)": 1.123600000000001,
+            "p(95)": 1.44551,
+            "avg": 0.5745562666666667,
+            "min": 0
+        },
+        "data_sent": {
+            "count": 68330,
+            "rate": 1049.246281312172
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_waiting": {
+            "max": 497.2228,
+            "p(90)": 109.42356000000004,
+            "p(95)": 135.88567,
+            "avg": 72.59354879999997,
+            "min": 6.5579,
+            "med": 64.6763
+        },
+        "vus_max": {
+            "value": 1,
+            "min": 1,
+            "max": 1
+        },
+        "http_req_blocked": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.015871466666666667,
+            "min": 0,
+            "med": 0,
+            "max": 1.0513
+        },
+        "http_req_duration{endpoint:access_requests}": {
+            "avg": 73.39704798927616,
+            "min": 20.8033,
+            "med": 64.9354,
+            "max": 497.2228,
+            "p(90)": 110.60230000000001,
+            "p(95)": 136.41268,
+            "thresholds": {
+                "p(95)<=500": false
+            }
+        },
+        "data_received": {
+            "count": 2276111,
+            "rate": 34950.987891171215
+        },
+        "iteration_duration": {
+            "avg": 174.37520777479884,
+            "min": 121.1436,
+            "med": 165.7791,
+            "max": 602.1602,
+            "p(90)": 211.17188000000002,
+            "p(95)": 238.66047999999995
+        },
+        "iterations": {
+            "count": 373,
+            "rate": 5.72762861011913
+        },
+        "http_req_duration{expected_response:true}": {
+            "p(90)": 110.30270000000003,
+            "p(95)": 136.39681,
+            "avg": 73.20260933333336,
+            "min": 6.9256,
+            "med": 64.9354,
+            "max": 497.2228
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 375,
+            "thresholds": {
+                "rate<0.01": false
+            },
+            "value": 0
+        },
+        "http_req_connecting": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.004234399999999999,
+            "min": 0,
+            "med": 0,
+            "max": 1.0513
+        },
+        "http_req_sending": {
+            "avg": 0.034504266666666665,
+            "min": 0,
+            "med": 0,
+            "max": 3.0018,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "http_req_duration": {
+            "avg": 73.20260933333336,
+            "min": 6.9256,
+            "med": 64.9354,
+            "max": 497.2228,
+            "p(90)": 110.30270000000003,
+            "p(95)": 136.39681
+        }
+    },
+    "setup_data": {
+        "cookieHeader": "sessionid=zw7xpfrguanyu8b5ln4eka840izxjx8k; csrftoken=W45PoJqxHN9breh3jcMUNjeSlT67hlpk"
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+            "status is 200": {
+                "name": "status is 200",
+                "path": "::status is 200",
+                "id": "6210a8cd14cd70477eba5c5e4cb3fb5f",
+                "passes": 373,
+                "fails": 0
+            },
+            "contains access requests markup": {
+                "id": "599dc5ae84457c40d23bcd662571e3e5",
+                "passes": 373,
+                "fails": 0,
+                "name": "contains access requests markup",
+                "path": "::contains access requests markup"
+            }
+        }
+    }
+}

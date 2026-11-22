@@ -13,7 +13,8 @@
     <link rel="stylesheet" type="text/css" href="{% static "datetimepicker/bootstrap-datetimepicker.css" %}" />
 {% endblock %}
 {% block content %}
-    <h1 class="form-group">
+    <main aria-labelledby="access-request-heading">
+    <h1 id="access-request-heading" class="form-group">
         {% if form.instance.id %}
             Modify access request
         {% else %}
@@ -102,8 +103,8 @@
                            style="min-width: 250px">
                 </div>
                 <div class="col-sm-6" id="other_users_label" style="display: none">
-                    <div style="margin-bottom: 5px;">Selected buddies</div>
-                    <ul id="other_users" class="form-control form-control-static" style="height: 100%">
+                    <div id="other_users_heading" style="margin-bottom: 5px;">Selected buddies</div>
+                    <ul id="other_users" aria-labelledby="other_users_heading" aria-live="polite" class="form-control form-control-static" style="height: 100%">
                     </ul>
                 </div>
             </div>
@@ -122,7 +123,7 @@
                       rows="3"
                       name="description"
                       id="description"
-                      maxlength="{{ form.fields.description.max_length }}"
+                      {% if form.fields.description.max_length %}maxlength="{{ form.fields.description.max_length }}"{% endif %}
                       placeholder="Provide additional details if needed">{{ form.description.value|default_if_none:"" }}</textarea>
         </div>
         <div class="text-right">
@@ -136,6 +137,7 @@
             {% endif %}
         </div>
     </form>
+    </main>
     <script>
         let timepicker_properties =
 		{
@@ -150,7 +152,19 @@
 			$(this).typeahead('val', '').trigger('focus');
 			if (!$("input[name='other_users'][value='"+search_selection.id+"']").length)
             {
-                $('#other_users').append('<li style="list-style: none"><input type="hidden" name="other_users" value="' + search_selection.id + '" />' + search_selection.name + ' <a class="grey hover-black" href="javascript:void" onclick="remove_other_user(this)"><span class="glyphicon glyphicon-remove-circle"></span></a></li>');
+                const $li = $('<li style="list-style: none"></li>');
+                $li.append($('<input>', { type: 'hidden', name: 'other_users', value: search_selection.id }));
+                $li.append(document.createTextNode(search_selection.name + ' '));
+                const $removeBtn = $('<button>', {
+                    type: 'button',
+                    class: 'btn-link grey hover-black',
+                    style: 'border: 0; background: transparent; padding: 0; vertical-align: middle;',
+                    'aria-label': 'Remove buddy ' + search_selection.name,
+                    title: 'Remove buddy ' + search_selection.name
+                }).on('click', function () { remove_other_user(this); });
+                $removeBtn.append('<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>');
+                $li.append($removeBtn);
+                $('#other_users').append($li);
             }
 		}
 		function remove_other_user(other_user_anchor)

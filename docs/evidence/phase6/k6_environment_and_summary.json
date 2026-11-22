@@ -1,0 +1,58 @@
+{
+  "k6_version": "k6.exe v2.4.0 (commit/dd9395906d, go1.26.11, windows/amd64)",
+  "os": "Windows-11-10.0.26300-SP0",
+  "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "cpu_count": 20,
+  "python_version": "3.12.0",
+  "target_operation": "GET /access_requests/ (authenticated as lab_user)",
+  "targets": {
+    "p95_limit_ms": 500,
+    "max_unexpected_failure_pct": 1.0
+  },
+  "runs": [
+    {
+      "run": "1vu_run1",
+      "vus": 1,
+      "duration": "65s",
+      "exit_code": 0,
+      "p95_ms": 38.421,
+      "avg_ms": 26.587,
+      "rps": 7.892,
+      "total_requests": 514,
+      "unexpected_failure_pct": 0.0
+    },
+    {
+      "run": "1vu_run2",
+      "vus": 1,
+      "duration": "65s",
+      "exit_code": 0,
+      "p95_ms": 136.413,
+      "avg_ms": 73.397,
+      "rps": 5.758,
+      "total_requests": 375,
+      "unexpected_failure_pct": 0.0
+    },
+    {
+      "run": "5vu_run1",
+      "vus": 5,
+      "duration": "65s",
+      "exit_code": 0,
+      "p95_ms": 225.47,
+      "avg_ms": 114.294,
+      "rps": 23.146,
+      "total_requests": 1514,
+      "unexpected_failure_pct": 0.0
+    },
+    {
+      "run": "5vu_run2",
+      "vus": 5,
+      "duration": "65s",
+      "exit_code": 0,
+      "p95_ms": 227.656,
+      "avg_ms": 73.921,
+      "rps": 28.616,
+      "total_requests": 1866,
+      "unexpected_failure_pct": 0.0
+    }
+  ]
+}

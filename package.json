@@ -1,0 +1,30 @@
+{
+  "name": "sqe_project",
+  "version": "1.0.0",
+  "description": "[![Code style: black](https://img.shields.io/badge/python%20style-black-000000.svg)](https://github.com/psf/black)\r [![Code style: djlint](https://img.shields.io/badge/html%20style-djlint-black.svg)](https://www.djlint.com)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues"
+  },
+  "homepage": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project#readme",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
+    "lighthouse": "^13.6.0"
+  }
+}
