@@ -15,6 +15,7 @@
 | Field | Value |
 | :--- | :--- |
 | **MIS Name** | NEMO (NanoFab Equipment Management and Operations) v8.2.1 |
+| **Team GitHub Repo** | `https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project` |
 | **Upstream GitHub URL** | `https://github.com/usnistgov/NEMO` |
 | **Licence** | NIST Software Licensing Statement (Public Domain — `LICENSE.md`) |
 | **Exact Baseline Commit Hash** | `aa5ac6e20e4e35e6f67ab7d2133b8188679ae746` |

@@ -2,9 +2,10 @@
 
 **Last Updated:** 2026-11-22  
 **Project:** SE3002 Software Quality Engineering Final Project (Fall 2026) — Section A  
+**Public Team GitHub Repo:** `https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project`  
 **Group (Trio — 3 Members):**
 - **Jaweria Abdul Hameed (`24I-3025`)** — Git: `Jaweria-Abdul-Hameed <jaweriahameed06@gmail.com>` — **Area 1** (Static analysis, white-box unit testing, MCC/MC-DC, mutation analysis, CI quality gate)
-- **Mohsin Khan (`24I-3135`)** — Git: `mohsinkhandevs <233349669+mohsinkhandevs@users.noreply.github.com>` *(confirm exact email if different from GitHub noreply)* — **Area 2** (OpenAPI spec, automated EP/3-point BVA generator, API & integration testing)
+- **Mohsin Khan (`24I-3135`)** — Git: `mohsinkhandevs <mohsinkhan.devs@gmail.com>` — **Area 2** (OpenAPI spec, automated EP/3-point BVA generator, API & integration testing)
 - **Muhammad Aun (`24P-3099`)** — Git: `m-aun-005 <muhammadaoun1786@gmail.com>` — **Area 3** (Use cases 6 total = 2/member, Playwright E2E, usability & accessibility, defensive security, k6 performance & failure recovery)
 - **Shared:** Baseline, Living Test Plan, 5x5 Risk Register, Exit Criteria, Traceability Matrix, GitHub Issues & RCAs, Weekly GQM, Completion Report, AI-Use Log
 
@@ -89,11 +90,8 @@ $env:DJANGO_SETTINGS_MODULE = "sqe_local.settings"
 ---
 
 ## 4. Open GitHub / User Actions
-1. **Public GitHub Repository Creation & Push:**
-   - Recommended repo name: `SE3002-NEMO-SQE-Project` under `Jaweria-Abdul-Hameed` (or confirm your preferred name).
-   - Once created, add `mohsinkhandevs` and `m-aun-005` as collaborators, add `origin` remote, and push `main`.
-2. **Confirm Mohsin Khan's Git Email:**
-   - User provided `mohsinkhandevs` without domain; currently noting GitHub noreply `233349669+mohsinkhandevs@users.noreply.github.com` — confirm exact email before Phase 4 commits under Mohsin's identity.
+1. **Collaborator Invitations Sent:** `mohsinkhandevs` and `m-aun-005` were invited with `push` access to `https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project` — both should accept their GitHub repository invitations.
+2. **GitHub Issues (Phase 7 / Ongoing):** Log the 3 baseline candidate weaknesses + SonarQube findings as GitHub Issues once functional/API/security verification produces concrete failing evidence.
 
 ---
 
