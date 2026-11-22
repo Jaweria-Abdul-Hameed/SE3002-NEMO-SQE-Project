@@ -369,3 +369,33 @@ def test_openapi_two_constraint_regeneration_produces_updated_bva_and_payload():
         after_bva["BVA3-description-maxLength-at_maxLength"]["length"],
         after_bva["BVA3-description-maxLength-above_maxLength"]["length"],
     ] == [199, 200, 201]
+
+
+def test_w_api_01_api_rejects_below_minimum_buddy_count_with_400(api_server, api_env):
+    """Documented Fix PR Test (W-API-01 / BR-1):
+    Assert that POST /api/temporary_physical_access_requests/ with empty other_users
+    (0 buddies when access_requests_minimum_users=2) is rejected with HTTP 400 Bad Request.
+    FAILS before fix in TemporaryPhysicalAccessRequestSerializer.validate(), PASSES after fix.
+    """
+    import datetime
+    from NEMO.models import Customization
+    Customization.objects.update_or_create(
+        name="access_requests_minimum_users", defaults={"value": "2"}
+    )
+    now = timezone.now()
+    start = now + datetime.timedelta(hours=2)
+    end = now + datetime.timedelta(hours=4)
+    payload = {
+        "creator": api_env["users"]["lab_user"].id,
+        "physical_access_level": api_env["cleanroom_level_id"],
+        "description": "W-API-01 PR Fix Demonstration",
+        "start_time": start.strftime("%Y-%m-%d %H:%M:%S"),
+        "end_time": end.strftime("%Y-%m-%d %H:%M:%S"),
+        "other_users": [],
+    }
+    auth_headers = {"Authorization": f"Token {api_env['tokens']['lab_user']}"}
+    url = f"{api_server}/api/temporary_physical_access_requests/"
+    resp = requests.post(url, json=payload, headers=auth_headers, timeout=15)
+    assert resp.status_code == 400, f"Expected 400 Bad Request for 0 buddies when min=2, got {resp.status_code}: {resp.text}"
+    data = resp.json()
+    assert "other_users" in data, f"Expected 'other_users' validation error key, got: {data}"
