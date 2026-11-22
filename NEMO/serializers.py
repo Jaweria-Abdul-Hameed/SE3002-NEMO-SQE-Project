@@ -603,6 +603,22 @@ class TemporaryPhysicalAccessRequestSerializer(FlexFieldsSerializerMixin, ModelS
             "other_users": ("NEMO.serializers.UserSerializer", {"many": True}),
         }
 
+    def validate(self, attrs):
+        attrs = super().validate(attrs)
+        from NEMO.models import PhysicalAccessLevel
+        from NEMO.views.customization import CustomizationBase
+        from rest_framework import serializers
+
+        # Enforce minimum buddy requirement (BR-1: access_requests_minimum_users)
+        min_users = CustomizationBase.get_int("access_requests_minimum_users") or PhysicalAccessLevel.DEFAULT_MINIMUM_USERS
+        if "other_users" in attrs:
+            other_users = attrs.get("other_users") or []
+            if (len(other_users) + 1) < min_users:
+                raise serializers.ValidationError(
+                    {"other_users": f"A minimum of {min_users} users (creator + buddies) is required."}
+                )
+        return attrs
+
 
 class AdjustmentRequestSerializer(FlexFieldsSerializerMixin, ModelSerializer):
     class Meta:

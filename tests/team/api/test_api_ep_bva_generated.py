@@ -39,7 +39,6 @@ KNOWN_DRF_BYPASS_BVA_CASES = {
     "BVA3-description-maxLength-above_maxLength",
     "BVA3-start_time-offset-below_min_offset",
     "BVA3-end_time-maxDuration-above_max_duration",
-    "BVA3-other_users-minItems-below_minItems",
     "BVA3-other_users-maxItems-above_maxItems",
 }
 
