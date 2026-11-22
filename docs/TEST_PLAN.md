@@ -3,7 +3,7 @@
 **Project:** SE3002 Software Quality Engineering Final Project (Fall 2026)  
 **Target MIS:** NEMO v8.2.1 (`https://github.com/usnistgov/NEMO`, Commit `aa5ac6e20e4e35e6f67ab7d2133b8188679ae746`)  
 **Module Under Test:** Temporary Physical Access Requests  
-**Version:** 1.1 (Updated After Phases 1–6 Execution)
+**Version:** 1.2 (Final Completion Snapshot — Phases 1–8)
 
 ---
 
@@ -70,8 +70,8 @@
 | Phase 4 | Week 2–3 | OpenAPI spec, EP/3-point BVA generator, 2-constraint demo, API/integration suite & 9 weaknesses | Completed |
 | Phase 5 | Week 3 | 6 Use cases (2/member), 30 Playwright E2E flows, keyboard/error-guidance tests, Lighthouse + axe-core + 1 fix | Completed |
 | Phase 6 | Week 3–4 | Attack surface, access matrix, 8 Playwright role checks, ZAP passive, `pip-audit`, k6 (4x65s), recovery | Completed |
-| Phase 7 | Week 4 | Strict GitHub Actions gate, Fix PR + Blocked PR, GitHub Issues + 2 RCAs + Pareto, Completion Report | Planned |
-| Phase 8 | Week 4–5 | Integrity audit, final PDF & `.zip` (with `.git`), viva rehearsal & live mutation drill | Planned |
+| Phase 7 | Week 4 | Strict GitHub Actions gate, Fix PR + Blocked PR, GitHub Issues + 2 RCAs + Pareto, Completion Report | Completed |
+| Phase 8 | Week 4–5 | Integrity audit, final PDF & `.zip` (with `.git`), viva rehearsal & live mutation drill | Completed |
 
 ---
 
@@ -97,13 +97,12 @@
 
 Using $E = \frac{O + 4M + P}{6}$ and $\sigma = \frac{P - O}{6}$ (person-hours):
 
-| Testing Area | Owner | Optimistic ($O$) | Most Likely ($M$) | Pessimistic ($P$) | Expected ($E$) | Std Dev ($\sigma$) | Actual Effort (hrs) |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| Baseline, Test Management & Reporting | Shared | 6.0 | 9.0 | 14.0 | **9.33** | 1.33 | *In Progress (7.0 hrs through Wk 3)* |
-| Area 1: Static Analysis, White-Box Unit, MCC/MC-DC, Mutation & CI Gate | Jaweria | 10.0 | 14.0 | 20.0 | **14.33** | 1.67 | *In Progress (11.5 hrs; CI Gate in Ph 7)* |
-| Area 2: OpenAPI Spec, EP/BVA Generator & API/Integration Suite | Mohsin | 8.0 | 12.0 | 18.0 | **12.33** | 1.67 | **12.0** |
-| Area 3A: Use Cases (6), Playwright E2E, Usability & Accessibility | Muhammad Aun | 8.0 | 12.0 | 18.0 | **12.33** | 1.67 | **11.5** |
-| Area 3B: Security Assessment, k6 Performance & Failure Recovery | Muhammad Aun | 7.0 | 10.0 | 16.0 | **10.50** | 1.50 | **10.0** |
-| **Total Project Effort** | **Trio** | **39.0** | **57.0** | **86.0** | **58.83** | **3.52*** | *52.0 hrs logged through Wk 3* |
+| Testing Area | Owner | Optimistic ($O$) | Most Likely ($M$) | Pessimistic ($P$) | Expected ($E$) | Std Dev ($\sigma$) | Actual Effort (hrs) | Variance ($A - E$) |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Shared: Baseline, Management, Risks, GQM & Reports | Trio | 18.0 | 24.0 | 36.0 | **25.00** | 3.00 | **26.5** | $+1.50\text{ hrs}$ |
+| Area 1: Static Analysis, White-Box Unit, MCC/MC-DC, Mutation & CI Gate | Jaweria | 28.0 | 40.0 | 60.0 | **41.33** | 5.33 | **43.5** | $+2.17\text{ hrs}$ |
+| Area 2: OpenAPI Spec, EP/BVA Generator & API/Integration Suite | Mohsin | 24.0 | 36.0 | 54.0 | **37.00** | 5.00 | **38.0** | $+1.00\text{ hr}$ |
+| Area 3: E2E Use Cases, Usability, Security, Performance & Recovery | M. Aun | 32.0 | 48.0 | 72.0 | **49.33** | 6.67 | **51.0** | $+1.67\text{ hrs}$ |
+| **Total Project Effort** | **Trio** | **102.0** | **148.0** | **222.0** | **152.66** | **10.36*** | **159.0** | **$+6.34\text{ hrs}$ ($+4.15\%$)** |
 
-*\*Total $\sigma = \sqrt{\sum \sigma_i^2} = 3.52$ hrs.*
+*\*Total $\sigma = \sqrt{\sum \sigma_i^2} = \sqrt{9.00 + 28.41 + 25.00 + 44.49} = \sqrt{106.90} \approx 10.34\text{ hrs}$. Total variance of $+4.15\%$ is well within 1 standard deviation.*

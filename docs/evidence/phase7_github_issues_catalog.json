@@ -1,0 +1,134 @@
+[
+  {
+    "id": "W-API-01",
+    "number": "3",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/3",
+    "status": "closed"
+  },
+  {
+    "id": "W-API-02",
+    "number": "4",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/4",
+    "status": "open"
+  },
+  {
+    "id": "W-API-03",
+    "number": "5",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/5",
+    "status": "open"
+  },
+  {
+    "id": "W-API-04",
+    "number": "6",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/6",
+    "status": "open"
+  },
+  {
+    "id": "W-API-05",
+    "number": "7",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/7",
+    "status": "open"
+  },
+  {
+    "id": "W-API-06",
+    "number": "8",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/8",
+    "status": "open"
+  },
+  {
+    "id": "W-API-07",
+    "number": "9",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/9",
+    "status": "open"
+  },
+  {
+    "id": "W-API-08",
+    "number": "10",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/10",
+    "status": "open"
+  },
+  {
+    "id": "W-API-09",
+    "number": "11",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/11",
+    "status": "open"
+  },
+  {
+    "id": "UA-01",
+    "number": "18",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/18",
+    "status": "closed"
+  },
+  {
+    "id": "UA-02",
+    "number": "19",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/19",
+    "status": "closed"
+  },
+  {
+    "id": "UA-03",
+    "number": "20",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/20",
+    "status": "closed"
+  },
+  {
+    "id": "UA-04",
+    "number": "21",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/21",
+    "status": "closed"
+  },
+  {
+    "id": "UA-05",
+    "number": "22",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/22",
+    "status": "open"
+  },
+  {
+    "id": "UA-06",
+    "number": "23",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/23",
+    "status": "open"
+  },
+  {
+    "id": "UA-07",
+    "number": "24",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/24",
+    "status": "open"
+  },
+  {
+    "id": "SEC-01",
+    "number": "12",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/12",
+    "status": "open"
+  },
+  {
+    "id": "SEC-02",
+    "number": "13",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/13",
+    "status": "open"
+  },
+  {
+    "id": "SEC-03",
+    "number": "14",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/14",
+    "status": "open"
+  },
+  {
+    "id": "SEC-04",
+    "number": "15",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/15",
+    "status": "open"
+  },
+  {
+    "id": "PERF-01",
+    "number": "16",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/16",
+    "status": "open"
+  },
+  {
+    "id": "PERF-02",
+    "number": "17",
+    "url": "https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project/issues/17",
+    "status": "open"
+  }
+]

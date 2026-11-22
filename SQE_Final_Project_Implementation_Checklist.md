@@ -99,13 +99,13 @@
 ## Phase 7: CI Quality Gate, Defects, RCA & Test Completion *(12 Marks + CI Gate of 8 · Area 1 & Shared)*
 *Enforce strict non-bypassable PR quality gates and finalize defect governance, GQM tracking, and the release decision.*
 
-- [ ] **Enforce Strict GitHub Actions PR Quality Gate (No Escape Hatches)**  
+- [x] **Enforce Strict GitHub Actions PR Quality Gate (No Escape Hatches)**  
   Configure `GitHub Actions` to run on every pull request: SonarQube, all test suites (unit, API, E2E), and mutation testing. Block merge and deployment on any failure or breach of evidence-justified coverage, mutation, and SonarQube thresholds. Strictly ban escape hatches (no `continue-on-error`, no `|| true`).
-- [ ] **Demonstrate Two Pull Requests: Documented Fix & Blocked PR**  
+- [x] **Demonstrate Two Pull Requests: Documented Fix & Blocked PR**  
   Include in the repository: (1) one documented fix delivered via PR proving the gate fails before the fix and passes after, and (2) one pull request that the pipeline correctly blocked from merging due to test/threshold failure.
-- [ ] **Complete GitHub Issues Lifecycle, 2 Major RCAs & Pareto Analysis** *(7 Marks · CLO3)*  
+- [x] **Complete GitHub Issues Lifecycle, 2 Major RCAs & Pareto Analysis** *(7 Marks · CLO3)*  
   Log defects in GitHub Issues with severity, priority, status/lifecycle, and triage decision. Conduct root cause analysis (`5 Whys` + `Fishbone` diagram) for ≥ 2 major defects with corrective and preventive actions. Produce a Pareto analysis by defect category and verify every API, accessibility, security, and performance weakness is linked to the risk register.
-- [ ] **Finalize Weekly GQM Reports, Actual Effort & Completion Report** *(5 Marks · CLO3)*  
+- [x] **Finalize Weekly GQM Reports, Actual Effort & Completion Report** *(5 Marks · CLO3)*  
   Compile weekly progress reports against the plan with control actions and GQM metrics (`defect density`, `requirements coverage`, `reopen rate`) read in context. Compare three-point estimates vs actual effort. Write the Test Completion Report covering tested/not tested scope, deviations, open defects, residual risk per risk, and an evidence-based **Release or Hold** decision showing actual vs target for all 3 release criteria.
 
 ---
@@ -113,13 +113,13 @@
 ## Phase 8: Final Packaging, Integrity Audit & Viva Readiness *(20 Marks · CLO1 · All Members)*
 *Deliver one compliant PDF + Git zip package and prepare every member to defend tests, artefacts, and live mutations.*
 
-- [ ] **Audit Repository Contents, Tool Versions & Per-Member Git Commits**  
+- [x] **Audit Repository Contents, Tool Versions & Per-Member Git Commits**  
   Verify every member committed their own work (commit history is checked in the viva). Confirm the repo contains: upstream URL/licence & baseline commit, reproducible setup/seed/reset instructions, runnable scripts & test data in `tests/team/`, exact tool versions, CI config, the documented fix PR, and the blocked PR.
-- [ ] **Compile Complete PDF Report & AI-Use Disclosure Record**  
+- [x] **Compile Complete PDF Report & AI-Use Disclosure Record**  
   Include public GitHub repo link, scope, risk register, traceability matrix, all test management documents, full results & evidence links for every testing activity, area ownership, root cause/severity/risk/fix (linked to risk register) for every API/a11y/security/performance finding, the complete AI-use record (tool, purpose, output, what you checked/changed; prompts kept), and the final Release or Hold decision (actual vs target for all 3 release criteria).
-- [ ] **Package One Final Submission with Exact Naming & `.git` Folder**  
+- [x] **Package One Final Submission with Exact Naming & `.git` Folder**  
   Submit one PDF and one repository zip per group named `Project_RollNumber1_RollNumber2_RollNumber3_Section.pdf` and `.zip` (e.g. `Project_23I-0001_23I-0002_23I-0003_A.zip`; pairs omit the third roll number). Ensure the `.git` folder is included inside the zip so full commit history is preserved.
-- [ ] **Rehearse Individual Test Reruns, Full-Scope Q&A & Live Task** *(20 Marks · CLO1)*  
+- [x] **Rehearse Individual Test Reruns, Full-Scope Q&A & Live Task** *(20 Marks · CLO1)*  
   Prepare every member to: (1) rerun a selected test live and explain all assertions, (2) answer questions on their owned area AND every shared component (risk register, traceability, metrics, findings), and (3) execute the live task — given a business-rule change or updated OpenAPI spec, predict which tests and CI pipeline gate will fail, apply the change, and demonstrate the actual failure.
 
 ---

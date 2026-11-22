@@ -32,5 +32,6 @@ SQE_Final_Project_Implementation_Checklist.pdf
 node_modules/
 playwright-report/
 test-results/
+*.zip
 
 

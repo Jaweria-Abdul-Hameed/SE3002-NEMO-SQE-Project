@@ -8,9 +8,9 @@
 
 ## 1. Functional Requirements & Business Rules Traceability
 
-| Req / Rule ID | Summary | Risk Link | Unit (`tests/team/unit/` — 74 Tests) | API / Integration (`tests/team/api/` — 154 Tests) | Browser E2E & Area 3 (`tests/team/e2e\|usability\|security\|recovery/` — 41 Tests) | Current Status |
+| Req / Rule ID | Summary | Risk Link | Unit (`tests/team/unit/` — 74 Tests) | API / Integration (`tests/team/api/` — 155 Tests) | Browser E2E & Area 3 (`tests/team/e2e\|usability\|security\|recovery/` — 41 Tests) | Current Status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **FR-01** | Lab User submits new access request in `PENDING` state | PR-01, PR-06 | `test_create_access_request_get_new_and_get_edit`, `test_create_access_request_post_valid_persists_pending_and_notifies`, `test_mk_create_access_request_get_context_filters_and_unbound_form`, `test_access_requests_ui_and_api_baseline` | `test_api_post_body_equivalence_partitions` (valid EPs), `test_cross_workflow_wf1_api_create_then_wf2_ui_approve_and_readback` | `UC-01-MAIN`, `UC-01-ALT-1`, `USA-WF1-ERR-KBD`, `SEC-RBAC-01` | **Unit + API + E2E Verified** |
+| **FR-01** | Lab User submits new access request in `PENDING` state | PR-01, PR-06 | `test_create_access_request_get_new_and_get_edit`, `test_create_access_request_post_valid_persists_pending_and_notifies`, `test_mk_create_access_request_get_context_filters_and_unbound_form`, `test_access_requests_ui_and_api_baseline` | `test_api_post_body_equivalence_partitions` (valid EPs), `test_cross_workflow_wf1_api_create_then_wf2_ui_approve_and_readback`, `test_w_api_01_api_rejects_below_minimum_buddy_count_with_400` (PR #1 regression test) | `UC-01-MAIN`, `UC-01-ALT-1`, `USA-WF1-ERR-KBD`, `SEC-RBAC-01` | **Unit + API + E2E Verified** |
 | **FR-02** | Reject invalid buddy count, `end <= start`, or past `start_time` | PR-01, PR-06 | `test_model_clean_time_order_3point_bva`, `test_form_buddy_count_3point_bva_default_min_2`, `test_form_buddy_count_3point_bva_min_3_plural_message`, `test_create_access_request_post_past_start_time_rejected`, `test_d2_start_time_guard_mcc_and_mcdc`, `test_d5_model_clean_mcc_and_mcdc`, `test_mk_exact_start_time_equal_to_now_is_allowed` | `test_api_post_body_3point_bva` (`end_time <= start_time` 400 verified; `other_users`/`start_time` bypasses logged `W-API-01`, `W-API-02`) | `UC-01-EXC-1`, `UC-01-EXC-2`, `USA-WF1-ERR-KBD` | **Unit + API + E2E Verified** |
 | **FR-03** | Lab User sees only own/buddy non-deleted requests | PR-02 | `test_access_requests_list_visibility_all_roles_and_max_limit`, `test_d4a_visibility_role_guard_mcc_and_mcdc`, `test_mk_creator_also_listed_in_other_users_remains_visible`, `test_mk_access_requests_context_buckets_and_reviewer_notification_retained` | `test_api_list_query_parameters_ep_and_bva` (`creator`, `status`, `deleted`) | `UC-01-ALT-2`, `UC-02-ALT-1`, `SEC-RBAC-08` | **Unit + API + E2E Verified** |
 | **FR-04** | Creator edits own `PENDING` request | PR-02, PR-03 | `test_edit_access_request_by_creator_keeps_pending_and_updates_fields`, `test_d1_edit_authorization_mcc_and_mcdc`, `test_mk_edit_notification_cleanup_reviewer_vs_creator` | `test_api_crud_put_patch_delete_idempotency_and_duplicate_post_weakness` | `UC-02-MAIN`, `UC-02-ALT-2`, `UC-02-EXC-1`, `SEC-RBAC-03` | **Unit + API + E2E Verified** |
@@ -27,11 +27,11 @@
 
 ---
 
-## 2. Requirements Coverage Summary (Updated After Phases 5 & 6)
+## 2. Requirements Coverage Summary (Final Snapshot)
 
 - **Total Functional Requirements:** 10 (`FR-01` .. `FR-10`)
 - **Total Business Rules:** 4 (`BR-1` .. `BR-4`)
 - **Automated Requirements Coverage:** **10 / 10 FRs (`100.0%`)** verified across ALL three functional test levels:
   - **Unit (`tests/team/unit/`):** `74` tests (`100.0%` statement/branch coverage; `93.21%` raw / `100.0%` equivalent-adjusted mutation score)
-  - **API / Integration (`tests/team/api/`):** `154` tests (OpenAPI-driven EP & 3-point BVA, idempotency, cross-workflow readbacks)
-  - **Browser E2E & Area 3 (`tests/team/`):** `30` Use Case E2E flows (`UC-01`..`UC-06`) + `2` Usability/Keyboard tests + `8` Security RBAC checks + `1` Controlled Failure-and-Recovery pytest = **`41` Area 3 tests** (`269` automated team tests total across `pytest` + `Playwright`) + Lighthouse/axe-core before/after audits + OWASP ZAP passive scan + `pip-audit` + 4 Grafana k6 OSS load runs.
+  - **API / Integration (`tests/team/api/`):** `155` tests (OpenAPI-driven EP & 3-point BVA, idempotency, cross-workflow readbacks, PR #1 regression test)
+  - **Browser E2E & Area 3 (`tests/team/`):** `30` Use Case E2E flows (`UC-01`..`UC-06`) + `2` Usability/Keyboard tests + `8` Security RBAC checks + `1` Controlled Failure-and-Recovery pytest = **`41` Area 3 tests** (`270` automated team tests total across `pytest` + `Playwright`) + Lighthouse/axe-core before/after audits + OWASP ZAP passive scan + `pip-audit` + 4 Grafana k6 OSS load runs.
