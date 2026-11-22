@@ -14,3 +14,16 @@ nemo.log
 conf/
 *.log
 .vs/
+sqe_nemo.db
+staticfiles/
+email_logs/
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.scannerwork/
+!sqe_local/settings.py
+RAHBAR Assignment 02 Implementation Checklist.pdf
+SQE_Final_Project Fall 2026.pdf
+SQE_Final_Project_Implementation_Checklist.pdf
+
