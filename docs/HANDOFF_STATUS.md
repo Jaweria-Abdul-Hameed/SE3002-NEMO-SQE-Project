@@ -12,90 +12,88 @@
 ---
 
 ## 1. Completed Phases
-- **Phase 1: MIS Selection, Registration & Reproducible Baseline** — **COMPLETED** (all 4 checklist items `[x]`)
-- **Phase 2: Static Analysis, Test Plan, Risk Register & Exit Criteria** — **COMPLETED** (all 4 checklist items `[x]`)
+- **Phase 1: MIS Selection, Registration & Reproducible Baseline** — **COMPLETED** (`4/4 [x]`)
+- **Phase 2: Static Analysis, Test Plan, Risk Register & Exit Criteria** — **COMPLETED** (`4/4 [x]`)
+- **Phase 3: White-Box Unit Testing, MCC/MC-DC & Mutation Analysis** — **COMPLETED** (`4/4 [x]`, committed under `Jaweria-Abdul-Hameed`)
+- **Phase 4: OpenAPI Spec, Data Generation & API/Integration Testing** — **COMPLETED** (`4/4 [x]`, committed under `mohsinkhandevs`)
 
-*(Next chat must start directly at **Phase 3** and execute **Phases 3 & 4**.)*
+*(Next chat MUST start directly at **Phase 5** and execute **Phases 5 & 6** — Area 3, committed under `m-aun-005 <muhammadaoun1786@gmail.com>`.)*
 
 ---
 
 ## 2. Exact Paths Created / Modified
 
 ### Local Configuration, Seed & Test Harness
-- `sqe_local/__init__.py` — Local SQE config package marker
-- `sqe_local/auth_backend.py` — `LocalSyntheticAuthBackend` (`SQE_LOCAL_TEST_PASSWORD`, default `nemo-sqe-test-2026`)
-- `sqe_local/settings.py` — Reproducible SQLite + DRF Token/Session settings (`sqe_nemo.db`)
-- `scripts/seed_synthetic_data.py` — Idempotent synthetic data seeder (7 users, tokens, areas, levels, customization, sample requests)
-- `scripts/reset_local_db.py` — Resets `sqe_nemo.db`, runs migrations, and re-seeds synthetic data
-- `scripts/fetch_sonar_metrics.py` — Queries SonarQube REST API and writes `docs/evidence/sonarqube_baseline_metrics.json`
-- `pytest.ini` — Configures `testpaths = tests/team`, `DJANGO_SETTINGS_MODULE = sqe_local.settings`
-- `.coveragerc` — Branch coverage config (`source = .`, `include = NEMO/*, sqe_local/*`, omitting `NEMO/migrations/*` & `NEMO/tests/*`)
-- `sonar-project.properties` — SonarQube project config (`nemo-sqe-access-requests`, Python 3.12, `coverage.xml`)
-- `.gitignore` — Excludes `sqe_nemo.db`, `coverage.xml`, `.coverage`, `.scannerwork/`, `email_logs/`, `staticfiles/`, and assignment PDFs
+- `sqe_local/__init__.py`, `sqe_local/auth_backend.py`, `sqe_local/settings.py` (added `TEST.NAME = sqe_nemo_pytest.db` for fast `--reuse-db`)
+- `scripts/seed_synthetic_data.py`, `scripts/reset_local_db.py`, `scripts/fetch_sonar_metrics.py`
+- `pytest.ini` (`testpaths = tests/team`, `addopts = -v --nomigrations`)
+- `.coveragerc`, `sonar-project.properties`, `.gitignore`
 
-### Isolated Team Tests (`tests/team/`)
-- `tests/team/__init__.py`
-- `tests/team/unit/__init__.py`
-- `tests/team/unit/test_baseline_smoke.py` — 2/2 smoke tests (`test_synthetic_seed_and_login_workflow`, `test_access_requests_ui_and_api_baseline`)
-- `tests/team/api/__init__.py`
-- `tests/team/e2e/__init__.py`
-- `tests/team/usability/__init__.py`
-- `tests/team/security/__init__.py`
-- `tests/team/recovery/__init__.py`
+### Phase 3 (Area 1 — White-Box Unit, MCC/MC-DC & Cosmic Ray Mutation)
+- `tests/team/unit/conftest.py` — Fixtures (`access_env`, `make_form_post_data`, `make_access_request`, `set_min_users`)
+- `tests/team/unit/test_baseline_smoke.py` — 2 smoke tests
+- `tests/team/unit/test_access_requests_whitebox.py` — 27 white-box unit tests (all 9 view functions, form BVA, model helpers, state transitions, roles, email, CSV)
+- `tests/team/unit/test_mcdc_decisions.py` — 36 tests covering complete MCC truth tables & derived MC/DC independence pairs (`D1`, `D2`, `D3`, `D4a`, `D4b`, `D5`)
+- `tests/team/unit/test_mutation_killers.py` — 9 tests (`MK-01`..`MK-09`) killing all 32 killable baseline surviving mutants
+- `sqe_mutators/` — Editable Python package registering 4 custom Cosmic Ray business-rule operators under `nemo_br/*` (`FlipApprovalStatusOperator`, `SkipGrantCreationOperator`, `BypassReviewerCheckOperator`, `RelaxBuddyMinimumOperator`)
+- `cosmic-ray.toml`, `cosmic-ray-forms.toml`, `scripts/run_cosmic_ray_parallel.py`, `scripts/run_custom_forms_mutation.py`
+- `docs/PHASE3_WHITEBOX_MCC_MCDC.md`, `docs/PHASE3_MUTATION_ANALYSIS.md`
+- Raw Evidence: `docs/evidence/phase3_unit_coverage.txt`, `docs/evidence/phase3_unit_coverage.json`, `docs/evidence/cr_baseline.sqlite`, `docs/evidence/cr_baseline_report.txt`, `docs/evidence/cr_final.sqlite`, `docs/evidence/cr_final_report.txt`, `docs/evidence/cr_forms_custom.sqlite`, `docs/evidence/cr_forms_custom_report.txt`
 
-### Documentation & Evidence (`docs/`)
-- `docs/PHASE1_BASELINE_AND_SCOPE.md` — MIS metadata (`usnistgov/NEMO`, commit `aa5ac6e20e4e35e6f67ab7d2133b8188679ae746`, NIST Public Domain), workflows, shared persistent state matrix, FR-01..FR-10, 2 roles, BR-1..BR-4, test basis & assumptions, trio ownership
-- `docs/PHASE2_STATIC_ANALYSIS_AND_CFG.md` — Real SonarQube `9.9.8.100196` metrics + interpretation, 6 code smells, 1 CSRF security hotspot (`python:S3752`), Mermaid CFG for `create_access_request` (`N=37, E=54, V(G)=19`, `24` atomic boolean paths) vs SonarQube (`complexity=51`, `cognitive_complexity=85`/`50`)
-- `docs/evidence/sonarqube_baseline_metrics.json` — Raw SonarQube REST API JSON snapshot
-- `docs/TEST_PLAN.md` — Living Test Plan & PERT three-point effort estimates
-- `docs/RISK_REGISTER_AND_EXIT_CRITERIA.md` — 10 product risks + 3 project risks (5x5 matrix) and 4 measurable exit criteria
-- `docs/TRACEABILITY_MATRIX.md` — FR-01..FR-10 and BR-1..BR-4 traceability matrix
-- `docs/WEEKLY_GQM_REPORT.md` — Week 1 progress & GQM metrics
-- `docs/AI_USAGE_LOG.md` — Disclosed AI usage (`AI-01`..`AI-03`) + saved prompts
+### Phase 4 (Area 2 — OpenAPI Spec, EP/3-Point BVA Generator & API/Integration)
+- `openapi/temporary_physical_access_requests.yaml` — OpenAPI 3.0.3 contract
+- `openapi/temporary_physical_access_requests_two_constraints_demo.yaml` — Two-constraint mutated demo spec (`other_users.minItems: 1->2`, `description.maxLength: 500->200`)
+- `scripts/generate_api_test_data.py` — Spec-driven OpenAPI EP & 3-point BVA generator (`--spec`, `--output`)
+- `scripts/demo_openapi_regeneration.py` — Automated 2-constraint regeneration & diff generator
+- `tests/team/api/generated_test_data.json` — Generated dataset (46 body EP, 52 body 3-point BVA, 85 query/path cases, 7 state transitions)
+- `tests/team/api/conftest.py` — Fast session-scoped `api_server` (`LiveServer`) + placeholder resolver
+- `tests/team/api/test_api_ep_bva_generated.py` — 141 spec-driven EP, 3-point BVA & parameter tests
+- `tests/team/api/test_api_integration_and_cross_workflow.py` — 13 RBAC, CRUD idempotency, state-transition, cross-workflow readback & regeneration tests
+- `docs/PHASE4_OPENAPI_AND_API_TESTING.md` — API coverage summary & 9 documented endpoint weaknesses (`W-API-01`..`W-API-09`) linked to Risk Register
+- Raw Evidence: `docs/evidence/phase4_api_pytest_output.txt`, `docs/evidence/phase3_4_combined_pytest_output.txt`, `docs/evidence/openapi_regeneration_demo/`
+
+### Updated Living Project Docs (Shared)
+- `docs/TRACEABILITY_MATRIX.md` — Updated to 10/10 FRs (100%) verified across Unit (74 tests) + API/Integration (154 tests) = 228 passing tests
+- `docs/WEEKLY_GQM_REPORT.md` — Added Week 2 progress & GQM snapshot
+- `docs/AI_USAGE_LOG.md` — Added `AI-04` and `AI-05` + saved prompts
 
 ---
 
-## 3. Exact Commands to Start, Reset, Test & Scan
+## 3. Exact Verified Metrics & Commands
 
-### Reset & Seed Synthetic Database
+### Key Verified Metrics So Far
+- **Unit Coverage (Server-Side Business Logic):** `212 / 212` statements (**100.0%**), `60 / 60` branches (**100.0%**) across `NEMO/views/access_requests.py` (`148/148`, `50/50`), `TemporaryPhysicalAccessRequestForm` (`13/13`, `4/4`), and `TemporaryPhysicalAccess`/`TemporaryPhysicalAccessRequest` (`51/51`, `6/6`).
+- **Cosmic Ray Mutation Score (`NEMO/views/access_requests.py`):** Baseline `119/162` (`73.46%`, 43 surviving) -> Final **`151/162` (`93.21%` raw; `100.0%` equivalent-adjusted across 11 proven equivalent mutants)**; **14 / 14 (`100%`) custom `nemo_br/*` business-rule mutants killed** across `access_requests.py` (12) + `forms.py` (2).
+- **API & Integration Suite:** **`154 / 154` passed**, **228 / 228 combined (`tests/team`) passed**.
+
+### Commands
 ```powershell
+# Reset & Seed Local DB
 .\venv\Scripts\python.exe scripts\reset_local_db.py
-```
 
-### Start Local NEMO Server
-```powershell
+# Start Local NEMO Server (for Playwright / Lighthouse / ZAP / k6 in Phases 5-6)
 $env:DJANGO_SETTINGS_MODULE = "sqe_local.settings"
 .\venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000
-```
 
-### Run Isolated Team Tests
-```powershell
-.\venv\Scripts\python.exe -m pytest tests/team
-```
+# Run All Team Tests (Unit + API = 228 tests)
+.\venv\Scripts\python.exe -m pytest tests/team --reuse-db
 
-### Run Coverage (`coverage.xml` with Linux path mapping for Docker SonarQube)
-```powershell
-.\venv\Scripts\coverage.exe run -m pytest tests/team
-.\venv\Scripts\coverage.exe xml -o coverage.xml
-.\venv\Scripts\python.exe -c "p='coverage.xml'; txt=open(p,encoding='utf-8').read(); open(p,'w',encoding='utf-8').write(txt.replace(r'C:\Users\Jaweria\Projects\SQE_Project','/usr/src'))"
-```
+# Regenerate API EP/3-Point BVA Data from OpenAPI Spec
+.\venv\Scripts\python.exe scripts\generate_api_test_data.py --spec openapi\temporary_physical_access_requests.yaml --output tests\team\api\generated_test_data.json
 
-### SonarQube Local Container (`http://localhost:9090`)
-- Running container: `sqe-sonarqube` (`sonarqube:lts-community` mapped to `9090:9000`, since port `9000` is used by `atip_minio`).
-- Re-scan command (pass generated token in `$env:SONAR_TOKEN`):
-  ```powershell
-  docker run --rm -v "${PWD}:/usr/src" -e SONAR_HOST_URL="http://host.docker.internal:9090" -e SONAR_TOKEN="$env:SONAR_TOKEN" sonarsource/sonar-scanner-cli
-  ```
+# Re-run Cosmic Ray Parallel Mutation Suite
+.\venv\Scripts\python.exe scripts\run_cosmic_ray_parallel.py --workers 6 --fresh --session docs\evidence\cr_final.sqlite --report docs\evidence\cr_final_report.txt
+```
 
 ---
 
-## 4. Open GitHub / User Actions
-1. **Collaborator Invitations Sent:** `mohsinkhandevs` and `m-aun-005` were invited with `push` access to `https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project` — both should accept their GitHub repository invitations.
-2. **GitHub Issues (Phase 7 / Ongoing):** Log the 3 baseline candidate weaknesses + SonarQube findings as GitHub Issues once functional/API/security verification produces concrete failing evidence.
+## 4. Open GitHub / Tool Actions
+1. **Collaborator Invitations:** Ensure `mohsinkhandevs` and `m-aun-005` accept their repository invitations on `https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project`.
+2. **Phase 5–6 Tool Installs (next chat):** Install Playwright + Chromium (`playwright` / `@playwright/test` + `@axe-core/playwright` + `lighthouse`), `pip-audit`, `OWASP ZAP` (Docker `ghcr.io/zaproxy/zaproxy:stable`), and `Grafana k6 OSS` (Docker `grafana/k6` or native Windows binary).
 
 ---
 
 ## 5. Exact Next Phase to Start
-- **Start at Phase 3** (and execute **Phases 3 & 4** in the next chat):
-  1. **Phase 3 (Area 1 — Jaweria):** 100% statement & branch coverage unit tests on `NEMO/views/access_requests.py` and `TemporaryPhysicalAccessRequestForm`, complete MCC truth tables + MC/DC pairs on `create_access_request` / business rules, `mutmut` (or `Cosmic Ray`) + >= 2 custom business-rule mutation operators, and >= 15 surviving-mutant analysis & killing all killable mutants.
-  2. **Phase 4 (Area 2 — Mohsin):** OpenAPI spec for `/api/temporary_physical_access_requests/` (and access-request endpoints), EP & 3-point BVA generator script, two-constraint regeneration demo, and `pytest` + `Requests` API/integration suite with cross-workflow readbacks & weakness report.
+- **Start at Phase 5** (and execute **Phases 5 & 6** in the next chat — **Area 3, Muhammad Aun `24P-3099`**, commit as `m-aun-005 <muhammadaoun1786@gmail.com>`):
+  1. **Phase 5:** Write 6 complete use case specs (2/member, preconditions, main, >=2 alt, >=2 exception, postconditions); automate EVERY flow in Playwright (Chromium) asserting UI + DB postconditions; automate 2 workflow task tests (with business-rule error guidance + recovery, and keyboard-only navigation/submission); run Lighthouse + `@axe-core/playwright` on each key screen, fix 1 screen, re-verify before/after, and archive all reports.
+  2. **Phase 6:** Map attack surface & 2-role access matrix; automate >= 4 Playwright role checks; run OWASP ZAP passive scan during Playwright execution + review >= 2 controls corroborated by source/config; run `pip-audit`; set p95 & failure targets BEFORE load testing and run Grafana k6 OSS (`1 VU` & `>= 5 VUs`, 2 runs each × >= 60s = 4 runs); automate 1 controlled failure-and-recovery state-change test in `tests/team/recovery/`.

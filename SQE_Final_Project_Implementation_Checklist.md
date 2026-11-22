@@ -43,13 +43,13 @@
 ## Phase 3: White-Box Unit Testing, MCC/MC-DC & Mutation Analysis *(16 Marks + Mutation of 8 · Area 1)*
 *Achieve exhaustive structural coverage on server-side business logic and prove test-suite fault-detection power via mutation testing.*
 
-- [ ] **Achieve 100% Statement & Branch Coverage on Server-Side Business Logic** *(16 Marks w/ MCC · CLO2)*  
+- [x] **Achieve 100% Statement & Branch Coverage on Server-Side Business Logic** *(16 Marks w/ MCC · CLO2)*  
   Use `pytest` + `coverage.py` (Python), `Vitest` (JS/TS), or `JUnit` + `JaCoCo` (Java). Reach 100% statement and branch coverage across all server-side business logic and explicitly justify any uncovered code. Cover all 4 business rules; apply decision tables (every rule with ≥ 2 conditions) and state transitions (every allowed + ≥ 1 disallowed change per state) wherever they fit; count each executable case once per test level.
-- [ ] **Build Complete MCC Tables & Derive MC/DC Pairs on Critical Module**  
+- [x] **Build Complete MCC Tables & Derive MC/DC Pairs on Critical Module**  
   For the critical business-rule module, enumerate complete Multiple Condition Coverage (MCC) truth tables, then extract the Modified Condition/Decision Coverage (MC/DC) independence pairs directly from those MCC tables and automate unit tests verifying each pair.
-- [ ] **Run Mutation Tool & Add ≥ 2 Custom Business-Rule Mutation Operators** *(8 Marks w/ CI · CLO3)*  
+- [x] **Run Mutation Tool & Add ≥ 2 Custom Business-Rule Mutation Operators** *(8 Marks w/ CI · CLO3)*  
   Run `mutmut` or `Cosmic Ray` (Python), `Stryker` (JS/TS), or `PIT` (Java) on the business-rule module and report the mutation score. Implement at least 2 custom mutation operators specifically modelling defects in your documented business rules.
-- [ ] **Analyse ≥ 15 Surviving Mutants & Kill All Killable Mutants**  
+- [x] **Analyse ≥ 15 Surviving Mutants & Kill All Killable Mutants**  
   Inspect at least 15 surviving mutants, classifying each as `equivalent`, `missing test`, or `weak assertion`. Write new unit tests or strengthen existing assertions to kill every killable mutant and document the updated mutation score.
 
 ---
@@ -57,13 +57,13 @@
 ## Phase 4: OpenAPI Spec, Data Generation & API/Integration Testing *(17 Marks · CLO2 · Area 2)*
 *Generate systematic EP and 3-point BVA datasets directly from an OpenAPI contract and validate all endpoint & cross-workflow behaviour.*
 
-- [ ] **Author OpenAPI Spec & Build EP / 3-Point BVA Generator Script** *(7 Marks · CLO2)*  
+- [x] **Author OpenAPI Spec & Build EP / 3-Point BVA Generator Script** *(7 Marks · CLO2)*  
   Write an OpenAPI specification covering your workflow endpoints (or verify and use the upstream spec if accurate). Build your own generator script that parses the OpenAPI spec and outputs Equivalence Partitioning (EP) classes and 3-point Boundary Value Analysis (BVA: just below, exactly at, just above every limit) inputs.
-- [ ] **Demonstrate Two-Constraint Regeneration & Viva Adaptability**  
+- [x] **Demonstrate Two-Constraint Regeneration & Viva Adaptability**  
   Change two constraints in the OpenAPI specification, re-run the generator, and show the regenerated outputs and test effect. Keep the generator cleanly spec-driven so you can regenerate live during the viva when given an updated API spec.
-- [ ] **Automate API & Integration Tests Consuming Generated Data** *(10 Marks · CLO2)*  
+- [x] **Automate API & Integration Tests Consuming Generated Data** *(10 Marks · CLO2)*  
   Use `pytest` + `Requests` (or the project language's open-source test framework). API tests MUST consume the generator's output. Test every valid and invalid EP partition (one invalid value per test) and 3-point BVA on every input, meeting all API coverage criteria plus decision-table and state-transition checks wherever they fit.
-- [ ] **Verify Rejections, Idempotency, Cross-Workflow Readbacks & Weaknesses**  
+- [x] **Verify Rejections, Idempotency, Cross-Workflow Readbacks & Weaknesses**  
   Automate business-rule rejections, invalid state transitions, and repeated requests (asserting no duplicate records). Read back shared persistent records after BOTH successful and rejected requests across workflows. Report all endpoint weaknesses with root cause, severity, risk, fix, and risk-register link.
 
 ---

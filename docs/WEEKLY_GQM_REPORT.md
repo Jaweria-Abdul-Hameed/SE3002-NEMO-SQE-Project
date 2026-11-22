@@ -32,3 +32,26 @@
 - **Control Actions:**
   1. Create public GitHub repo (recommended name `SE3002-NEMO-SQE-Project`) under `Jaweria-Abdul-Hameed`, add `mohsinkhandevs` and `m-aun-005` as collaborators, and push `main`.
   2. Begin Phase 3 white-box unit testing targeting 100% statement/branch coverage, MCC/MC-DC pairs on `create_access_request`, and `mutmut` + 2 custom business-rule operators.
+
+---
+
+### Week 2 Report (Phases 3–4 Execution — 2026-11-22)
+- **Planned Milestones:** Complete Phase 3 (Area 1 — 100% statement/branch unit coverage, complete MCC/MC-DC pairs, Cosmic Ray + >= 2 custom operators, >= 15 surviving-mutant analysis & remediation) and Phase 4 (Area 2 — OpenAPI 3.0.3 spec, EP & 3-point BVA generator, 2-constraint regeneration demo, `pytest` + `requests` API/integration suite & weakness report).
+- **Actual Progress:**
+  - **Phase 3 (Area 1 — Jaweria):**
+    - Authored 74 isolated unit tests in `tests/team/unit/` achieving **100.0% statement (212/212) and 100.0% branch (60/60) coverage** across `NEMO/views/access_requests.py` (`148/148` stmts, `50/50` branches), `TemporaryPhysicalAccessRequestForm` (`13/13` stmts, `4/4` branches), and `TemporaryPhysicalAccess` / `TemporaryPhysicalAccessRequest` (`51/51` stmts, `6/6` branches).
+    - Enumerated complete MCC truth tables and automated every MC/DC independence pair across all 5 compound decisions (`D1`–`D5`) in `docs/PHASE3_WHITEBOX_MCC_MCDC.md`.
+    - Built and registered 4 custom Cosmic Ray business-rule operators (`sqe_mutators/`: `FlipApprovalStatusOperator`, `SkipGrantCreationOperator`, `BypassReviewerCheckOperator`, `RelaxBuddyMinimumOperator`).
+    - Executed real 162-mutant Cosmic Ray baseline (`119/162` = **73.46%**, 43 surviving), classified all 43 surviving mutants (`10` missing tests, `22` weak assertions, `11` mathematically equivalent), added `test_mutation_killers.py` (`MK-01`..`MK-09`), and re-executed Cosmic Ray achieving **`151/162` = `93.21%` raw mutation score (`100.0%` equivalent-adjusted; `14/14` = `100%` custom business-rule mutants killed)**.
+  - **Phase 4 (Area 2 — Mohsin):**
+    - Authored OpenAPI 3.0.3 spec (`openapi/temporary_physical_access_requests.yaml`) and spec-driven generator (`scripts/generate_api_test_data.py`) producing 46 body EP cases, 52 body 3-point BVA cases, 85 query/path cases, and 7 state-transition cases.
+    - Executed two-constraint regeneration demo (`other_users.minItems: 1->2`, `description.maxLength: 500->200`) and verified live API test consumption (`6/6 passed`).
+    - Executed **154/154 passing `pytest` + `requests` API & integration tests** in 21.29s against local live NEMO server, discovering and documenting **9 genuine API endpoint weaknesses (`W-API-01`..`W-API-09`)** linked to `PR-01`, `PR-02`, `PR-03`, `PR-04`, `PR-06`.
+- **Schedule Variance:** On track — Phases 1 through 4 completed (`16/32` total checklist items `[x]`).
+- **GQM Snapshot (Week 2):**
+  - **Defect Density (Confirmed Test Findings):** `9` confirmed API/endpoint weaknesses + `6` SonarQube code smells + `1` CSRF security hotspot across `0.249` KLOC of `access_requests.py` (and DRF API layer) — `9` actionable product defects queued for GitHub Issues & Phase 7 RCAs (`W-API-01`..`W-API-09`, including 3 Critical: `W-API-03`, `W-API-04`, `W-API-05`). *Interpretation:* High early defect discovery in the REST API confirms our risk register's top risk (`PR-01`, score 25) and shows strong fault-detection effectiveness of spec-driven EP/BVA + cross-workflow readbacks.
+  - **Requirements Coverage:** **`100.0%` (`10 / 10` FRs)** covered by passing automated tests at both Unit and API/Integration levels (`228 / 228` tests passing).
+  - **Reopen Rate:** `N/A (0 / 0 closed defects yet; fix PR scheduled in Phase 7)`.
+- **Control Actions:**
+  1. Proceed to Phase 5 (Area 3 — Muhammad Aun): author 6 use cases (2/member), automate all main/alt/exception flows in Playwright (Chromium), run task/error-guidance/keyboard tests, and run Lighthouse + `@axe-core/playwright` audits with 1-screen remediation.
+  2. Proceed to Phase 6 (Area 3): execute Playwright >= 4 role checks, OWASP ZAP passive scan + 2 control reviews, `pip-audit`, Grafana k6 OSS benchmarks (1 & >= 5 VUs x 2 x 60s), and failure-and-recovery integration test.
