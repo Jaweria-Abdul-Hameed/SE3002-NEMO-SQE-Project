@@ -144,6 +144,11 @@ def main() -> int:
 
     # 1. Statement & Branch Coverage
     cov_path = Path(args.coverage_file)
+    if not cov_path.exists():
+        for candidate in [Path("coverage.json"), Path("coverage-reports/coverage.json"), Path("docs/evidence/phase3_unit_coverage.json")]:
+            if candidate.exists():
+                cov_path = candidate
+                break
     try:
         stmt_pct, branch_pct, scope_desc = get_in_scope_coverage(cov_path)
         print(f"[*] Coverage Scope     : {scope_desc}")

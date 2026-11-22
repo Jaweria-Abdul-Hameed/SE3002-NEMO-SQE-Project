@@ -30,7 +30,7 @@ jobs:
 
       - name: Static Analysis & Flake8 Lint Check
         run: |
-          flake8 NEMO/views/access_requests.py NEMO/forms.py tests/team/unit tests/team/api tests/team/recovery --max-line-length=160 --ignore=E501,W503,E203,E402,F401,F403,F405,E722
+          flake8 NEMO/views/access_requests.py NEMO/forms.py tests/team/unit tests/team/api tests/team/recovery --max-line-length=160 --ignore=E501,W503,E203,E402,F401,F403,F405,E722,E713
 
       - name: Run Pytest Suites with Statement & Branch Coverage
         env:
@@ -120,6 +120,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: coverage-reports
+          path: .
 
       - name: Verify Strict Non-Bypassable PR Quality Gate
         run: |

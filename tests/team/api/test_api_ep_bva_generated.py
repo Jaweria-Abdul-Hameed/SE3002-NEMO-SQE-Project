@@ -207,7 +207,7 @@ def test_api_list_query_parameters_ep_and_bva(api_server, api_env, case):
         (0, 404),       # 3-point BVA: minimum - 1
         (-1, 404),      # EP: negative integer
         (999999, 404),  # 3-point BVA: nonexistent max
-        (1000000, 404), # 3-point BVA: above max
+        (1000000, 404),  # 3-point BVA: above max
         ("abc", 404),   # EP: non-integer path segment
     ],
 )
