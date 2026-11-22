@@ -1,0 +1,403 @@
+openapi: 3.0.3
+info:
+  title: NEMO Temporary Physical Access Requests API
+  version: "8.2.1-sqe"
+  description: >
+    OpenAPI 3.0.3 specification for the NEMO Temporary Physical Access Requests
+    workflow endpoints (Area 2 — Mohsin Khan, 24I-3135). Anchored to NEMO v8.2.1
+    baseline commit aa5ac6e20e4e35e6f67ab7d2133b8188679ae746
+    (NEMO/views/api.py::TemporaryPhysicalAccessRequestViewSet,
+    NEMO/serializers.py::TemporaryPhysicalAccessRequestSerializer,
+    NEMO/forms.py::TemporaryPhysicalAccessRequestForm, and NEMO/models.py).
+  license:
+    name: NIST Software Licensing Statement (Public Domain)
+servers:
+  - url: http://127.0.0.1:8000
+    description: Local reproducible SQE NEMO instance
+
+security:
+  - TokenAuth: []
+
+paths:
+  /api/temporary_physical_access_requests/:
+    get:
+      operationId: listTemporaryPhysicalAccessRequests
+      summary: List temporary physical access requests
+      description: >
+        Returns paginated temporary physical access requests. Protected by
+        NEMO.permissions.DjangoModelPermissions (view_temporaryphysicalaccessrequest).
+      parameters:
+        - name: id
+          in: query
+          required: false
+          description: Exact request ID filter.
+          schema:
+            type: integer
+            minimum: 1
+        - name: creator
+          in: query
+          required: false
+          description: Filter by creator user ID.
+          schema:
+            type: integer
+            minimum: 1
+        - name: physical_access_level
+          in: query
+          required: false
+          description: Filter by physical access level ID.
+          schema:
+            type: integer
+            minimum: 1
+        - name: status
+          in: query
+          required: false
+          description: Filter by request status (0=Pending, 1=Approved, 2=Denied, 3=Expired).
+          schema:
+            type: integer
+            enum: [0, 1, 2, 3]
+            minimum: 0
+            maximum: 3
+        - name: reviewer
+          in: query
+          required: false
+          description: Filter by reviewer user ID.
+          schema:
+            type: integer
+            minimum: 1
+        - name: deleted
+          in: query
+          required: false
+          description: Filter by soft-deleted boolean flag.
+          schema:
+            type: boolean
+        - name: page
+          in: query
+          required: false
+          description: 1-indexed pagination page number.
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+      responses:
+        "200":
+          description: Paginated list of temporary physical access requests
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PaginatedTemporaryPhysicalAccessRequestList"
+        "401":
+          description: Authentication credentials were not provided or invalid
+        "403":
+          description: Authenticated user lacks view_temporaryphysicalaccessrequest permission
+    post:
+      operationId: createTemporaryPhysicalAccessRequest
+      summary: Create a temporary physical access request
+      description: >
+        Creates a new TemporaryPhysicalAccessRequest record. Expected domain
+        business rules (BR-1..BR-4): status starts at 0 (PENDING), end_time > start_time,
+        start_time >= now for non-reviewers, and len(other_users) >= minItems (1 for min_users=2).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TemporaryPhysicalAccessRequestWrite"
+      responses:
+        "200":
+          description: Temporary physical access request created (NEMO ModelViewSet.create omits HTTP 201 and returns 200 OK)
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TemporaryPhysicalAccessRequestRead"
+        "201":
+          description: Standard REST Created status (not emitted by NEMO v8.2.1 ModelViewSet.create)
+        "400":
+          description: Validation error (invalid partition, boundary, or missing required field)
+        "401":
+          description: Unauthenticated
+        "403":
+          description: Missing add_temporaryphysicalaccessrequest permission or invalid token when SessionAuthentication precedes TokenAuthentication
+
+  /api/temporary_physical_access_requests/{id}/:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        description: Primary key of the TemporaryPhysicalAccessRequest.
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 999999
+    get:
+      operationId: retrieveTemporaryPhysicalAccessRequest
+      summary: Retrieve a single temporary physical access request
+      responses:
+        "200":
+          description: Request detail
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TemporaryPhysicalAccessRequestRead"
+        "401":
+          description: Unauthenticated
+        "403":
+          description: Forbidden
+        "404":
+          description: Request not found
+    put:
+      operationId: updateTemporaryPhysicalAccessRequest
+      summary: Full replacement update of a temporary physical access request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TemporaryPhysicalAccessRequestWrite"
+      responses:
+        "200":
+          description: Request updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TemporaryPhysicalAccessRequestRead"
+        "400":
+          description: Validation error or disallowed state transition
+        "401":
+          description: Unauthenticated
+        "403":
+          description: Forbidden
+        "404":
+          description: Request not found
+    patch:
+      operationId: partialUpdateTemporaryPhysicalAccessRequest
+      summary: Partial update (e.g., review decision or description edit)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TemporaryPhysicalAccessRequestPatch"
+      responses:
+        "200":
+          description: Request partially updated
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TemporaryPhysicalAccessRequestRead"
+        "400":
+          description: Validation error or disallowed state transition
+        "401":
+          description: Unauthenticated
+        "403":
+          description: Forbidden
+        "404":
+          description: Request not found
+    delete:
+      operationId: deleteTemporaryPhysicalAccessRequest
+      summary: Delete a temporary physical access request
+      responses:
+        "204":
+          description: Request deleted
+        "401":
+          description: Unauthenticated
+        "403":
+          description: Forbidden
+        "404":
+          description: Request not found
+
+  /api/physical_access_levels/:
+    get:
+      operationId: listPhysicalAccessLevels
+      summary: List physical access levels (readback reference endpoint)
+      parameters:
+        - name: allow_user_request
+          in: query
+          required: false
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: List of physical access levels
+        "401":
+          description: Unauthenticated
+        "403":
+          description: Forbidden
+
+components:
+  securitySchemes:
+    TokenAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'DRF Token header formatted as "Token <key>"'
+
+  schemas:
+    TemporaryPhysicalAccessRequestWrite:
+      type: object
+      required:
+        - creator
+        - physical_access_level
+        - start_time
+        - end_time
+      x-state-transitions:
+        states:
+          0: PENDING
+          1: APPROVED
+          2: DENIED
+          3: EXPIRED
+        allowed:
+          - from: 0
+            to: 1
+            action: approve
+          - from: 0
+            to: 2
+            action: deny
+          - from: 0
+            to: 3
+            action: expire
+        disallowed:
+          - from: 1
+            to: 0
+            reason: Cannot revert APPROVED request to PENDING
+          - from: 1
+            to: 2
+            reason: Cannot change APPROVED request to DENIED
+          - from: 2
+            to: 1
+            reason: Cannot change DENIED request to APPROVED
+          - from: 3
+            to: 1
+            reason: Cannot approve an EXPIRED request
+      properties:
+        creator:
+          type: integer
+          minimum: 1
+          maximum: 999999
+          description: User ID of the requester.
+          x-seed-ref: lab_user_id
+        last_updated_by:
+          type: integer
+          nullable: true
+          minimum: 1
+          maximum: 999999
+          description: User ID of the last modifier.
+          x-seed-ref: lab_user_id
+        physical_access_level:
+          type: integer
+          minimum: 1
+          maximum: 999999
+          description: PhysicalAccessLevel ID with allow_user_request=true.
+          x-seed-ref: cleanroom_level_id
+        description:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 500
+          description: Free-text justification for temporary physical access.
+        start_time:
+          type: string
+          format: date-time
+          description: Requested access window start (ISO-8601 UTC/offset). Must be >= now for non-reviewers.
+          x-min-offset-minutes: 5
+        end_time:
+          type: string
+          format: date-time
+          description: Requested access window end (ISO-8601 UTC/offset). Must be strictly > start_time.
+          x-must-be-after: start_time
+          x-min-duration-minutes: 1
+          x-max-duration-hours: 168
+        other_users:
+          type: array
+          minItems: 1
+          maxItems: 10
+          uniqueItems: true
+          description: Buddy user IDs (BR-1 default access_requests_minimum_users=2 => minItems=1).
+          items:
+            type: integer
+            minimum: 1
+            maximum: 999999
+          x-seed-ref: buddy_user_ids
+        status:
+          type: integer
+          enum: [0, 1, 2, 3]
+          minimum: 0
+          maximum: 3
+          default: 0
+          description: Request status (0=Pending, 1=Approved, 2=Denied, 3=Expired).
+        reviewer:
+          type: integer
+          nullable: true
+          minimum: 1
+          maximum: 999999
+          description: User ID of the reviewer who approved or denied the request.
+          x-seed-ref: facility_reviewer_id
+        deleted:
+          type: boolean
+          default: false
+          description: Soft-delete indicator.
+
+    TemporaryPhysicalAccessRequestPatch:
+      type: object
+      properties:
+        description:
+          type: string
+          nullable: true
+          minLength: 1
+          maxLength: 500
+        status:
+          type: integer
+          enum: [0, 1, 2, 3]
+          minimum: 0
+          maximum: 3
+        reviewer:
+          type: integer
+          nullable: true
+          minimum: 1
+          maximum: 999999
+        deleted:
+          type: boolean
+        other_users:
+          type: array
+          minItems: 1
+          maxItems: 10
+          items:
+            type: integer
+            minimum: 1
+            maximum: 999999
+
+    TemporaryPhysicalAccessRequestRead:
+      allOf:
+        - $ref: "#/components/schemas/TemporaryPhysicalAccessRequestWrite"
+        - type: object
+          required:
+            - id
+            - creation_time
+            - last_updated
+          properties:
+            id:
+              type: integer
+              readOnly: true
+            creation_time:
+              type: string
+              format: date-time
+              readOnly: true
+            last_updated:
+              type: string
+              format: date-time
+              readOnly: true
+
+    PaginatedTemporaryPhysicalAccessRequestList:
+      type: object
+      properties:
+        count:
+          type: integer
+        next:
+          type: string
+          nullable: true
+        previous:
+          type: string
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: "#/components/schemas/TemporaryPhysicalAccessRequestRead"

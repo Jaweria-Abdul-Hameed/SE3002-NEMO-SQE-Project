@@ -1,0 +1,124 @@
+{
+  "constraint_changes": [
+    {
+      "field": "other_users",
+      "constraint": "minItems",
+      "before": 1,
+      "after": 2
+    },
+    {
+      "field": "description",
+      "constraint": "maxLength",
+      "before": 500,
+      "after": 200
+    }
+  ],
+  "before_spec_sha256": "2b25542cc165b815",
+  "after_spec_sha256": "5a47f1f8d9a3ffa2",
+  "baseline_payload_other_users_before": "${buddy_user_ids:1}",
+  "baseline_payload_other_users_after": "${buddy_user_ids:2}",
+  "changed_bva_cases": [
+    {
+      "case_id": "BVA3-description-maxLength-above_maxLength",
+      "before": {
+        "boundary": "maxLength=500",
+        "point": "above_maxLength",
+        "length": 501,
+        "item_count": null,
+        "expected_valid": false
+      },
+      "after": {
+        "boundary": "maxLength=200",
+        "point": "above_maxLength",
+        "length": 201,
+        "item_count": null,
+        "expected_valid": false
+      }
+    },
+    {
+      "case_id": "BVA3-description-maxLength-at_maxLength",
+      "before": {
+        "boundary": "maxLength=500",
+        "point": "at_maxLength",
+        "length": 500,
+        "item_count": null,
+        "expected_valid": true
+      },
+      "after": {
+        "boundary": "maxLength=200",
+        "point": "at_maxLength",
+        "length": 200,
+        "item_count": null,
+        "expected_valid": true
+      }
+    },
+    {
+      "case_id": "BVA3-description-maxLength-below_maxLength",
+      "before": {
+        "boundary": "maxLength=500",
+        "point": "below_maxLength",
+        "length": 499,
+        "item_count": null,
+        "expected_valid": true
+      },
+      "after": {
+        "boundary": "maxLength=200",
+        "point": "below_maxLength",
+        "length": 199,
+        "item_count": null,
+        "expected_valid": true
+      }
+    },
+    {
+      "case_id": "BVA3-other_users-minItems-above_minItems",
+      "before": {
+        "boundary": "minItems=1",
+        "point": "above_minItems",
+        "length": null,
+        "item_count": 2,
+        "expected_valid": true
+      },
+      "after": {
+        "boundary": "minItems=2",
+        "point": "above_minItems",
+        "length": null,
+        "item_count": 3,
+        "expected_valid": true
+      }
+    },
+    {
+      "case_id": "BVA3-other_users-minItems-at_minItems",
+      "before": {
+        "boundary": "minItems=1",
+        "point": "at_minItems",
+        "length": null,
+        "item_count": 1,
+        "expected_valid": true
+      },
+      "after": {
+        "boundary": "minItems=2",
+        "point": "at_minItems",
+        "length": null,
+        "item_count": 2,
+        "expected_valid": true
+      }
+    },
+    {
+      "case_id": "BVA3-other_users-minItems-below_minItems",
+      "before": {
+        "boundary": "minItems=1",
+        "point": "below_minItems",
+        "length": null,
+        "item_count": 0,
+        "expected_valid": false
+      },
+      "after": {
+        "boundary": "minItems=2",
+        "point": "below_minItems",
+        "length": null,
+        "item_count": 1,
+        "expected_valid": false
+      }
+    }
+  ]
+}
