@@ -1,0 +1,1280 @@
+{
+  "project": {
+    "component": {
+      "key": "nemo-sqe-access-requests",
+      "name": "NEMO SQE Access Requests",
+      "qualifier": "TRK",
+      "measures": [
+        {
+          "metric": "code_smells",
+          "value": "407",
+          "bestValue": false
+        },
+        {
+          "metric": "statements",
+          "value": "18484"
+        },
+        {
+          "metric": "functions",
+          "value": "1691"
+        },
+        {
+          "metric": "sqale_index",
+          "value": "4432",
+          "bestValue": false
+        },
+        {
+          "metric": "line_coverage",
+          "value": "34.9",
+          "bestValue": false
+        },
+        {
+          "metric": "security_hotspots",
+          "value": "52",
+          "bestValue": false
+        },
+        {
+          "metric": "classes",
+          "value": "679"
+        },
+        {
+          "metric": "cognitive_complexity",
+          "value": "6590",
+          "bestValue": false
+        },
+        {
+          "metric": "vulnerabilities",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "reliability_rating",
+          "value": "3.0",
+          "bestValue": false
+        },
+        {
+          "metric": "security_review_rating",
+          "value": "5.0",
+          "bestValue": false
+        },
+        {
+          "metric": "coverage",
+          "value": "27.8",
+          "bestValue": false
+        },
+        {
+          "metric": "duplicated_blocks",
+          "value": "89",
+          "bestValue": false
+        },
+        {
+          "metric": "branch_coverage",
+          "value": "1.7",
+          "bestValue": false
+        },
+        {
+          "metric": "ncloc",
+          "value": "55089"
+        },
+        {
+          "metric": "lines",
+          "value": "62204"
+        },
+        {
+          "metric": "duplicated_lines_density",
+          "value": "2.0",
+          "bestValue": false
+        },
+        {
+          "metric": "alert_status",
+          "value": "OK"
+        },
+        {
+          "metric": "bugs",
+          "value": "106",
+          "bestValue": false
+        },
+        {
+          "metric": "security_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "complexity",
+          "value": "6003"
+        },
+        {
+          "metric": "sqale_rating",
+          "value": "1.0",
+          "bestValue": true
+        }
+      ]
+    }
+  },
+  "access_requests_py": {
+    "component": {
+      "key": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+      "name": "access_requests.py",
+      "qualifier": "FIL",
+      "path": "NEMO/views/access_requests.py",
+      "language": "py",
+      "measures": [
+        {
+          "metric": "ncloc",
+          "value": "249"
+        },
+        {
+          "metric": "duplicated_blocks",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "cognitive_complexity",
+          "value": "85",
+          "bestValue": false
+        },
+        {
+          "metric": "branch_coverage",
+          "value": "0.0",
+          "bestValue": false
+        },
+        {
+          "metric": "duplicated_lines_density",
+          "value": "0.0",
+          "bestValue": true
+        },
+        {
+          "metric": "lines",
+          "value": "295"
+        },
+        {
+          "metric": "coverage",
+          "value": "16.7",
+          "bestValue": false
+        },
+        {
+          "metric": "complexity",
+          "value": "51"
+        },
+        {
+          "metric": "sqale_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "classes",
+          "value": "0"
+        },
+        {
+          "metric": "security_review_rating",
+          "value": "5.0",
+          "bestValue": false
+        },
+        {
+          "metric": "statements",
+          "value": "138"
+        },
+        {
+          "metric": "vulnerabilities",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "bugs",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "security_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "reliability_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "functions",
+          "value": "9"
+        },
+        {
+          "metric": "security_hotspots",
+          "value": "1",
+          "bestValue": false
+        },
+        {
+          "metric": "code_smells",
+          "value": "6",
+          "bestValue": false
+        },
+        {
+          "metric": "line_coverage",
+          "value": "22.3",
+          "bestValue": false
+        },
+        {
+          "metric": "sqale_index",
+          "value": "65",
+          "bestValue": false
+        }
+      ]
+    }
+  },
+  "forms_py": {
+    "component": {
+      "key": "nemo-sqe-access-requests:NEMO/forms.py",
+      "name": "forms.py",
+      "qualifier": "FIL",
+      "path": "NEMO/forms.py",
+      "language": "py",
+      "measures": [
+        {
+          "metric": "duplicated_lines_density",
+          "value": "4.2",
+          "bestValue": false
+        },
+        {
+          "metric": "sqale_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "complexity",
+          "value": "120"
+        },
+        {
+          "metric": "code_smells",
+          "value": "4",
+          "bestValue": false
+        },
+        {
+          "metric": "ncloc",
+          "value": "555"
+        },
+        {
+          "metric": "branch_coverage",
+          "value": "0.0",
+          "bestValue": false
+        },
+        {
+          "metric": "security_hotspots",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "vulnerabilities",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "reliability_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "coverage",
+          "value": "30.2",
+          "bestValue": false
+        },
+        {
+          "metric": "lines",
+          "value": "666"
+        },
+        {
+          "metric": "functions",
+          "value": "35"
+        },
+        {
+          "metric": "line_coverage",
+          "value": "39.4",
+          "bestValue": false
+        },
+        {
+          "metric": "sqale_index",
+          "value": "30",
+          "bestValue": false
+        },
+        {
+          "metric": "classes",
+          "value": "40"
+        },
+        {
+          "metric": "duplicated_blocks",
+          "value": "2",
+          "bestValue": false
+        },
+        {
+          "metric": "bugs",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "security_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "statements",
+          "value": "403"
+        },
+        {
+          "metric": "cognitive_complexity",
+          "value": "123",
+          "bestValue": false
+        },
+        {
+          "metric": "security_review_rating",
+          "value": "1.0",
+          "bestValue": true
+        }
+      ]
+    }
+  },
+  "models_py": {
+    "component": {
+      "key": "nemo-sqe-access-requests:NEMO/models.py",
+      "name": "models.py",
+      "qualifier": "FIL",
+      "path": "NEMO/models.py",
+      "language": "py",
+      "measures": [
+        {
+          "metric": "functions",
+          "value": "459"
+        },
+        {
+          "metric": "code_smells",
+          "value": "37",
+          "bestValue": false
+        },
+        {
+          "metric": "sqale_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "complexity",
+          "value": "1029"
+        },
+        {
+          "metric": "lines",
+          "value": "6070"
+        },
+        {
+          "metric": "sqale_index",
+          "value": "239",
+          "bestValue": false
+        },
+        {
+          "metric": "security_hotspots",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "ncloc",
+          "value": "5028"
+        },
+        {
+          "metric": "security_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "duplicated_blocks",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "reliability_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "branch_coverage",
+          "value": "0.8",
+          "bestValue": false
+        },
+        {
+          "metric": "line_coverage",
+          "value": "55.1",
+          "bestValue": false
+        },
+        {
+          "metric": "vulnerabilities",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "statements",
+          "value": "3028"
+        },
+        {
+          "metric": "security_review_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "coverage",
+          "value": "46.2",
+          "bestValue": false
+        },
+        {
+          "metric": "bugs",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "duplicated_lines_density",
+          "value": "0.0",
+          "bestValue": true
+        },
+        {
+          "metric": "classes",
+          "value": "193"
+        },
+        {
+          "metric": "cognitive_complexity",
+          "value": "739",
+          "bestValue": false
+        }
+      ]
+    }
+  },
+  "api_py": {
+    "component": {
+      "key": "nemo-sqe-access-requests:NEMO/views/api.py",
+      "name": "api.py",
+      "qualifier": "FIL",
+      "path": "NEMO/views/api.py",
+      "language": "py",
+      "measures": [
+        {
+          "metric": "security_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "cognitive_complexity",
+          "value": "53",
+          "bestValue": false
+        },
+        {
+          "metric": "duplicated_lines_density",
+          "value": "0.0",
+          "bestValue": true
+        },
+        {
+          "metric": "ncloc",
+          "value": "1119"
+        },
+        {
+          "metric": "sqale_index",
+          "value": "27",
+          "bestValue": false
+        },
+        {
+          "metric": "reliability_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "code_smells",
+          "value": "2",
+          "bestValue": false
+        },
+        {
+          "metric": "sqale_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "vulnerabilities",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "line_coverage",
+          "value": "73.9",
+          "bestValue": false
+        },
+        {
+          "metric": "classes",
+          "value": "58"
+        },
+        {
+          "metric": "security_review_rating",
+          "value": "1.0",
+          "bestValue": true
+        },
+        {
+          "metric": "statements",
+          "value": "467"
+        },
+        {
+          "metric": "complexity",
+          "value": "64"
+        },
+        {
+          "metric": "lines",
+          "value": "1291"
+        },
+        {
+          "metric": "bugs",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "duplicated_blocks",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "security_hotspots",
+          "value": "0",
+          "bestValue": true
+        },
+        {
+          "metric": "branch_coverage",
+          "value": "13.2",
+          "bestValue": false
+        },
+        {
+          "metric": "functions",
+          "value": "28"
+        },
+        {
+          "metric": "coverage",
+          "value": "69.3",
+          "bestValue": false
+        }
+      ]
+    }
+  },
+  "access_requests_issues": {
+    "total": 6,
+    "p": 1,
+    "ps": 100,
+    "paging": {
+      "pageIndex": 1,
+      "pageSize": 100,
+      "total": 6
+    },
+    "effortTotal": 65,
+    "issues": [
+      {
+        "key": "AaIDj2mQTqGjgepVdhyM",
+        "rule": "python:S3776",
+        "severity": "CRITICAL",
+        "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+        "project": "nemo-sqe-access-requests",
+        "line": 90,
+        "hash": "b3c83c7a76d09045210f97dda54713fd",
+        "textRange": {
+          "startLine": 90,
+          "endLine": 90,
+          "startOffset": 4,
+          "endOffset": 25
+        },
+        "flows": [
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 94,
+                  "endLine": 94,
+                  "startOffset": 4,
+                  "endOffset": 10
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 102,
+                  "endLine": 102,
+                  "startOffset": 4,
+                  "endOffset": 6
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 106,
+                  "endLine": 106,
+                  "startOffset": 8,
+                  "endOffset": 10
+                },
+                "msg": "+2 (incl 1 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 107,
+                  "endLine": 107,
+                  "startOffset": 12,
+                  "endOffset": 14
+                },
+                "msg": "+3 (incl 2 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 109,
+                  "endLine": 109,
+                  "startOffset": 12,
+                  "endOffset": 14
+                },
+                "msg": "+3 (incl 2 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 111,
+                  "endLine": 111,
+                  "startOffset": 12,
+                  "endOffset": 14
+                },
+                "msg": "+3 (incl 2 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 111,
+                  "endLine": 111,
+                  "startOffset": 46,
+                  "endOffset": 49
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 115,
+                  "endLine": 115,
+                  "startOffset": 94,
+                  "endOffset": 96
+                },
+                "msg": "+2 (incl 1 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 119,
+                  "endLine": 119,
+                  "startOffset": 8,
+                  "endOffset": 11
+                },
+                "msg": "+2 (incl 1 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 123,
+                  "endLine": 123,
+                  "startOffset": 8,
+                  "endOffset": 10
+                },
+                "msg": "+2 (incl 1 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 126,
+                  "endLine": 126,
+                  "startOffset": 12,
+                  "endOffset": 15
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 125,
+                  "endLine": 125,
+                  "startOffset": 26,
+                  "endOffset": 28
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 130,
+                  "endLine": 130,
+                  "startOffset": 8,
+                  "endOffset": 10
+                },
+                "msg": "+2 (incl 1 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 131,
+                  "endLine": 131,
+                  "startOffset": 12,
+                  "endOffset": 14
+                },
+                "msg": "+3 (incl 2 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 133,
+                  "endLine": 133,
+                  "startOffset": 12,
+                  "endOffset": 14
+                },
+                "msg": "+3 (incl 2 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 133,
+                  "endLine": 133,
+                  "startOffset": 20,
+                  "endOffset": 23
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 135,
+                  "endLine": 135,
+                  "startOffset": 16,
+                  "endOffset": 18
+                },
+                "msg": "+4 (incl 3 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 136,
+                  "endLine": 136,
+                  "startOffset": 20,
+                  "endOffset": 22
+                },
+                "msg": "+5 (incl 4 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 139,
+                  "endLine": 139,
+                  "startOffset": 20,
+                  "endOffset": 24
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 146,
+                  "endLine": 146,
+                  "startOffset": 12,
+                  "endOffset": 14
+                },
+                "msg": "+3 (incl 2 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 149,
+                  "endLine": 149,
+                  "startOffset": 16,
+                  "endOffset": 18
+                },
+                "msg": "+4 (incl 3 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 155,
+                  "endLine": 155,
+                  "startOffset": 8,
+                  "endOffset": 12
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 158,
+                  "endLine": 158,
+                  "startOffset": 4,
+                  "endOffset": 8
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          }
+        ],
+        "status": "OPEN",
+        "message": "Refactor this function to reduce its Cognitive Complexity from 50 to the 15 allowed.",
+        "effort": "40min",
+        "debt": "40min",
+        "author": "",
+        "tags": [
+          "brain-overload"
+        ],
+        "creationDate": "2026-11-22T13:59:24+0000",
+        "updateDate": "2026-11-22T13:59:24+0000",
+        "type": "CODE_SMELL",
+        "scope": "MAIN",
+        "quickFixAvailable": false,
+        "messageFormattings": []
+      },
+      {
+        "key": "AaIDj2mQTqGjgepVdhyN",
+        "rule": "python:S1940",
+        "severity": "MINOR",
+        "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+        "project": "nemo-sqe-access-requests",
+        "line": 111,
+        "hash": "59c5c52575731598f47fb86dae4415c2",
+        "textRange": {
+          "startLine": 111,
+          "endLine": 111,
+          "startOffset": 50,
+          "endOffset": 88
+        },
+        "flows": [],
+        "status": "OPEN",
+        "message": "Use the opposite operator (\"not in\") instead.",
+        "effort": "2min",
+        "debt": "2min",
+        "author": "",
+        "tags": [
+          "pitfall"
+        ],
+        "creationDate": "2026-11-22T13:59:24+0000",
+        "updateDate": "2026-11-22T13:59:24+0000",
+        "type": "CODE_SMELL",
+        "scope": "MAIN",
+        "quickFixAvailable": false,
+        "messageFormattings": []
+      },
+      {
+        "key": "AaIDj2mQTqGjgepVdhyO",
+        "rule": "python:S3776",
+        "severity": "CRITICAL",
+        "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+        "project": "nemo-sqe-access-requests",
+        "line": 199,
+        "hash": "861670060f3a34d6f43a2762c841da4b",
+        "textRange": {
+          "startLine": 199,
+          "endLine": 199,
+          "startOffset": 4,
+          "endOffset": 31
+        },
+        "flows": [
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 201,
+                  "endLine": 201,
+                  "startOffset": 4,
+                  "endOffset": 6
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 217,
+                  "endLine": 217,
+                  "startOffset": 12,
+                  "endOffset": 14
+                },
+                "msg": "+2 (incl 1 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 218,
+                  "endLine": 218,
+                  "startOffset": 26,
+                  "endOffset": 28
+                },
+                "msg": "+3 (incl 2 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 218,
+                  "endLine": 218,
+                  "startOffset": 90,
+                  "endOffset": 92
+                },
+                "msg": "+4 (incl 3 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 221,
+                  "endLine": 221,
+                  "startOffset": 31,
+                  "endOffset": 33
+                },
+                "msg": "+2 (incl 1 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 221,
+                  "endLine": 221,
+                  "startOffset": 69,
+                  "endOffset": 71
+                },
+                "msg": "+3 (incl 2 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 231,
+                  "endLine": 231,
+                  "startOffset": 8,
+                  "endOffset": 10
+                },
+                "msg": "+2 (incl 1 for nesting)",
+                "msgFormattings": []
+              }
+            ]
+          },
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 240,
+                  "endLine": 240,
+                  "startOffset": 8,
+                  "endOffset": 12
+                },
+                "msg": "+1",
+                "msgFormattings": []
+              }
+            ]
+          }
+        ],
+        "status": "OPEN",
+        "message": "Refactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+        "effort": "8min",
+        "debt": "8min",
+        "author": "",
+        "tags": [
+          "brain-overload"
+        ],
+        "creationDate": "2026-11-22T13:59:24+0000",
+        "updateDate": "2026-11-22T13:59:24+0000",
+        "type": "CODE_SMELL",
+        "scope": "MAIN",
+        "quickFixAvailable": false,
+        "messageFormattings": []
+      },
+      {
+        "key": "AaIDj2mQTqGjgepVdhyP",
+        "rule": "python:S3358",
+        "severity": "MAJOR",
+        "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+        "project": "nemo-sqe-access-requests",
+        "line": 218,
+        "hash": "6f8c3af80dd7c7e3ec0d7464d2263484",
+        "textRange": {
+          "startLine": 218,
+          "endLine": 218,
+          "startOffset": 17,
+          "endOffset": 113
+        },
+        "flows": [
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 217,
+                  "endLine": 217,
+                  "startOffset": 12,
+                  "endOffset": 14
+                },
+                "msg": "Parent conditional expression.",
+                "msgFormattings": []
+              }
+            ]
+          }
+        ],
+        "status": "OPEN",
+        "message": "Extract this nested conditional expression into an independent statement.",
+        "effort": "5min",
+        "debt": "5min",
+        "author": "",
+        "tags": [
+          "confusing"
+        ],
+        "creationDate": "2026-11-22T13:59:24+0000",
+        "updateDate": "2026-11-22T13:59:24+0000",
+        "type": "CODE_SMELL",
+        "scope": "MAIN",
+        "quickFixAvailable": false,
+        "messageFormattings": []
+      },
+      {
+        "key": "AaIDj2mQTqGjgepVdhyQ",
+        "rule": "python:S3358",
+        "severity": "MAJOR",
+        "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+        "project": "nemo-sqe-access-requests",
+        "line": 218,
+        "hash": "6f8c3af80dd7c7e3ec0d7464d2263484",
+        "textRange": {
+          "startLine": 218,
+          "endLine": 218,
+          "startOffset": 80,
+          "endOffset": 113
+        },
+        "flows": [
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 218,
+                  "endLine": 218,
+                  "startOffset": 26,
+                  "endOffset": 28
+                },
+                "msg": "Parent conditional expression.",
+                "msgFormattings": []
+              }
+            ]
+          }
+        ],
+        "status": "OPEN",
+        "message": "Extract this nested conditional expression into an independent statement.",
+        "effort": "5min",
+        "debt": "5min",
+        "author": "",
+        "tags": [
+          "confusing"
+        ],
+        "creationDate": "2026-11-22T13:59:24+0000",
+        "updateDate": "2026-11-22T13:59:24+0000",
+        "type": "CODE_SMELL",
+        "scope": "MAIN",
+        "quickFixAvailable": false,
+        "messageFormattings": []
+      },
+      {
+        "key": "AaIDj2mQTqGjgepVdhyR",
+        "rule": "python:S3358",
+        "severity": "MAJOR",
+        "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+        "project": "nemo-sqe-access-requests",
+        "line": 221,
+        "hash": "466c8abeb725b26b616a19048e083989",
+        "textRange": {
+          "startLine": 221,
+          "endLine": 221,
+          "startOffset": 60,
+          "endOffset": 102
+        },
+        "flows": [
+          {
+            "locations": [
+              {
+                "component": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+                "textRange": {
+                  "startLine": 221,
+                  "endLine": 221,
+                  "startOffset": 31,
+                  "endOffset": 33
+                },
+                "msg": "Parent conditional expression.",
+                "msgFormattings": []
+              }
+            ]
+          }
+        ],
+        "status": "OPEN",
+        "message": "Extract this nested conditional expression into an independent statement.",
+        "effort": "5min",
+        "debt": "5min",
+        "author": "",
+        "tags": [
+          "confusing"
+        ],
+        "creationDate": "2026-11-22T13:59:24+0000",
+        "updateDate": "2026-11-22T13:59:24+0000",
+        "type": "CODE_SMELL",
+        "scope": "MAIN",
+        "quickFixAvailable": false,
+        "messageFormattings": []
+      }
+    ],
+    "components": [
+      {
+        "key": "nemo-sqe-access-requests",
+        "enabled": true,
+        "qualifier": "TRK",
+        "name": "NEMO SQE Access Requests",
+        "longName": "NEMO SQE Access Requests"
+      },
+      {
+        "key": "nemo-sqe-access-requests:NEMO/views/access_requests.py",
+        "enabled": true,
+        "qualifier": "FIL",
+        "name": "access_requests.py",
+        "longName": "NEMO/views/access_requests.py",
+        "path": "NEMO/views/access_requests.py"
+      }
+    ],
+    "facets": []
+  }
+}
