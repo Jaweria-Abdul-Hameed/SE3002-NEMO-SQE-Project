@@ -15,6 +15,9 @@ conf/
 *.log
 .vs/
 sqe_nemo.db
+sqe_nemo_pytest.db
+sqe_nemo_pytest.db-*
+sqe_mutators/*.egg-info/
 staticfiles/
 email_logs/
 .coverage

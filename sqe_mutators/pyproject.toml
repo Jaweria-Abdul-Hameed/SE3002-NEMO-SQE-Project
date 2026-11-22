@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sqe-nemo-mutators"
+version = "1.0.0"
+description = "Custom Cosmic Ray business-rule mutation operators for NEMO Temporary Physical Access Requests (SE3002 Area 1)"
+requires-python = ">=3.10"
+
+[project.entry-points."cosmic_ray.operator_providers"]
+nemo_br = "sqe_mutators.provider:NemoBusinessRuleProvider"

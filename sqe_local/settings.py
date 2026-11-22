@@ -100,6 +100,9 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": os.getenv("NEMO_SQLITE_PATH", str(BASE_DIR / "sqe_nemo.db")),
+        "TEST": {
+            "NAME": str(BASE_DIR / "sqe_nemo_pytest.db"),
+        },
     }
 }
 

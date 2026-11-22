@@ -1,0 +1,489 @@
+[job-id] 5ce548f1f4c6454ab975e8a658842e91
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_Add 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 28f0e3e1822645b4b1aeed47d26663f0
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_Sub 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 9cedfcdf106a42a7a70eb5107f62a886
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_Mul 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] b9359c8eb5ec4be59501e161d49586cd
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_Div 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 0584a4b5e5dc473496f1f0ee784eedea
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_FloorDiv 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 882db02b92d947488fa516df1c13db4f
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_Mod 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 08847565305f472ba56b02b34ef16c58
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_Pow 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 06a616eda90b4b5a9eba8effb3428fef
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_RShift 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 89e712154460438f8e3fc47f55111e4f
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_LShift 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] c1a65431eb6e491682b4407cb9e06ddf
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_BitAnd 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 7ce31961f90d4916ac94d205ad862802
+NEMO\views\access_requests.py core/ReplaceBinaryOperator_BitOr_BitXor 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 7fb8dfa24a5641a3b7f0017da70937be
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_NotEq 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 796c03dbbfc1469dbab8e516b27c4a4f
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_NotEq 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] a56a86e56eae447bbd9791bee1f6074e
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_NotEq 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 289027cd2ce8476dadbcac3f45ce64d4
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_NotEq 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] af031a641ddd40bdb02ff94cb9c5fadb
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_NotEq 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 4ce740b7016d46ceb7419c6092fb18ce
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_NotEq 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 8fea41b7774f4768878b45a1f7ec3fda
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Lt 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] ec58cc18e9a14424860984f58b8bb29e
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Lt 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] edc13513470746c0a015d5906ecaa953
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Lt 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 8af44461d40549ba8e587b8e80763c64
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Lt 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] d3a6cf72d18f41d18fec5b5bd7d89409
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Lt 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 70b964805fef40128494f40d51750037
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Lt 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 3c10975c61fc4020813d95c22310a99f
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_LtE 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 9812bd4221e04365a1aa926ed545d7ba
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_LtE 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 9b25270abdda4cd4b280198fd6e74bd0
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_LtE 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 52ae2a2a425e4efb9c498852f9eafb7f
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_LtE 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] c1c7ce41e4764535bb0bd423932a49c2
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_LtE 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 39e4365ee63d4353b14aebe5e251b382
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_LtE 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] d36dcff53f2d42109c3f145e0725f028
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Gt 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] cd03e111548a4e28a7e40a2a89fb2f3a
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Gt 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 5c90761d8e89411495c62e2dd09320a9
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Gt 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] dddf9a0cd39842f99af3698888d6ad3f
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Gt 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] eef4e586775b4f75a14f681c4e4b4963
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Gt 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 558dbd0487464bc9a01f12267079c561
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Gt 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 3b0a013ebb9a4669b3690e5c15a038b7
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_GtE 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 189aaf001bbe4974b43c905111902c70
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_GtE 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] ab7ffce11a724d7db1acf398dc4ff487
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_GtE 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] cb53362289754f648997a3f35547c56c
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_GtE 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 208b3ec1ee074f22a4955e135894eb84
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_GtE 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 4622b1551ef64bac862452f2904806ba
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_GtE 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] e7868bc582bf424583e126926f830cd7
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Is 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] e6dc075f90634a62820e6090d537768e
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Is 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 4037413612994c1587f2433021155081
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Is 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 06121d3c8e6c4f319238ff54d73af6cb
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Is 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 778931d0dc624715b2c8841840a0eb94
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Is 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 096b0fbb654343cea8fb7c78569d773d
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_Is 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 2b5a28bdbf7d42c186e95ea9878e3ee8
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_IsNot 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 774b79c63fdb4346ae16d35697e1d286
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_IsNot 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 78f5ecc0740c46258ac7a363f14c2878
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_IsNot 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 4ed53bef4918441d999f4774c4144197
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_IsNot 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 7418e9b69681491d8ba7b2965312d531
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_IsNot 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 4aaef64704bb4790b2d0dd80c2cc4232
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Eq_IsNot 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 4abae4ff0e844e74a935519590aa9d2f
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Eq 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 18ba4f39272a4a298596a358dcff841a
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Eq 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 60e5728c11f643d5adbc129734531f99
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Eq 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 44e5b828104748fb846b40b4982f88c8
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Eq 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 7f6b03d582c04c92a679cb2f587e7472
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Lt 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] f105b68cb0cf46069f42ca5a04580a03
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Lt 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 8ac2f9389e91406fb21804a8e5916c0a
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Lt 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] e5733b8c775a4dfea4d02fb764456310
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Lt 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 7ccd72b51ffe4816af97824dda81b966
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_LtE 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] e568bab397804788bad9d72b97c32e00
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_LtE 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 4ce605d384924815a41de9b002f93780
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_LtE 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 19633c18160c4a3d927895205bd7f7f5
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_LtE 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 13f7a683ede047b59914d9726fdff15e
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Gt 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 82863c29b4e149839b4e4f103dac5852
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Gt 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 881ac022535743209f3369f44ea43fc1
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Gt 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 6efa57bd81ad4e45888f01b5a0b8f153
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Gt 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 13b486d689024d1ba784e00cc5f50e26
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_GtE 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] d719bb45e65a41ee8d4416b724859bd2
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_GtE 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] a7395532e773446e89e5172176fa6bf8
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_GtE 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] abce72b99ced4c909aeca84520f08901
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_GtE 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 8cadf92854954701a7683a2e61ee90fd
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Is 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] bef2ea4398454d21a0a2de76054078d7
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Is 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 20b749d948b8454a9858ba83bc926715
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Is 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 2e112a0341c6474eb67a9c9147f8cb0a
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_Is 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 9c36476071cf4c0c9b2f475e0db337ea
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_IsNot 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] b2d7f04085ab42de975c8568c0bc9b19
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_IsNot 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 016d73bec4d245ecad6f85aa48c54c04
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_IsNot 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] a6438b89bb8042d7be9925f88f6e6228
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_NotEq_IsNot 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 381e5a0f09f944f38478f016f88bb4b2
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Lt_Eq 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 7cf140fe2faf4ac18507b354231beeb3
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Lt_NotEq 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 112ad9ef65d74337bedcbf8ef26591d6
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Lt_LtE 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 5f7417d5ea454e4c9cc331dbc9f71a52
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Lt_Gt 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] c691b326dc5d4037a4c1e84d1b387653
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Lt_GtE 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 5ed3a8d6638a42a8a42bbe60b2f5660c
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Lt_Is 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] f0564ba7e0a9460e921858dc7afc7eb7
+NEMO\views\access_requests.py core/ReplaceComparisonOperator_Lt_IsNot 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 6a8a235e6ff740ae968ef9a7764b6dba
+NEMO\views\access_requests.py core/ReplaceUnaryOperator_Delete_Not 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 4338f87b70d94dcc90fe58e7455a0518
+NEMO\views\access_requests.py core/ReplaceUnaryOperator_Delete_Not 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 6ec6ca319b934ab38e6548364844be9c
+NEMO\views\access_requests.py core/ReplaceUnaryOperator_Delete_Not 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] f010c8d945384ce39ec75174f6323fed
+NEMO\views\access_requests.py core/ReplaceUnaryOperator_Delete_Not 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 88d9b5079420401ca0fb9f4c0f127d49
+NEMO\views\access_requests.py core/ReplaceUnaryOperator_Delete_Not 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 78245c4a80ab4e38bff984a85f8174fd
+NEMO\views\access_requests.py core/AddNot 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] f53eb6c3762e4254b6e4085e8f133146
+NEMO\views\access_requests.py core/AddNot 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 622cb7f457b54475a853fb5dff12353b
+NEMO\views\access_requests.py core/AddNot 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 44de8fa96c6d49e69e40d016ac41037d
+NEMO\views\access_requests.py core/AddNot 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 2af8eb95f27a4d2784610b0db36884e7
+NEMO\views\access_requests.py core/AddNot 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 3516b76fe0a9478d8b1b60ebcfe0d66a
+NEMO\views\access_requests.py core/AddNot 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] a602fff2a1e44a379d56eee5a880d41e
+NEMO\views\access_requests.py core/AddNot 6
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 420eb007499e47f2bd2134d8f83c3a57
+NEMO\views\access_requests.py core/AddNot 7
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 85d223ed446e44608a7882d3c2aa9c79
+NEMO\views\access_requests.py core/AddNot 8
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] b36f14dcea9a47dd9d25c400207fd83b
+NEMO\views\access_requests.py core/AddNot 9
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 0a1bda791992409eb9f5df9801a1b9a0
+NEMO\views\access_requests.py core/AddNot 10
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] c54a68c7a5c1414ea7cb3bbdb68e650e
+NEMO\views\access_requests.py core/AddNot 11
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 0e9902d433e24490bdf3ba1fd3189ac1
+NEMO\views\access_requests.py core/AddNot 12
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 958406cc46914a20a01621a4cf45af9e
+NEMO\views\access_requests.py core/AddNot 13
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 76375747d85d48dcb6c1db4455470121
+NEMO\views\access_requests.py core/AddNot 14
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 85ac29efec9e46e5a044f4ffd0f9f67b
+NEMO\views\access_requests.py core/AddNot 15
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 227208fe349440f4a2435dffb0f6da61
+NEMO\views\access_requests.py core/AddNot 16
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] d2df03f7e1914335a32d24ac5f610b4c
+NEMO\views\access_requests.py core/AddNot 17
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 6c01ac659fd94a46acc7c679117153ee
+NEMO\views\access_requests.py core/AddNot 18
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 3c63ee059da44e8abb128b97bc052efb
+NEMO\views\access_requests.py core/AddNot 19
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 4a05725d0ca245b1a198e92766184c14
+NEMO\views\access_requests.py core/AddNot 20
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] c47aa996b3e04962b26706656871172a
+NEMO\views\access_requests.py core/AddNot 21
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 33a1e94a7c254288b3a77def54f71361
+NEMO\views\access_requests.py core/AddNot 22
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 93487c8745ea4cb58501bafb183d04bd
+NEMO\views\access_requests.py core/AddNot 23
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 062745a9efe4448aad074fad867149a3
+NEMO\views\access_requests.py core/AddNot 24
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] dd8022f0dece4c67bab254271eef5efe
+NEMO\views\access_requests.py core/ReplaceTrueWithFalse 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 1401ff18d1bf41a7aca56d73aaee2e03
+NEMO\views\access_requests.py core/ReplaceTrueWithFalse 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 3011784a5655497b8b0b978a433452ff
+NEMO\views\access_requests.py core/ReplaceTrueWithFalse 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 5ef9e42d458f4af39e8866e04c147591
+NEMO\views\access_requests.py core/ReplaceFalseWithTrue 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 0cec2c02df3d4274bc6d7596a0954c0a
+NEMO\views\access_requests.py core/ReplaceFalseWithTrue 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] c8e3418977474bed8334cd9e470cfc7e
+NEMO\views\access_requests.py core/ReplaceFalseWithTrue 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 93efc17c461f4562ab1ae8650931bb5b
+NEMO\views\access_requests.py core/ReplaceFalseWithTrue 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] e14652b64fef455d9b10a1c6be117fff
+NEMO\views\access_requests.py core/ReplaceAndWithOr 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 0b5f83ab7ce64449afd58e29af136360
+NEMO\views\access_requests.py core/ReplaceAndWithOr 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 3ff3f5eaf13a4b7bb10f6ee5332ec004
+NEMO\views\access_requests.py core/ReplaceAndWithOr 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 578c5bfcf6f040c7ac622e7f9d0a383c
+NEMO\views\access_requests.py core/ReplaceAndWithOr 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 6e678518a93c4017b7e184c7c97ca567
+NEMO\views\access_requests.py core/ReplaceAndWithOr 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] ab0ed024671542aebf4d9fc2df3e4a66
+NEMO\views\access_requests.py core/ReplaceAndWithOr 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] f2fda9f15753483390d6270f854f1589
+NEMO\views\access_requests.py core/ReplaceAndWithOr 6
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 290ebbff0b95447c947c20c8d2b2005d
+NEMO\views\access_requests.py core/ReplaceOrWithAnd 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 662719f5f9fb424abd5f417b357a3921
+NEMO\views\access_requests.py core/ReplaceOrWithAnd 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 9459ecc410714d4dad036b4a64bc58cf
+NEMO\views\access_requests.py core/ReplaceOrWithAnd 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 161d078901804d059ca66d1a5e0fe74e
+NEMO\views\access_requests.py core/ReplaceOrWithAnd 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 87a2c1c1d34f4321af0713272b46089b
+NEMO\views\access_requests.py core/ExceptionReplacer 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 8ab5eeab66f5415592865bb247b72cde
+NEMO\views\access_requests.py core/RemoveDecorator 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 71290c741fa148da869b08b093cd0a6c
+NEMO\views\access_requests.py core/RemoveDecorator 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 21f3aef5dbbb40bdaf5d539769958274
+NEMO\views\access_requests.py core/RemoveDecorator 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 7d7fb7eb872a452b8e158053827c49a4
+NEMO\views\access_requests.py core/RemoveDecorator 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 9eaaaef103064f7c9fa9b0e90e93bb5a
+NEMO\views\access_requests.py core/RemoveDecorator 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 06a1ec28a0b04ed6b8a6208e1d766303
+NEMO\views\access_requests.py core/RemoveDecorator 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] da943a41ebcc4d5899354d3665a809dc
+NEMO\views\access_requests.py core/RemoveDecorator 6
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 8e75f0ee561d41738c0837c2496abbf9
+NEMO\views\access_requests.py core/RemoveDecorator 7
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] f69153e89c824dfdb63c487f91eebed9
+NEMO\views\access_requests.py core/ZeroIterationForLoop 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 81664acb4cf84558859b34d91f731526
+NEMO\views\access_requests.py core/ZeroIterationForLoop 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] e30fdaacfb2b43bfb974b36bf98b6984
+NEMO\views\access_requests.py core/ZeroIterationForLoop 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] afbfa5b8a6ca4f5ca3d57c6d0f691e02
+NEMO\views\access_requests.py core/ZeroIterationForLoop 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] c8b48d8d724f425098faaa833ab32dd5
+NEMO\views\access_requests.py core/ZeroIterationForLoop 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] dda84a9707cf4f488a0283bf82b435fb
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] cdf1330fea38483391254d938edf9287
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] 8e018cf6c48e4f698bde7832b26169bc
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 2
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.SURVIVED
+[job-id] cfb842a0731a4e888e71adf09e127179
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 3
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 64121466a21848608441637273392ee4
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 4
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] e4e40247690741c6bf08d67b960f3e13
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 5
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] e5d0116f47b242de84f0b060d791542d
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 6
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] f8cc418f3cb94a60a1e974eeb7516460
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 7
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] d2ddf36053eb4e9c8c9e524e9728bc53
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 8
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 77d81f45794448e9a911fa94ee6eb210
+NEMO\views\access_requests.py nemo_br/FlipApprovalStatusOperator 9
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 8c801a9bb5cd491fb827f4ff35277b4d
+NEMO\views\access_requests.py nemo_br/SkipGrantCreationOperator 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 2514b8af21f24e4286f545346ef4d198
+NEMO\views\access_requests.py nemo_br/BypassReviewerCheckOperator 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+total jobs: 162
+complete: 162 (100.00%)
+surviving mutants: 43 (26.54%)

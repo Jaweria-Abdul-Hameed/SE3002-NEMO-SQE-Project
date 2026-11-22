@@ -1,0 +1,9 @@
+[job-id] fbd4c9480c5d4b8b9392814b392923a1
+NEMO\forms.py nemo_br/RelaxBuddyMinimumOperator 0
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+[job-id] 18eb0c46b36f4872bb505c16ca15d01d
+NEMO\forms.py nemo_br/RelaxBuddyMinimumOperator 1
+worker outcome: WorkerOutcome.NORMAL, test outcome: TestOutcome.KILLED
+total jobs: 2
+complete: 2 (100.00%)
+surviving mutants: 0 (0.00%)
