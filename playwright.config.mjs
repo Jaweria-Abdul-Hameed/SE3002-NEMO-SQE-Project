@@ -2,6 +2,7 @@ import { defineConfig } from '@playwright/test';
 
 const baseURL = process.env.PLAYWRIGHT_BASE_URL || 'http://127.0.0.1:8000';
 const proxyServer = process.env.PLAYWRIGHT_PROXY_SERVER || undefined;
+const pythonCmd = process.env.PYTHON_BIN || (process.platform === 'win32' ? '.\\venv\\Scripts\\python.exe' : 'python3');
 
 export default defineConfig({
   testDir: './tests/team',
@@ -30,7 +31,7 @@ export default defineConfig({
   webServer: process.env.SKIP_WEB_SERVER
     ? undefined
     : {
-        command: '.\\venv\\Scripts\\python.exe manage.py runserver 127.0.0.1:8000 --noreload',
+        command: `${pythonCmd} manage.py runserver 127.0.0.1:8000 --noreload`,
         url: 'http://127.0.0.1:8000/login/',
         reuseExistingServer: true,
         env: {

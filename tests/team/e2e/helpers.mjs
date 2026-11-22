@@ -2,7 +2,7 @@ import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 
 export const TEST_PASSWORD = process.env.SQE_LOCAL_TEST_PASSWORD || 'nemo-sqe-test-2026';
-const PYTHON_EXE = path.resolve('venv', 'Scripts', 'python.exe');
+const PYTHON_EXE = process.env.PYTHON_BIN || (process.platform === 'win32' ? path.resolve('venv', 'Scripts', 'python.exe') : 'python3');
 const DB_HELPER = path.resolve('scripts', 'e2e_db_helper.py');
 
 export function runDbHelper(args) {
