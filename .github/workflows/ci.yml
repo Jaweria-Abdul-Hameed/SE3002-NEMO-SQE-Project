@@ -37,7 +37,7 @@ jobs:
           DJANGO_SETTINGS_MODULE: sqe_local.settings
           PYTHONPATH: .
         run: |
-          coverage run --source=NEMO/views/access_requests.py,NEMO/forms.py,NEMO/models.py --branch -m pytest tests/team/unit tests/team/api tests/team/recovery --reuse-db -v
+          coverage run --source=NEMO --branch -m pytest tests/team/unit tests/team/api tests/team/recovery --reuse-db -v
           coverage report -m
           coverage json -o coverage.json
           coverage xml -o coverage.xml
