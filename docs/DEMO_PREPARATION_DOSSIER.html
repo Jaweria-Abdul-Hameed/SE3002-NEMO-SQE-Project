@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEMO MIS — Technical Defense & Demo Preparation Dossier</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #111111;
+    --text-muted: #555555;
+    --border: #cccccc;
+    --border-light: #e5e5e5;
+    --code-bg: #f6f6f6;
+    --highlight-bg: #f0f0f0;
+    --callout-bg: #fafafa;
+    --accent-dark: #000000;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--bg);
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px 80px 24px;
+  }
+
+  /* Document Header */
+  header.doc-header {
+    border-bottom: 2px solid var(--accent-dark);
+    padding-bottom: 24px;
+    margin-bottom: 36px;
+  }
+
+  .doc-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--accent-dark);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .doc-subtitle {
+    font-size: 1.12rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+    background: var(--callout-bg);
+    border: 1px solid var(--border-light);
+    padding: 16px;
+    font-size: 0.88rem;
+  }
+
+  .meta-item strong {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Table of Contents */
+  .toc-box {
+    border: 1px solid var(--border);
+    background: var(--callout-bg);
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+
+  .toc-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+  }
+
+  .toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+    font-size: 0.9rem;
+  }
+
+  .toc-list a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--text-muted);
+  }
+
+  .toc-list a:hover {
+    color: var(--accent-dark);
+    border-bottom-style: solid;
+  }
+
+  /* Headings & Sections */
+  h2.section-heading {
+    font-size: 1.42rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--accent-dark);
+    padding-bottom: 8px;
+    margin-top: 50px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .section-tag {
+    font-size: 0.8rem;
+    font-family: monospace;
+    font-weight: normal;
+    color: var(--text-muted);
+  }
+
+  h3.sub-heading {
+    font-size: 1.12rem;
+    font-weight: 700;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    color: var(--accent-dark);
+    border-left: 3px solid var(--accent-dark);
+    padding-left: 10px;
+  }
+
+  p { margin-bottom: 14px; font-size: 0.95rem; }
+
+  /* Tables */
+  table.doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0 28px 0;
+    font-size: 0.88rem;
+  }
+
+  table.doc-table th, table.doc-table td {
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  table.doc-table th {
+    background: var(--code-bg);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    border-bottom: 2px solid var(--accent-dark);
+  }
+
+  table.doc-table tr:nth-child(even) td {
+    background: var(--callout-bg);
+  }
+
+  /* Code blocks & tags */
+  code {
+    font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border: 1px solid var(--border-light);
+  }
+
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    padding: 14px 18px;
+    overflow-x: auto;
+    font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+    font-size: 0.83rem;
+    line-height: 1.5;
+    margin: 14px 0 20px 0;
+  }
+
+  /* Callout Boxes */
+  .callout {
+    border-left: 4px solid var(--accent-dark);
+    background: var(--callout-bg);
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 0.93rem;
+  }
+
+  .callout-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .callout.warning {
+    border-left-color: #444444;
+    background: #f7f7f7;
+  }
+
+  .callout.danger {
+    border-left: 4px solid #000000;
+    background: #eeeeee;
+  }
+
+  /* Diagram box */
+  .diagram-box {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    padding: 18px;
+    margin: 18px 0;
+    font-family: ui-monospace, "Cascadia Code", Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+  /* Viva Q&A Accordion Style */
+  .qa-block {
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+    background: var(--bg);
+  }
+
+  .qa-header {
+    background: var(--callout-bg);
+    padding: 12px 16px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .qa-tag {
+    font-size: 0.72rem;
+    font-family: monospace;
+    padding: 2px 6px;
+    background: var(--text);
+    color: #fff;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+
+  .qa-body {
+    padding: 14px 18px;
+    font-size: 0.92rem;
+  }
+
+  .qa-body p:last-child { margin-bottom: 0; }
+
+  .qa-evidence {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    font-family: monospace;
+  }
+
+  /* Step by Step Timeline */
+  .step-node {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 28px;
+    border-left: 2px solid var(--border);
+  }
+
+  .step-node::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-dark);
+    border-radius: 50%;
+  }
+
+  .step-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .step-summary {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  /* Example Card */
+  .example-card {
+    border: 1px solid var(--border);
+    background: #ffffff;
+    margin: 22px 0 32px 0;
+  }
+
+  .example-card-header {
+    background: #f0f0f0;
+    padding: 12px 18px;
+    font-weight: 700;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .example-card-body {
+    padding: 18px;
+  }
+
+  .pipe-step {
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 3px solid var(--border);
+  }
+
+  .pipe-step-title {
+    font-size: 0.86rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  /* Print Styles */
+  @media print {
+    body { font-size: 10pt; line-height: 1.4; color: #000; background: #fff; }
+    .container { max-width: 100%; padding: 0; }
+    .toc-box { display: none; }
+    h2.section-heading { page-break-before: always; margin-top: 20pt; }
+    .qa-block, .example-card { page-break-inside: avoid; border: 1px solid #999; }
+    table.doc-table { page-break-inside: avoid; }
+    pre, .diagram-box { font-size: 8pt; white-space: pre-wrap; word-break: break-all; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="doc-header">
+    <div class="doc-title">NEMO MIS: Software Quality Engineering Dossier</div>
+    <div class="doc-subtitle">Technical Defense Dossier, Tooling Transitions, Test Architecture, Security Audits & Demo Runbook</div>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <strong>Repository</strong>
+        <code>github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project</code>
+      </div>
+      <div class="meta-item">
+        <strong>Engineered For</strong>
+        SE3002 · Software Quality Engineering (Fall 2026) · Section A
+      </div>
+      <div class="meta-item">
+        <strong>Target MIS & Scope</strong>
+        NEMO v8.2.1 (Commit <code>aa5ac6e2</code>) · Temporary Physical Access
+      </div>
+      <div class="meta-item">
+        <strong>Verified Test Suite</strong>
+        270 / 270 Passed (100% Pass) · 100% Stmt (212/212) & Branch (60/60)
+      </div>
+      <div class="meta-item">
+        <strong>Mutation & BVA Metrics</strong>
+        100% Equiv-Adjusted (162 mutants) · 14/14 Custom BR Mutants · 141 BVA
+      </div>
+      <div class="meta-item">
+        <strong>Group Trio Ownership</strong>
+        Jaweria (Area 1) · Mohsin (Area 2) · Aun (Area 3)
+      </div>
+    </div>
+  </header>
+
+  <!-- Table of Contents -->
+  <nav class="toc-box">
+    <div class="toc-title">Table of Contents</div>
+    <ul class="toc-list">
+      <li><a href="#section-quick">1. How to Run on THIS Machine (Zero-Rebuild Quickstart)</a></li>
+      <li><a href="#section-run">2. Clean Rebuild from Scratch (Disaster Recovery Only)</a></li>
+      <li><a href="#section-flow">3. The 11-Step Data Lifecycle & Dual-Channel Architecture</a></li>
+      <li><a href="#section-examples">4. Five Concrete Test Transformations & Data Proofs</a></li>
+      <li><a href="#section-story">5. The Chronological Transition Story (Phase 1 to Phase 8)</a></li>
+      <li><a href="#section-matrix">6. Tooling Decision Matrix (Why X, Not Y)</a></li>
+      <li><a href="#section-incidents">7. The 4 Real Incidents & Live Debugging Breakthroughs</a></li>
+      <li><a href="#section-viva">8. Master Technical Viva Q&A (35+ Questions)</a></li>
+      <li><a href="#section-honest">9. The "Did You Do X?" Honest List</a></li>
+      <li><a href="#section-runbook">10. Five-Minute Live Demo Runbook (Timed Viva Script)</a></li>
+      <li><a href="#section-glossary">11. Complete Technology, Tools & Metrics Glossary</a></li>
+    </ul>
+  </nav>
+
+  <!-- SECTION QUICK (ON THIS MACHINE) -->
+  <section id="section-quick">
+    <h2 class="section-heading">
+      1. How to Run on THIS Machine (Zero-Rebuild Quickstart)
+      <span class="section-tag">[SAFE 30-SECOND LAUNCH]</span>
+    </h2>
+
+    <div class="callout warning">
+      <div class="callout-title">IMPORTANT: DO NOT REBUILD THE DATABASE OR DELETE VENV BEFORE DEMO!</div>
+      <p>
+        On this machine, the virtual environment (<code>venv</code>), Node modules (<code>node_modules</code>), Chromium browser binaries, seeded database (<code>sqe_nemo.db</code>), mutation databases (<code>cr_final.sqlite</code>), and OpenAPI test fixtures are <strong>fully installed, compiled, and ready</strong>.
+      </p>
+      <p>
+        <strong>DO NOT run</strong> <code>rmdir /s venv</code> or delete <code>sqe_nemo.db</code> without using our idempotent reset script. Resetting via <code>python scripts/reset_local_db.py</code> takes under <strong>1.5 seconds</strong> and deterministically resets all 7 test user accounts, 2 physical access levels, and synthetic pending requests.
+      </p>
+    </div>
+
+    <p>Follow this 3-step idempotent protocol to bring up and verify the entire test stack live in under 30 seconds:</p>
+
+    <div class="step-node">
+      <div class="step-title">Step 1: Deterministic Local Database Reset & Seeding (1.5 seconds)</div>
+      <div class="step-summary">Re-initializes SQLite database, applies migrations, seeds 7 test accounts, 2 access areas, and sample requests.</div>
+      <pre><code># Open PowerShell in workspace root: C:\Users\Jaweria\Projects\SQE_Project
+.\venv\Scripts\python.exe scripts\reset_local_db.py
+
+# Expected Output:
+# [RESET] Applying Django database migrations...
+# [SEED] Seeding 7 synthetic accounts (lab_user, buddy_user, facility_reviewer, etc.)
+# [SEED] Created Cleanroom Bay A (requestable) & Cryo Vault B (non-requestable)
+# [SEED] access_requests_minimum_users set to '2' (requires >= 1 buddy)
+# [SUCCESS] Clean seeded database ready at sqe_nemo.db</code></pre>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Step 2: Run All 230 Pytest Tests (Unit, API, Recovery) in 15 Seconds</div>
+      <div class="step-summary">Executes 74 White-box Unit, 155 REST API / Integration, and 1 Failure Recovery test with zero failures.</div>
+      <pre><code># Run all team pytest suites in one command:
+.\venv\Scripts\python.exe -m pytest tests/team --reuse-db
+
+# Expected Output:
+# 230 passed in 14.82s (100% pass rate)</code></pre>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Step 3: Start Local Server & Run 40 Playwright Chromium Tests (18 Seconds)</div>
+      <div class="step-summary">Spins up local Django server on port 8000 and runs 30 E2E Use Cases, 2 Usability/Keyboard, and 8 RBAC tests.</div>
+      <pre><code># Terminal 1 (Start server with sqe_local settings):
+$env:DJANGO_SETTINGS_MODULE = "sqe_local.settings"
+.\venv\Scripts\python.exe manage.py runserver 127.0.0.1:8000 --noreload
+
+# Terminal 2 (Execute Playwright Chromium suite):
+node node_modules/@playwright/test/cli.js test
+
+# Expected Output:
+# 40 passed (18.4s)</code></pre>
+    </div>
+  </section>
+
+  <!-- SECTION RUN (SCRATCH ONLY) -->
+  <section id="section-run">
+    <h2 class="section-heading">
+      2. Clean Rebuild from Scratch (Disaster Recovery Only)
+      <span class="section-tag">[CLEAN CLONE PROTOCOL]</span>
+    </h2>
+
+    <p>
+      Use this section <strong>only</strong> if setting up a completely new machine or evaluating a fresh clone from GitHub:
+    </p>
+
+    <pre><code># 1. Clone repository from public GitHub
+git clone https://github.com/Jaweria-Abdul-Hameed/SE3002-NEMO-SQE-Project.git nemo-sqe
+cd nemo-sqe
+
+# 2. Create Python 3.12 virtual environment & install dependencies
+python -m venv venv
+.\venv\Scripts\python.exe -m pip install --upgrade pip
+.\venv\Scripts\python.exe -m pip install -e . pytest pytest-django coverage requests pyyaml pip-audit cosmic-ray
+.\venv\Scripts\python.exe -m pip install -e sqe_mutators/
+
+# 3. Install Playwright browser automation dependencies
+npm install
+npx playwright install chromium
+
+# 4. Initialize and seed local database
+.\venv\Scripts\python.exe scripts\reset_local_db.py
+
+# 5. Run full test suite to verify baseline parity
+.\venv\Scripts\python.exe -m pytest tests/team --reuse-db
+npx playwright test
+
+# 6. Verify Strict CI Quality Gate locally
+.\venv\Scripts\python.exe scripts\ci_quality_gate_check.py</code></pre>
+  </section>
+
+  <!-- SECTION FLOW (ARCHITECTURE) -->
+  <section id="section-flow">
+    <h2 class="section-heading">
+      3. The 11-Step Data Lifecycle & Dual-Channel Architecture
+      <span class="section-tag">[SYSTEM ARCHITECTURE & CONTROL FLOW]</span>
+    </h2>
+
+    <p>
+      NEMO v8.2.1 operates a <strong>Dual-Channel Architecture</strong>: requests can enter through either the server-rendered <strong>Django Web UI</strong> or the <strong>Django REST Framework (DRF) HTTP API</strong>. Our quality engineering revealed a critical architectural discrepancy: validation rules implemented in the UI form layer were bypassed by DRF endpoints!
+    </p>
+
+    <div class="diagram-box">
+                       [CHANNEL 1: Web UI Client]                [CHANNEL 2: REST API Client]
+                                   │                                         │
+                                   ▼                                         ▼
+                   [1. GET/POST /create_access_request/]    [2. POST/PATCH /api/temporary_physical_...]
+                                   │                                         │
+                                   ▼                                         ▼
+                   [3. View Level Auth & Decorators]       [4. DRF DjangoModelPermissions]
+                   (@login_required, @require_http_methods) (view_, add_, change_ permissions)
+                                   │                                         │
+                                   ▼                                         ▼
+                   [5. Form Validation (forms.py)]         [6. Serializer Validation (serializers.py)]
+                   (clean(): checks minimum buddy count     (ORIGINAL GAP: fields="__all__" omitted
+                    access_requests_minimum_users - 1)       buddy count validation! FIXED IN PR #1)
+                                   │                                         │
+                                   ▼                                         ▼
+                        [7. Domain Model Validation (models.py :: clean())]
+                        (Enforces end_time > start_time; raises ValidationError)
+                                   │
+                                   ▼
+                        [8. SQLite Persistent Transaction (sqe_nemo.db)]
+                        (Inserts TemporaryPhysicalAccessRequest in PENDING (0) state)
+                                   │
+                                   ▼
+                        [9. Reviewer Notification Creation (models.py)]
+                        (Inserts Notification row for facility managers / area reviewers)
+                                   │
+                                   ▼
+                        [10. Workflow 2 Review Decision (Approve / Deny)]
+                        (Reviewer POST with approve_request OR deny_request)
+                                   ├── DENY: status -> 2 (DENIED), reviewer set, 0 grants created
+                                   └── APPROVE: status -> 1 (APPROVED), reviewer set,
+                                                create_temporary_access() creates N grant records
+                                   │
+                                   ▼
+                        [11. State Lock & Invalidation]
+                        (Subsequent edits or deletes rejected with 400 Bad Request;
+                         expired requests auto-transitioned to EXPIRED (3) on view load)</div>
+
+    <div class="callout">
+      <div class="callout-title">Core Architectural Discovery: The UI vs. API Validation Divergence</div>
+      <p>
+        In monolithic web frameworks like Django, developers often place critical validation logic inside HTML form classes (<code>TemporaryPhysicalAccessRequestForm.clean()</code>) rather than in shared domain services or model managers.
+      </p>
+      <p>
+        When Django REST Framework serializers were subsequently introduced (<code>TemporaryPhysicalAccessRequestSerializer</code>), DRF bypassed <code>forms.py</code> completely. Furthermore, standard DRF <code>ModelSerializer</code> classes <strong>do not automatically call <code>model.full_clean()</code></strong> unless explicitly invoked!
+      </p>
+      <p>
+        This architectural gap allowed external API clients to submit access requests with <strong>0 buddies</strong> (violating <code>BR-1</code>), submit past start-times, and execute arbitrary state transitions (e.g. <code>APPROVED -> PENDING</code> via <code>PATCH</code>). Our team systematically caught this in Phase 4 (logged as <code>W-API-01</code> through <code>W-API-06</code>) and delivered the production-ready architectural fix in <strong>PR #1</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION EXAMPLES -->
+  <section id="section-examples">
+    <h2 class="section-heading">
+      4. Five Concrete Test Transformations & Data Proofs
+      <span class="section-tag">[EMPIRICAL TEST EXECUTION]</span>
+    </h2>
+
+    <p>
+      Here are 5 concrete test transformations spanning all testing disciplines, demonstrating the exact inputs, boundary calculations, assertions, and verified database states:
+    </p>
+
+    <!-- EXAMPLE 1: White-Box Unit & MC/DC -->
+    <div class="example-card">
+      <div class="example-card-header">
+        <span>Example 1: White-Box Unit & MC/DC Pair Execution (Decision D1)</span>
+        <span class="qa-tag">WHITE-BOX / MC-DC</span>
+      </div>
+      <div class="example-card-body">
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step A: Target Compound Decision & Conditions</div>
+          <p style="font-size: 0.85rem;">Decision D1 (Edit Authorization Guard in <code>NEMO/views/access_requests.py:106, 111</code>):</p>
+          <code>D_1 = E and A and B</code>
+          <p style="font-size: 0.85rem; margin-top: 4px;">Where $E$: <code>edit</code> (True for existing request), $A$: <code>creator != user</code>, and $B$: <code>user not in reviewers()</code>.</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step B: MC/DC Independence Pair for Condition B (Reviewer Membership)</div>
+          <p style="font-size: 0.85rem;">To prove condition $B$ independently dictates the outcome, hold $E=\text{True}$ and $A=\text{True}$ fixed:</p>
+          <ul style="margin-left: 20px; font-size: 0.85rem;">
+            <li><strong>Row 8 (Test D1-B-True):</strong> $E=T, A=T, B=T$ &rarr; $D_1 = \text{True}$ (Non-reviewer user editing other's request &rarr; <strong>BLOCKED</strong>).</li>
+            <li><strong>Row 7 (Test D1-B-False):</strong> $E=T, A=T, B=F$ &rarr; $D_1 = \text{False}$ (Area reviewer editing other's request &rarr; <strong>PERMITTED</strong>).</li>
+          </ul>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step C: Pytest Automated Test Assertion</div>
+          <pre><code># tests/team/unit/test_mcdc_decisions.py
+def test_d1_mcdc_condition_b_reviewer_membership(client, sample_request, area_reviewer, unrelated_user):
+    # Row 8: Unrelated user (B=True) -> Blocked
+    client.force_login(unrelated_user)
+    response = client.post(reverse("edit_access_request", args=[sample_request.id]), {"start_time": "..."})
+    assert "You are not allowed to edit this request." in response.context["errors"]
+
+    # Row 7: Area reviewer (B=False) -> Permitted
+    client.force_login(area_reviewer)
+    response = client.post(reverse("edit_access_request", args=[sample_request.id]), {"start_time": "..."})
+    assert "You are not allowed to edit this request." not in response.context.get("errors", [])</code></pre>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step D: Verified Result</div>
+          <p style="font-size: 0.85rem;">Both branches executed; 100% branch coverage verified across decision D1; zero regressions.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXAMPLE 2: OpenAPI 3-Point BVA -->
+    <div class="example-card">
+      <div class="example-card-header">
+        <span>Example 2: Spec-Driven 3-Point BVA on Minimum Buddy Count</span>
+        <span class="qa-tag">API / 3-POINT BVA</span>
+      </div>
+      <div class="example-card-body">
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step A: OpenAPI Specification Constraint</div>
+          <p style="font-size: 0.85rem;">When facility sets <code>access_requests_minimum_users = 2</code>, the required buddy array boundary is <code>minItems: 1</code> (creator + 1 buddy = 2 users).</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step B: Dynamically Generated 3-Point BVA Test Points</div>
+          <p style="font-size: 0.85rem;"><code>scripts/generate_api_test_data.py</code> evaluates lower bound $min = 1$ and emits 3 boundary points:</p>
+          <pre><code>Point 1 (Just Below: min - 1 = 0): []               -> Expected: HTTP 400 Bad Request
+Point 2 (Exactly At:  min = 1):     [buddy_user.id]   -> Expected: HTTP 200 OK
+Point 3 (Just Above: min + 1 = 2): [buddy_1, buddy_2]-> Expected: HTTP 200 OK</code></pre>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step C: Verified Execution & Bug Catch</div>
+          <pre><code># Output against baseline NEMO:
+# Point 1 with [] -> Returned HTTP 200 OK! (BUG W-API-01 DISCOVERED)
+# Output after PR #1 fix:
+# Point 1 with [] -> Returned HTTP 400 Bad Request: {"other_users": ["At least 1 buddy user is required."]} (PASS)</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXAMPLE 3: E2E Browser Flow with DB Assertion -->
+    <div class="example-card">
+      <div class="example-card-header">
+        <span>Example 3: Playwright E2E Use Case UC-04 (Reviewer Approval & Grant Generation)</span>
+        <span class="qa-tag">PLAYWRIGHT E2E / DB ASSERTION</span>
+      </div>
+      <div class="example-card-body">
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step A: Browser Interaction Sequence</div>
+          <p style="font-size: 0.85rem;">Playwright Chromium logs in as <code>facility_reviewer</code>, navigates to <code>/user_requests/access/</code>, clicks <strong>Review</strong> on request <code>#101</code>, and clicks <strong>Approve</strong> (<code>approve_request</code>).</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step B: UI Verification</div>
+          <pre><code>// tests/team/e2e/use_cases.spec.mjs
+await page.click('button[name="approve_request"]');
+await expect(page.locator('#approved_access_requests')).toContainText('Dr. Nadia Siddiqui');
+await expect(page.locator('#pending_access_requests')).not.toContainText('Request #101');</code></pre>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step C: Dual-Layer Database Postcondition Readback</div>
+          <pre><code># Executed via scripts/e2e_db_helper.py directly querying sqe_nemo.db:
+req = TemporaryPhysicalAccessRequest.objects.get(id=101)
+assert req.status == 1 # APPROVED
+assert req.reviewer.username == "facility_reviewer"
+
+# Assert exact grant creation for creator AND buddy (2 total grants, 0 duplicate grants):
+grants = TemporaryPhysicalAccess.objects.filter(physical_access_level=req.physical_access_level)
+assert grants.count() == 2
+assert set(g.user.username for g in grants) == {"lab_user", "buddy_user"}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXAMPLE 4: Security Role Check -->
+    <div class="example-card">
+      <div class="example-card-header">
+        <span>Example 4: Playwright Privilege Escalation Defense (SEC-RBAC-02)</span>
+        <span class="qa-tag">DEFENSIVE SECURITY / RBAC</span>
+      </div>
+      <div class="example-card-body">
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step A: Malicious Attack Scenario</div>
+          <p style="font-size: 0.85rem;">A standard <code>lab_user</code> attempts to approve their own request by forging a POST request to <code>/edit_access_request/<id>/</code> containing injected parameter <code>approve_request="Approve"</code>.</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step B: Server-Side Defense Evaluation</div>
+          <p style="font-size: 0.85rem;">In <code>NEMO/views/access_requests.py:133</code>, the server enforces: <code>if edit and user in access_request.reviewers():</code>. Because <code>lab_user not in reviewers()</code>, the decision block is completely skipped!</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step C: Database State Assertion (Privilege Escalation Thwarted)</div>
+          <pre><code># tests/team/security/role_checks.spec.mjs
+req = TemporaryPhysicalAccessRequest.objects.get(id=sample_id)
+assert req.status == 0 # STRICTLY REMAINS PENDING!
+assert req.reviewer is None
+assert TemporaryPhysicalAccess.objects.filter(user=req.creator).count() == 0</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXAMPLE 5: Failure & Recovery -->
+    <div class="example-card">
+      <div class="example-card-header">
+        <span>Example 5: Controlled Fault Injection & Transaction Rollback Recovery</span>
+        <span class="qa-tag">RESILIENCE / RECOVERY</span>
+      </div>
+      <div class="example-card-body">
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step A: Simulated Infrastructure Failure</div>
+          <p style="font-size: 0.85rem;">Using <code>unittest.mock.patch</code>, we inject an <code>OperationalError("Disk I/O failure")</code> inside <code>create_temporary_access()</code> during request approval.</p>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step B: Atomic Rollback Verification</div>
+          <pre><code># tests/team/recovery/test_failure_and_recovery.py
+with pytest.raises(OperationalError):
+    with transaction.atomic():
+        approve_and_grant_access(request_id=101)
+
+# Assert database consistency preserved:
+req = TemporaryPhysicalAccessRequest.objects.get(id=101)
+assert req.status == 0 # REMAINS PENDING!
+assert TemporaryPhysicalAccess.objects.count() == 0 # 0 partial grants!</code></pre>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-step-title">Step C: Successful Resumption & Zero Duplicates</div>
+          <p style="font-size: 0.85rem;">Remove mock, restore connectivity, and retry approval: transitions cleanly to <code>APPROVED (1)</code>, creates exactly 2 grants, with <strong>0 duplicate records</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION STORY -->
+  <section id="section-story">
+    <h2 class="section-heading">
+      5. The Chronological Transition Story (Phase 1 to Phase 8)
+      <span class="section-tag">[THE COMPLETE ENGINEERING JOURNEY]</span>
+    </h2>
+
+    <div class="step-node">
+      <div class="step-title">Phase 1: MIS Selection, Baseline Lockdown & Scope Definition</div>
+      <div class="step-summary">Selected NEMO v8.2.1, locked commit aa5ac6e2, isolated team suites, and defined 2 core workflows.</div>
+      <p>
+        We registered NEMO v8.2.1 under NIST Public Domain, created a reproducible local environment (<code>sqe_local/settings.py</code>) bypassing production LDAP, and locked in the <strong>Temporary Physical Access Requests</strong> module. We authored 10 Functional Requirements (<code>FR-01</code>..<code>10</code>), 2 Roles, and 4 Business Rules (<code>BR-1</code> limits, <code>BR-2</code> booleans, <code>BR-3</code> state transitions, <code>BR-4</code> RBAC). Upstream tests were strictly isolated; all team tests reside in <code>tests/team/</code>.
+      </p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Phase 2: Static Analysis, Hand CFG, Living Test Plan & 5x5 Risk Register</div>
+      <div class="step-summary">SonarQube scan, hand-calculated CC = 19 on create_access_request, 10 risks scored, 3 Exit Criteria.</div>
+      <p>
+        SonarQube 9.9.8 flagged 51 Cyclomatic Complexity and 85 Cognitive Complexity in <code>access_requests.py</code>, identifying <code>create_access_request</code> as a critical hotspot (Cognitive Complexity 50 > 15). We constructed its Control Flow Graph by hand ($N=37, E=54, P=18$), proving $V(G) = E - N + 2 = 19$, matching predicate counting ($P+1=19$). We established a 5x5 Risk Register (8 product, 2 project risks) and formulated 3 measurable Exit Criteria tied directly to top risks.
+      </p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Phase 3: White-Box Unit Testing, Complete MCC/MC-DC & Cosmic Ray Mutation Analysis</div>
+      <div class="step-summary">100% statement & branch coverage, D1-D5 MC/DC pairs, 162 Cosmic Ray mutants, 4 custom business mutators.</div>
+      <p>
+        Jaweria authored 74 unit tests achieving <strong>100.0% statement (212/212)</strong> and <strong>100.0% branch (60/60)</strong> coverage across all server-side logic. Truth tables and MC/DC independence pairs were automated for decisions D1–D5. Running Cosmic Ray revealed 43 surviving mutants (73.46% score), proving coverage is not enough. We authored <code>test_mutation_killers.py</code> and proved 11 mutants mathematically equivalent, achieving a <strong>100.0% equivalent-adjusted score</strong> and killing <strong>14/14 (100%) custom business-rule mutants</strong>.
+      </p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Phase 4: OpenAPI 3.0.3 Spec, Dynamic EP/BVA Generator & 155 API Tests</div>
+      <div class="step-summary">OpenAPI contract, 141 boundary test cases, 2-constraint live regeneration demo, 9 API weaknesses.</div>
+      <p>
+        Mohsin authored the OpenAPI 3.0.3 specification and engineered <code>scripts/generate_api_test_data.py</code>, dynamically generating 141 test cases (46 EP, 52 3-point BVA, 85 parameter, 7 state transitions). In an automated demo, changing 2 constraints dynamically shifted BVA boundaries in real time. Running 155 API tests uncovered 9 genuine weaknesses (<code>W-API-01</code> to <code>W-API-09</code>), exposing that DRF completely bypassed UI form validation.
+      </p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Phase 5: Use Case Automation, Playwright E2E, Keyboard Usability & Accessibility Remediation</div>
+      <div class="step-summary">6 Use Cases, 30 Playwright flows with DB assertions, keyboard navigation, axe-core 1-screen fix.</div>
+      <p>
+        Aun and trio specified 6 Use Cases (2/member) and automated 30 Playwright Chromium E2E flows asserting both UI rendering and SQLite database records. We verified keyboard-only navigation without mouse. Auditing with axe-core and Google Lighthouse revealed 4 violations (1 Serious <code>link-name</code> on buddy removal). Aun remediated <code>access_request.html</code> with semantic buttons, <code>&lt;main&gt;</code> landmarks, and <code>aria-live</code>, dropping violations from 4 to 1 and boosting Lighthouse Accessibility from 86 to 91.
+      </p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Phase 6: Defensive Security, OWASP ZAP, k6 Performance & Failure Recovery</div>
+      <div class="step-summary">8 Playwright RBAC checks, ZAP passive scan, pip-audit 0 CVEs, 4x65s k6 runs (p95=227ms), atomic rollback.</div>
+      <p>
+        We mapped the attack surface, verified 8 Playwright role checks, and executed an OWASP ZAP passive scan proxied during live browser tests (flagging bundled <code>moment.js v2.29.3</code> ReDoS CVE and missing CSP). <code>pip-audit</code> verified 0 CVEs across all 82 Python packages. Grafana k6 benchmarks across 1 and 5 VUs proved peak $p95 = 227.6\text{ ms} \ll 500\text{ ms}$ threshold. A controlled fault-injection test proved atomic transaction rollback and zero duplicate grants upon recovery.
+      </p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Phase 7: Strict CI Quality Gate, Fix/Blocked PRs, Defects, RCAs & Completion</div>
+      <div class="step-summary">GitHub Actions gate, merged Fix PR #1, blocked PR #2, 22 defects catalogued, 2 major RCAs, Pareto 72.7%.</div>
+      <p>
+        We built a strict GitHub Actions CI gate with zero escape hatches. We merged <strong>PR #1</strong> (fixing API buddy validation with regression test) and demonstrated <strong>PR #2</strong> being blocked by the pipeline. We catalogued 22 defects in GitHub Issues, authored 2 Major RCAs (5 Whys + Fishbone), performed Pareto analysis (API + A11y account for 72.7% of defects), verified PERT effort (+4.15% variance), and issued a formal <strong>Conditional Release</strong> decision.
+      </p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Phase 8: Packaging, Git Integrity Audit & Viva Readiness</div>
+      <div class="step-summary">Verified 3-member git history, compiled 14-page PDF report, created 195MB zip preserving .git.</div>
+      <p>
+        We audited git commits for Jaweria, Mohsin, and Aun, compiled the publication-quality 14-page PDF report <code>Project_24I-3025_24I-3135_24P-3099_A.pdf</code> (367 KB), packaged the complete repository archive <code>Project_24I-3025_24I-3135_24P-3099_A.zip</code> (195 MB) strictly preserving the complete <code>.git</code> history, and finalized this comprehensive Viva Defense Dossier.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION MATRIX -->
+  <section id="section-matrix">
+    <h2 class="section-heading">
+      6. Tooling Decision Matrix (Why X, Not Y)
+      <span class="section-tag">[ARCHITECTURAL TRADE-OFFS]</span>
+    </h2>
+
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th>Category / Discipline</th>
+          <th>Chosen Tool / Framework</th>
+          <th>Rejected Alternatives</th>
+          <th>Defensive Rationale (Why This Choice Won)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Static Analysis</strong></td>
+          <td>SonarQube Community 9.9.8 + SonarScanner CLI</td>
+          <td>Flake8; Pylint; Bandit only</td>
+          <td>
+            SonarQube provides industrial Cognitive & Cyclomatic complexity metrics, duplication detection, maintainability debt calculations, and security hotspot rules (S3752, S3776) with unified reporting.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Mutation Testing</strong></td>
+          <td>Cosmic Ray 8.9.0 with <code>sqe_mutators</code> plugin</td>
+          <td>Mutmut; Custom AST script only</td>
+          <td>
+            Cosmic Ray uses a modular <code>stevedore</code> plugin architecture, allowing us to implement and register 4 custom AST business-rule mutation operators (<code>nemo_br/*</code>) alongside core operators with SQLite session persistence.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Test Data Generation</strong></td>
+          <td>Spec-Driven Python Generator (`scripts/generate_api_test_data.py`)</td>
+          <td>Faker only; Hypothesis property-based only</td>
+          <td>
+            Pure random generators (Faker) lack deterministic boundary awareness. Our generator parses OpenAPI 3.0 schemas directly to calculate exact 3-point BVA values ($min-1, min, min+1$) and dynamically shifts when constraints change.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>E2E Browser Automation</strong></td>
+          <td>Playwright (Chromium)</td>
+          <td>Selenium WebDriver; Cypress</td>
+          <td>
+            Playwright supports modern async execution, auto-waiting (eliminating flaky sleeps), multi-tab contexts, headless Chromium speed, and seamless integration with <code>@axe-core/playwright</code> for accessibility audits.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Accessibility Auditing</strong></td>
+          <td>`@axe-core/playwright` + Google Lighthouse CI</td>
+          <td>Pa11y; Manual Chrome DevTools only</td>
+          <td>
+            Combining axe-core (deterministic WCAG rule violations on live DOM) with Google Lighthouse (holistic accessibility, SEO, and best practice scores) provides dual-source corroboration before and after remediation.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Defensive Security</strong></td>
+          <td>OWASP ZAP Passive Scanner (Docker) + `pip-audit`</td>
+          <td>Nikto; Commercial Snyk; Safety</td>
+          <td>
+            OWASP ZAP passive scanning inspects live HTTP traffic without intrusive payloads, detecting bundled library CVEs (`moment.js`) and missing security headers. `pip-audit` uses PyPA's official advisory database with zero false alarms.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Performance Benchmarking</strong></td>
+          <td>Grafana k6 OSS (CLI JS Scenarios)</td>
+          <td>Apache JMeter; Locust</td>
+          <td>
+            k6 runs as a lightweight, single-binary CLI without JVM overhead, records nanosecond-precision percentiles ($p90, p95, p99$), outputs JSON summaries, and executes reproducible ramp-up and steady-state load tests in CI.
+          </td>
+        </tr>
+        <tr>
+          <td><strong>Continuous Integration</strong></td>
+          <td>GitHub Actions (Strict Gate Workflow)</td>
+          <td>GitLab CI; Jenkins; Travis CI</td>
+          <td>
+            GitHub Actions natively integrates with team PRs, branch protection rules, and issue trackers. Our workflow enforces zero escape hatches, automatically blocking unapproved or failing pull requests.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION INCIDENTS -->
+  <section id="section-incidents">
+    <h2 class="section-heading">
+      7. The 4 Real Incidents & Live Debugging Breakthroughs
+      <span class="section-tag">[WAR STORIES & RESILIENCE]</span>
+    </h2>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Incident 1: The DRF `ModelSerializer` Silent Validation Omission Trap
+        <span class="qa-tag">BACKEND ARCHITECTURE</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>The Symptom:</strong> During Phase 4 boundary testing, submitting a REST API request with <code>other_users: []</code> (0 buddies) returned <code>HTTP 200 OK</code> and persisted an invalid request, even though the web UI rejected it with a clear error message.</p>
+        <p><strong>The Root Cause:</strong> Developers assumed DRF's <code>ModelSerializer</code> with <code>fields = "__all__"</code> automatically inherits validation from Django's form class (<code>TemporaryPhysicalAccessRequestForm.clean()</code>). It does not! Furthermore, standard DRF serializers only invoke field-level model validation and omit cross-field model <code>clean()</code> unless explicitly programmed.</p>
+        <p><strong>The Fix:</strong> In PR #1 (<code>fix/w-api-01-buddy-count-serializer</code>), we added a dedicated <code>validate()</code> method to <code>TemporaryPhysicalAccessRequestSerializer</code> in <code>NEMO/serializers.py</code>, enforcing <code>len(other_users) + 1 >= min_users</code> and returning <code>HTTP 400 Bad Request</code>.</p>
+        <div class="qa-evidence">Manifest / Code Fix: NEMO/serializers.py -> TemporaryPhysicalAccessRequestSerializer.validate()</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Incident 2: The Cosmic Ray SQLite Multiprocessing Lock Contention
+        <span class="qa-tag">TEST TOOLING</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>The Symptom:</strong> When running Cosmic Ray mutation testing in parallel across 162 mutants on Windows, worker processes crashed intermittently with: <code>sqlite3.OperationalError: database is locked</code>.</p>
+        <p><strong>The Root Cause:</strong> SQLite default timeout is low (5 seconds), and Cosmic Ray worker processes concurrently wrote mutation execution results to <code>cr_baseline.sqlite</code> while Django tests simultaneously initialized in-memory/disk test databases.</p>
+        <p><strong>The Fix:</strong> We engineered <code>scripts/run_cosmic_ray_parallel.py</code> with per-worker SQLite timeout flags (30s busy timeout), WAL mode (Write-Ahead Logging), and separated the custom forms mutation run into its own isolated session file <code>cr_forms_custom.sqlite</code>.</p>
+        <div class="qa-evidence">Tool Fix: scripts/run_cosmic_ray_parallel.py & scripts/run_custom_forms_mutation.py</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Incident 3: The Playwright Bootstrap DateTimePicker Popover Focus Trap
+        <span class="qa-tag">E2E AUTOMATION</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>The Symptom:</strong> In automated keyboard navigation test <code>USA-WF1-ERR-KBD</code>, pressing <code>Tab</code> after filling <code>#start_time</code> caused <code>document.activeElement</code> to become trapped in the date picker popover rather than advancing to <code>#end_time</code> and <code>#description</code>.</p>
+        <p><strong>The Root Cause:</strong> The legacy Bootstrap DateTimePicker jQuery plugin intercepts focus and displays an active calendar table popup that absorbs sequential <code>Tab</code> events.</p>
+        <p><strong>The Fix:</strong> Dispatched an explicit <code>Escape</code> keyboard event immediately after date input entry to cleanly dismiss the popover widget, allowing sequential <code>Tab</code> focus navigation to advance smoothly through all form inputs to the submit button.</p>
+        <div class="qa-evidence">Code Fix: tests/team/usability/usability_and_keyboard.spec.mjs -> page.keyboard.press('Escape')</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Incident 4: The Dynamic Buddy Removal DOM Anchor Defect (`link-name`)
+        <span class="qa-tag">ACCESSIBILITY</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>The Symptom:</strong> axe-core and Google Lighthouse audits flagged a Serious <code>link-name</code> accessibility violation on the access request creation and review screens.</p>
+        <p><strong>The Root Cause:</strong> When a user dynamically added a buddy chip via JavaScript, the removal control was rendered as an anchor tag with no text content: <code>&lt;a href="javascript:void" onclick="remove_other_user(this)"&gt;&lt;span class="glyphicon glyphicon-remove-circle"&gt;&lt;/span&gt;&lt;/a&gt;</code>. Screen readers announced "link, javascript:void" with no indication of what buddy would be removed.</p>
+        <p><strong>The Fix:</strong> In <code>NEMO/templates/requests/access_requests/access_request.html</code>, we refactored the JavaScript DOM injection to create a semantic <code>&lt;button type="button" class="btn btn-default btn-xs" aria-label="Remove buddy {{ user.get_name }}"&gt;</code> with <code>aria-hidden="true"</code> on the glyphicon. Axe-core violations dropped from 4 to 1 and Lighthouse Accessibility rose from 86 to 91.</p>
+        <div class="qa-evidence">Template Fix: NEMO/templates/requests/access_requests/access_request.html:153</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION VIVA (35+ QUESTIONS) -->
+  <section id="section-viva">
+    <h2 class="section-heading">
+      8. Master Technical Viva Q&A (35+ Questions)
+      <span class="section-tag">[DEFENSIVE KNOWLEDGE]</span>
+    </h2>
+
+    <p>
+      Organized by ownership area to ensure every team member can defend their contributions with absolute confidence:
+    </p>
+
+    <!-- AREA 1: JAWERIA -->
+    <h3 class="sub-heading">Area 1: Static Analysis, White-Box, MC/DC, Mutation & CI Gate (Jaweria Abdul Hameed · 24I-3025)</h3>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q1: Why did SonarQube report Cyclomatic Complexity = 51 on `access_requests.py`?
+        <span class="qa-tag">AREA 1</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> <code>access_requests.py</code> concentrates 9 functions handling request listing across 4 roles, date-filtering, search-string filtering, CSV streaming, expiration checks, email formatting, and creation/review branching. The single function <code>create_access_request</code> accounts for CC = 19 (Cognitive Complexity 50) due to nested role checks, edit guards, and decision branches. The sum of all 9 functions equals SonarQube's file Cyclomatic Complexity of 51.</p>
+        <div class="qa-evidence">Reference: docs/PHASE2_STATIC_ANALYSIS_AND_CFG.md & docs/evidence/sonarqube_baseline_metrics.json</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q2: How did you construct the Control Flow Graph and calculate Cyclomatic Complexity by hand?
+        <span class="qa-tag">AREA 1</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> For <code>create_access_request</code> (L90–161), we drew the CFG with $N=37$ basic blocks and $E=54$ directed edges, containing 18 binary predicate decision nodes. Using McCabe's formula: $V(G) = E - N + 2P = 54 - 37 + 2(1) = \mathbf{19}$. Using the predicate counting formula: $V(G) = P + 1 = 18 + 1 = \mathbf{19}$. Expanding the 5 compound short-circuit boolean conditions inside compound guards yields 24 atomic branch execution paths.</p>
+        <div class="qa-evidence">Reference: docs/PHASE2_STATIC_ANALYSIS_AND_CFG.md (Section 3 CFG Diagram)</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q3: How did you achieve 100% statement and 100% branch coverage?
+        <span class="qa-tag">AREA 1</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> We measured coverage using <code>coverage.py</code> with <code>branch = True</code>. Our 74 unit tests cover all 212 statements (148 in <code>access_requests.py</code>, 13 in <code>forms.py</code>, 51 in <code>models.py</code>) and all 60 branches (50 in <code>access_requests.py</code>, 4 in <code>forms.py</code>, 6 in <code>models.py</code>). We systematically exercised both True and False outcomes for every if-statement, ternary expression, and loop boundary, leaving 0 uncovered statements and 0 partial branches.</p>
+        <div class="qa-evidence">Reference: docs/PHASE3_WHITEBOX_MCC_MCDC.md & docs/evidence/phase3_unit_coverage.json</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q4: How did you derive MC/DC pairs from MCC truth tables?
+        <span class="qa-tag">AREA 1</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> For each of the 5 multi-condition boolean decisions (D1–D5), we first constructed the complete $2^n$ Truth Table (MCC). For each condition $C_i$, we identified an independence pair $(r_A, r_B)$ where only $C_i$ flips ($T \leftrightarrow F$), all other conditions remain fixed, and the overall decision outcome flips. For D1 ($D_1 = E \land A \land B$, 8 rows), the MC/DC pairs are: for $E$ (Row 8 vs 4), for $A$ (Row 8 vs 6), and for $B$ (Row 8 vs 7). Each pair was automated as a distinct test in <code>test_mcdc_decisions.py</code>.</p>
+        <div class="qa-evidence">Reference: tests/team/unit/test_mcdc_decisions.py</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q5: Why did 43 mutants survive in Cosmic Ray despite 100% branch coverage?
+        <span class="qa-tag">AREA 1</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Structural coverage only guarantees that a line or branch was executed; it does not guarantee that the test asserted the output! The 43 baseline survivors fell into: (1) Missing tests on HTTP method decorators (`@require_GET`, `@require_http_methods`); (2) Weak assertions (e.g. asserting HTTP 200 without checking context querysets or notification deletions); and (3) Equivalent mutants. We authored <code>test_mutation_killers.py</code> to kill all 32 killable mutants, raising raw score to 93.21%.</p>
+        <div class="qa-evidence">Reference: docs/PHASE3_MUTATION_ANALYSIS.md (Section 3 Survivor Table)</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q6: How did you prove the remaining 11 mutants were equivalent?
+        <span class="qa-tag">AREA 1</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> We performed line-by-line semantic proofs: 4 mutants replaced `m >= "POST"` where methods are restricted to `{"GET", "POST"}` (since `"GET" < "POST"`, `>=` is equivalent to `==`); 3 mutants altered comparison `status > 0` where status domain is `{0, 1, 2, 3}` (since all values are $\ge 0$, $>0 \iff \ne 0$); and 4 mutants swapped `==` for `is` on interned literals and small integers. None represent executable bugs, giving an equivalent-adjusted mutation score of 100.0%.</p>
+        <div class="qa-evidence">Reference: docs/PHASE3_MUTATION_ANALYSIS.md (Section 4 Equivalence Proofs)</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q7: What are your custom mutation operators and how did you verify them?
+        <span class="qa-tag">AREA 1</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Built in `sqe_mutators/`: (1) `RelaxBuddyMinimumOperator` (replaces `min_users - 1` with `min_users - 2`); (2) `SkipGrantCreationOperator` (replaces `create_temporary_access()` with `pass`); (3) `FlipApprovalStatusOperator` (swaps `APPROVED <-> DENIED`); and (4) `BypassReviewerCheckOperator` (replaces reviewer check with `True`). Across 14 custom business-rule mutants, our unit tests killed 14 / 14 (100% kill rate).</p>
+        <div class="qa-evidence">Reference: sqe_mutators/sqe_mutators/operators.py & scripts/run_custom_forms_mutation.py</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q8: How does your GitHub Actions CI Quality Gate prevent escapes?
+        <span class="qa-tag">AREA 1</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> <code>.github/workflows/ci.yml</code> runs Ruff linting, Mypy type-checking, Pytest test execution (100% pass required), coverage threshold checks (fails if statement $< 90\%$ or branch $< 85\%$), and mutation score checks ($< 85\%$). It contains strictly ZERO escape hatches (no <code>continue-on-error</code> and no <code>|| true</code>). Any breach exits with code 1, automatically blocking the PR.</p>
+        <div class="qa-evidence">Reference: .github/workflows/ci.yml & scripts/ci_quality_gate_check.py</div>
+      </div>
+    </div>
+
+    <!-- AREA 2: MOHSIN -->
+    <h3 class="sub-heading">Area 2: OpenAPI Spec, Automated Test Data Generator & API Testing (Mohsin Khan · 24I-3135)</h3>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q9: How does your generator read the OpenAPI spec and emit EP and 3-point BVA values?
+        <span class="qa-tag">AREA 2</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> <code>scripts/generate_api_test_data.py</code> parses <code>openapi/temporary_physical_access_requests.yaml</code>. For every declared property, it analyzes boundaries: for lower bounds ($min$), it generates $min-1$ (below/invalid), $min$ (at/valid), and $min+1$ (above/valid); for upper bounds ($max$), it generates $max-1$, $max$, and $max+1$. For string lengths, it emits strings of exact lengths. It generates 141 discrete cases stored in JSON and consumed by <code>pytest.mark.parametrize</code>.</p>
+        <div class="qa-evidence">Reference: scripts/generate_api_test_data.py & tests/team/api/generated_test_data.json</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q10: What happened when you mutated two constraints in the OpenAPI spec?
+        <span class="qa-tag">AREA 2</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Demonstrated in <code>scripts/demo_openapi_regeneration.py</code>: (1) Changed <code>other_users.minItems</code> from 1 &rarr; 2 (requiring 2 buddies); (2) Changed <code>description.maxLength</code> from 500 &rarr; 200. The generator dynamically shifted buddy BVA test points from $[0, 1, 2]$ to $[1, 2, 3]$, and description length points from $[499, 500, 501]$ to $[199, 200, 201]$. The API test suite immediately consumed the updated dataset without modifying any test code.</p>
+        <div class="qa-evidence">Reference: scripts/demo_openapi_regeneration.py & docs/evidence/openapi_regeneration_demo/</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q11: What critical defects did your API tests uncover that UI tests missed?
+        <span class="qa-tag">AREA 2</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Uncovered 9 major API weaknesses (<code>W-API-01</code> to <code>W-API-09</code>): (1) <code>W-API-01</code>: API accepted 0 buddies when minimum users = 2; (2) <code>W-API-03</code>: API allowed illegal state transitions via PATCH (`APPROVED -> PENDING`); (3) <code>W-API-04</code>: API approval never created <code>TemporaryPhysicalAccess</code> grants; (4) <code>W-API-05</code>: Broken Object-Level Authorization (BOLA) where one user approved another user's request; and (5) <code>W-API-06</code>: API DELETE hard-deleted DB rows instead of soft-deleting.</p>
+        <div class="qa-evidence">Reference: docs/PHASE4_OPENAPI_AND_API_TESTING.md (Section 4 Weaknesses Table)</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q12: Walk through PR #1 (Documented Fix PR).
+        <span class="qa-tag">AREA 2</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> PR #1 (`fix/w-api-01-buddy-count-serializer`) addressed <code>W-API-01</code>. We first committed failing regression test <code>test_w_api_01_api_rejects_below_minimum_buddy_count_with_400</code>. On baseline NEMO, the API returned HTTP 200, failing the assertion (`assert 200 == 400`). We then added <code>validate()</code> to <code>TemporaryPhysicalAccessRequestSerializer</code> in <code>NEMO/serializers.py</code>, reran CI, verified all tests passed, and merged the PR into main.</p>
+        <div class="qa-evidence">Reference: GitHub PR #1 (Merged) & tests/team/api/test_api_integration_and_cross_workflow.py</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q13: Why did you test cross-workflow persistent readbacks between API and UI?
+        <span class="qa-tag">AREA 2</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> In <code>test_cross_workflow_api_create_ui_approve_and_readbacks</code>, a request created via the REST API was subsequently reviewed and approved via the web UI. We asserted persistent DB state: status transitioned to 1 (APPROVED), reviewer was recorded, and exactly 2 <code>TemporaryPhysicalAccess</code> grant records were created. We then verified that subsequent API edit or delete requests were strictly rejected, proving cross-channel data integrity.</p>
+        <div class="qa-evidence">Reference: tests/team/api/test_api_integration_and_cross_workflow.py</div>
+      </div>
+    </div>
+
+    <!-- AREA 3: AUN -->
+    <h3 class="sub-heading">Area 3: E2E Use Cases, Usability, Accessibility, Security & Performance (Muhammad Aun · 24P-3099)</h3>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q14: How do your Playwright E2E tests assert both UI state and database postconditions?
+        <span class="qa-tag">AREA 3</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Every test in <code>tests/team/e2e/use_cases.spec.mjs</code> drives real browser actions (filling dates, selecting dropdowns, clicking buttons) and asserts UI DOM feedback (alert messages, table rows). Simultaneously, using <code>scripts/e2e_db_helper.py</code>, Playwright queries SQLite directly to verify that database fields changed accurately (e.g. <code>status=1</code>, <code>reviewer_id</code> set, and <code>TemporaryPhysicalAccess.count() == 2</code>).</p>
+        <div class="qa-evidence">Reference: tests/team/e2e/use_cases.spec.mjs & scripts/e2e_db_helper.py</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q15: Explain your usability and keyboard-only test (`USA-WF1-ERR-KBD`).
+        <span class="qa-tag">AREA 3</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> In <code>tests/team/usability/usability_and_keyboard.spec.mjs</code>, Playwright opens <code>/create_access_request/</code>, submits with 0 buddies, and verifies the rendered error clearly guides the user. It then executes complete form recovery using <em>only</em> keyboard inputs (<code>Tab</code>, <code>ArrowDown</code>, <code>Enter</code>, <code>Escape</code>) to focus elements in logical order, select a buddy, navigate to submit, and submit the request, verifying successful completion without a mouse.</p>
+        <div class="qa-evidence">Reference: tests/team/usability/usability_and_keyboard.spec.mjs</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q16: What accessibility violations were found and how did you remediate the access request screen?
+        <span class="qa-tag">AREA 3</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Axe-core flagged Serious <code>link-name</code> on dynamic buddy removal anchors (`<a href="javascript:void">`). In <code>NEMO/templates/requests/access_requests/access_request.html</code>, we replaced the anchor with `<button type="button" aria-label="Remove buddy {{ user.get_name }}">`, wrapped content in `<main aria-labelledby="access-request-heading">`, and added `aria-live="polite"`. In before vs after audits, violations dropped from 4 to 1 (0 Serious) and Lighthouse Accessibility rose from 86 to 91.</p>
+        <div class="qa-evidence">Reference: docs/PHASE5_USABILITY_AND_ACCESSIBILITY.md & NEMO/templates/requests/access_requests/access_request.html</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q17: What were the results of your OWASP ZAP passive scan and pip-audit?
+        <span class="qa-tag">AREA 3</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> OWASP ZAP passively inspected all HTTP traffic during Playwright tests, reporting 113 alerts across 11 rules. It identified bundled `moment.js v2.29.3` with a known ReDoS CVE (CVE-2022-31129), Bootstrap 3.4.1/jQuery 2.1.3 legacy libraries, missing CSP headers, and state-changing HTTP GET delete. Meanwhile, <code>pip-audit</code> scanned all 82 Python environment packages against PyPA advisories, confirming <strong>0 known CVEs</strong>.</p>
+        <div class="qa-evidence">Reference: docs/PHASE6_SECURITY_PERFORMANCE_RECOVERY.md & docs/evidence/phase6/pip_audit_report.json</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q18: What were your Grafana k6 load test results and how do they compare to targets?
+        <span class="qa-tag">AREA 3</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Our exit criterion required steady-state $p95 \le 500\text{ ms}$ and failure rate $< 1.0\%$. We ran 4 benchmark runs of 65s each on <code>GET /access_requests/</code>: 1 VU produced $p95 = 38.4\text{ ms}$ and $136.4\text{ ms}$ (0.00% failures); 5 VUs produced $p95 = 225.5\text{ ms}$ and $227.7\text{ ms}$ (0.00% failures). Both workloads easily satisfied the 500ms target.</p>
+        <div class="qa-evidence">Reference: docs/evidence/phase6/k6_environment_and_summary.json</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q19: Explain the controlled failure-and-recovery test.
+        <span class="qa-tag">AREA 3</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> In <code>tests/team/recovery/test_failure_and_recovery.py</code>, we used <code>unittest.mock.patch</code> to inject an <code>OperationalError</code> during approval before <code>create_temporary_access()</code> completed. We asserted transaction rollback: the request remained in <code>PENDING (0)</code> state with 0 grants. We then removed the fault, re-executed approval, and asserted clean recovery: status changed to <code>APPROVED (1)</code>, exactly 2 grants were created, with zero duplicate rows.</p>
+        <div class="qa-evidence">Reference: tests/team/recovery/test_failure_and_recovery.py</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q20: Walk through PR #2 (Pipeline-Blocked PR).
+        <span class="qa-tag">AREA 3</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> PR #2 (`demo/broken-access-requests-pipeline`) introduced a deliberate fault by relaxing the buddy minimum check in <code>forms.py</code> (`min_users - 2` instead of `min_users - 1`). When pushed to GitHub, our strict CI quality gate ran: unit tests failed on boundary assertions, the mutation check failed, and GitHub Actions exited with code 1, successfully blocking the PR from merging.</p>
+        <div class="qa-evidence">Reference: GitHub PR #2 (Blocked / Open for Viva Inspection)</div>
+      </div>
+    </div>
+
+    <!-- SHARED & MANAGEMENT: TRIO -->
+    <h3 class="sub-heading">Shared Management, Risks, GQM & RCA (All Members)</h3>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q21: How did you score your 5x5 Risk Register and link risks to testing depth?
+        <span class="qa-tag">SHARED</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> We scored 8 product risks and 2 project risks using $\text{Likelihood} \times \text{Impact}$ ($1–5$). Highest risks like PR-01 (Buddy bypass, score 25) and PR-03 (State transition violation, score 16) were mapped to 100% branch unit testing, MC/DC, and OpenAPI 3-point BVA. Medium risks (PR-08 accessibility, PR-07 performance) were tested via axe-core, Lighthouse, and k6 benchmarks.</p>
+        <div class="qa-evidence">Reference: docs/RISK_REGISTER_AND_EXIT_CRITERIA.md</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q22: Explain your two Major Root Cause Analyses (RCAs).
+        <span class="qa-tag">SHARED</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> (1) **RCA 1 (API Buddy Validation Bypass):** 5 Whys revealed that validation lived exclusively in Django UI forms; DRF ModelSerializers were added later without shared service validation. Fishbone diagram identified lack of cross-channel CI contract testing. Corrected in PR #1; preventive action is shared service validators. (2) **RCA 2 (Accessibility Barrier):** 5 Whys revealed icon-only anchors without labels were used due to legacy jQuery patterns and desktop-only testing. Fishbone showed missing automated a11y linting. Remediated in Phase 5.</p>
+        <div class="qa-evidence">Reference: docs/PHASE7_DEFECTS_RCA_AND_COMPLETION.md (Section 2 RCAs)</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q23: What did your Pareto Analysis reveal?
+        <span class="qa-tag">SHARED</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Defect distribution across 22 findings showed: API Testing (9 defects, 40.91%), Usability/A11y (7 defects, 31.82%), Security (4 defects, 18.18%), and Performance (2 defects, 9.09%). The top two categories account for **72.73%** of all defects, proving that backend business rule enforcement diverges primarily at the API boundary, and legacy web templates harbor systematic accessibility barriers.</p>
+        <div class="qa-evidence">Reference: docs/PHASE7_DEFECTS_RCA_AND_COMPLETION.md (Section 3 Pareto Analysis)</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q24: How did your actual effort compare against PERT estimates?
+        <span class="qa-tag">SHARED</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> Using three-point estimation ($T_e = \frac{O + 4M + P}{6}$), our PERT expected effort was 152.66 hours ($\sigma = 20.0\text{ hrs}$). Actual tracked effort was 159.0 hours (Jaweria 43.5h, Mohsin 38.0h, Aun 51.0h, Shared 26.5h). The variance of $+6.34\text{ hours}$ ($+4.15\%$) was well within the standard error, justified by parallelizing Cosmic Ray runs and configuring live Docker ZAP scans.</p>
+        <div class="qa-evidence">Reference: docs/PHASE7_DEFECTS_RCA_AND_COMPLETION.md (Section 5 PERT Analysis)</div>
+      </div>
+    </div>
+
+    <div class="qa-block">
+      <div class="qa-header">
+        Q25: What was your final release decision and why?
+        <span class="qa-tag">SHARED</span>
+      </div>
+      <div class="qa-body">
+        <p><strong>Answer:</strong> We issued a formal **CONDITIONAL RELEASE (v8.2.1-sqe)**. All 3 Exit Criteria were fully satisfied: Criterion 1 (100% statement/branch coverage, 100% mutation score, 270/270 tests pass), Criterion 2 (0 Python CVEs, 8/8 RBAC checks pass), and Criterion 3 ($p95 = 227\text{ms} < 500\text{ms}$). Release is subject to 3 advisories: mandatory deployment of PR #1, processing approvals via UI until v8.3.0 lands API grant hooks, and upgrading `moment.js`.</p>
+        <div class="qa-evidence">Reference: docs/PHASE7_DEFECTS_RCA_AND_COMPLETION.md (Section 6 Release Decision)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION HONEST -->
+  <section id="section-honest">
+    <h2 class="section-heading">
+      9. The "Did You Do X?" Honest List
+      <span class="section-tag">[ACADEMIC INTEGRITY]</span>
+    </h2>
+
+    <p>
+      Never guess or over-claim. If the examiner asks whether you implemented advanced out-of-scope enterprise features, answer with strict precision:
+    </p>
+
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th>Candidate Feature</th>
+          <th>Status</th>
+          <th>What Was Implemented Instead / Architectural Justification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tool Interlocks & Hardware Control</strong></td>
+          <td>NO</td>
+          <td>Excluded from scope. Physical relay and tool hardware controllers require proprietary physical cleanroom hardware.</td>
+        </tr>
+        <tr>
+          <td><strong>Physical Badge / Kiosk NFC Readers</strong></td>
+          <td>NO</td>
+          <td>Excluded from scope. Physical card swipe readers on kiosk terminals were simulated using our deterministic local synthetic authentication backend.</td>
+        </tr>
+        <tr>
+          <td><strong>Stripe / Billing Invoice Processing</strong></td>
+          <td>NO</td>
+          <td>Excluded from scope. Financial invoicing belongs to NEMO's billing module, independent of physical access requests.</td>
+        </tr>
+        <tr>
+          <td><strong>Active OWASP ZAP Attack Fuzzing</strong></td>
+          <td>NO</td>
+          <td>OWASP ZAP Passive Scan executed in Docker. Active attack scanning was omitted to prevent corrupting test databases during live Playwright runs.</td>
+        </tr>
+        <tr>
+          <td><strong>Multi-Cluster Kubernetes / Istio Mesh</strong></td>
+          <td>NO</td>
+          <td>NEMO runs on local Python/Django with SQLite. Container orchestration belongs to systems engineering (SCD), not software quality engineering (SQE).</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION RUNBOOK -->
+  <section id="section-runbook">
+    <h2 class="section-heading">
+      10. Five-Minute Live Demo Runbook (Timed Viva Script)
+      <span class="section-tag">[VIVA DEMONSTRATION RUNBOOK]</span>
+    </h2>
+
+    <div class="step-node">
+      <div class="step-title">Minute 1: Clean Reset & Suite Execution (60 seconds)</div>
+      <pre><code># 1. Reset database to clean seeded state
+.\venv\Scripts\python.exe scripts\reset_local_db.py
+
+# 2. Run all 230 Pytest tests in one command
+.\venv\Scripts\python.exe -m pytest tests/team --reuse-db -v</code></pre>
+      <p style="font-size: 0.88rem;"><strong>What to say:</strong> <em>"We begin with our deterministic reset script. In 1.5 seconds, it applies migrations, seeds 7 test accounts across 2 roles, and configures Cleanroom Bay A. Notice that all 230 tests pass cleanly in ~15 seconds across Unit, API, and Recovery suites."</em></p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Minute 2: Area 1 Defense — 100% Coverage & Mutation Operators (60 seconds)</div>
+      <pre><code># Run White-Box Unit coverage report
+.\venv\Scripts\python.exe -m pytest tests/team/unit/ --cov=NEMO/views/access_requests.py --cov=NEMO/forms.py --cov-branch --cov-report=term-missing
+
+# Run Custom Business-Rule Mutators (14/14 killed)
+.\venv\Scripts\python.exe scripts\run_custom_forms_mutation.py</code></pre>
+      <p style="font-size: 0.88rem;"><strong>What Jaweria says:</strong> <em>"Notice 100% statement (212/212) and 100% branch (60/60) coverage. In Cosmic Ray, we evaluated 162 mutants, achieved a 100% equivalent-adjusted score, and killed 14/14 custom business-rule mutants modelling boundary relaxation and missing grants."</em></p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Minute 3: Area 2 Defense — OpenAPI 2-Constraint Live Demonstration (60 seconds)</div>
+      <pre><code># Run automated OpenAPI 2-constraint regeneration demo
+.\venv\Scripts\python.exe scripts\demo_openapi_regeneration.py
+
+# Verify PR #1 regression fix test
+.\venv\Scripts\python.exe -m pytest tests/team/api/ -k "test_w_api_01" -v</code></pre>
+      <p style="font-size: 0.88rem;"><strong>What Mohsin says:</strong> <em>"Our generator parsed the OpenAPI spec to generate 141 EP and 3-point BVA test cases. Watch as we mutate 2 constraints live: minimum buddies shifts from (0,1,2) to (1,2,3). Furthermore, our API tests uncovered 9 weaknesses including buddy bypass, which we resolved and merged in PR #1."</em></p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Minute 4: Area 3 Defense — Playwright E2E, Keyboard & A11y Remediation (60 seconds)</div>
+      <pre><code># Run Playwright Chromium tests
+node node_modules/@playwright/test/cli.js test tests/team/usability/usability_and_keyboard.spec.mjs
+node node_modules/@playwright/test/cli.js test tests/team/security/role_checks.spec.mjs</code></pre>
+      <p style="font-size: 0.88rem;"><strong>What Aun says:</strong> <em>"We automated 30 E2E flows asserting both UI rendering and SQLite database records. Notice the keyboard-only test passing without mouse interaction. In Phase 5, we remediated access_request.html, eliminating Serious link-name violations and raising Lighthouse score from 86 to 91."</em></p>
+    </div>
+
+    <div class="step-node">
+      <div class="step-title">Minute 5: Live Examiner Mutation / Spec Task (60 seconds)</div>
+      <p style="font-size: 0.88rem;"><strong>When the examiner asks for a live rule change:</strong> Increase buddy minimum from 2 to 3 live!</p>
+      <pre><code># 1. Update minimum buddies live in SQLite:
+.\venv\Scripts\python.exe -c "from NEMO.models import Customization; Customization.objects.update_or_create(name='access_requests_minimum_users', defaults={'value': '3'})"
+
+# 2. Run predicted failing test (1 buddy now fails validation):
+.\venv\Scripts\python.exe -m pytest tests/team/unit/test_access_requests_whitebox.py -k "buddy_count"
+
+# 3. Cleanly reset database back to baseline:
+.\venv\Scripts\python.exe scripts\reset_local_db.py</code></pre>
+    </div>
+  </section>
+
+  <!-- SECTION GLOSSARY -->
+  <section id="section-glossary">
+    <h2 class="section-heading">
+      11. Complete Technology, Tools & Metrics Glossary
+      <span class="section-tag">[TAXONOMY & SPECIFICATIONS]</span>
+    </h2>
+
+    <table class="doc-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Technology / Artifact</th>
+          <th>Exact Version / Spec</th>
+          <th>Role in SQE Project</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4"><strong>Target MIS & Stack</strong></td>
+          <td><code>NEMO</code></td>
+          <td>v8.2.1 (Commit <code>aa5ac6e2</code>)</td>
+          <td>Target open-source Laboratory Management Information System under test.</td>
+        </tr>
+        <tr>
+          <td><code>Django</code></td>
+          <td>v5.2.18 (Python 3.12)</td>
+          <td>Core web framework providing ORM models, views, templates, and session management.</td>
+        </tr>
+        <tr>
+          <td><code>Django REST Framework</code></td>
+          <td>v3.18.3</td>
+          <td>REST API framework serving <code>/api/temporary_physical_access_requests/</code>.</td>
+        </tr>
+        <tr>
+          <td><code>SQLite</code></td>
+          <td><code>sqe_nemo.db</code></td>
+          <td>Relational database holding users, requests, notifications, and access grants.</td>
+        </tr>
+        <tr>
+          <td rowspan="4"><strong>White-Box & Quality</strong></td>
+          <td><code>SonarQube Community</code></td>
+          <td>v9.9.8.100196</td>
+          <td>Static analysis engine reporting 51 CC, Cognitive Complexity 85, and S3752 hotspot.</td>
+        </tr>
+        <tr>
+          <td><code>Coverage.py</code></td>
+          <td>v7.17.4 (Branch mode)</td>
+          <td>Measures 100% statement (212/212) and 100% branch (60/60) server-side coverage.</td>
+        </tr>
+        <tr>
+          <td><code>Cosmic Ray</code></td>
+          <td>v8.9.0</td>
+          <td>Mutation testing framework executing 162 mutants with SQLite session tracking.</td>
+        </tr>
+        <tr>
+          <td><code>sqe_mutators</code></td>
+          <td>Custom Stevedore Plugin</td>
+          <td>Team-built package implementing 4 custom business-rule mutation operators.</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><strong>API & Data Generation</strong></td>
+          <td><code>OpenAPI Specification</code></td>
+          <td>v3.0.3 YAML Contract</td>
+          <td>Formal API contract defining endpoints, schemas, parameters, and boundary constraints.</td>
+        </tr>
+        <tr>
+          <td><code>generate_api_test_data.py</code></td>
+          <td>Spec-Driven Generator</td>
+          <td>Custom script parsing OpenAPI schemas to emit 141 EP & 3-point BVA test cases.</td>
+        </tr>
+        <tr>
+          <td><code>Requests</code></td>
+          <td>v2.34.2</td>
+          <td>HTTP client library executing 155 automated API and integration tests.</td>
+        </tr>
+        <tr>
+          <td rowspan="4"><strong>E2E, Usability & A11y</strong></td>
+          <td><code>Playwright</code></td>
+          <td>Chromium Engine</td>
+          <td>Headless browser automation executing 30 E2E flows, usability, and role checks.</td>
+        </tr>
+        <tr>
+          <td><code>@axe-core/playwright</code></td>
+          <td>v4.10+</td>
+          <td>Automated WCAG accessibility audit engine scanning live Chromium DOM trees.</td>
+        </tr>
+        <tr>
+          <td><code>Google Lighthouse CI</code></td>
+          <td>CLI Auditor</td>
+          <td>Measures accessibility (86 &rarr; 91), SEO (100), and Best Practices (100).</td>
+        </tr>
+        <tr>
+          <td><code>e2e_db_helper.py</code></td>
+          <td>Database Bridge</td>
+          <td>Enables Playwright tests to execute real-time SQLite database state assertions.</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><strong>Security & Performance</strong></td>
+          <td><code>OWASP ZAP</code></td>
+          <td>Passive Docker Scanner</td>
+          <td>Proxies browser traffic to identify library CVEs, missing CSP, and header risks.</td>
+        </tr>
+        <tr>
+          <td><code>pip-audit</code></td>
+          <td>v2.10.1</td>
+          <td>Scans all 82 Python virtual environment packages against official PyPA CVEs (0 found).</td>
+        </tr>
+        <tr>
+          <td><code>Grafana k6 OSS</code></td>
+          <td>v1.x CLI</td>
+          <td>Executes 4 $\times$ 65s load runs, measuring steady-state latency percentiles ($p95 = 227\text{ms}$).</td>
+        </tr>
+        <tr>
+          <td rowspan="3"><strong>CI/CD & Governance</strong></td>
+          <td><code>GitHub Actions</code></td>
+          <td><code>.github/workflows/ci.yml</code></td>
+          <td>Strict quality gate enforcing Ruff, Mypy, Pytest, coverage, and mutation thresholds.</td>
+        </tr>
+        <tr>
+          <td><code>PR #1 (Merged Fix)</code></td>
+          <td><code>fix/w-api-01</code></td>
+          <td>Documented fix PR adding buddy validation to serializer with failing regression test.</td>
+        </tr>
+        <tr>
+          <td><code>PR #2 (Blocked PR)</code></td>
+          <td><code>demo/broken-pipeline</code></td>
+          <td>Open PR demonstrating pipeline blocking merge on deliberate business-rule regression.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+</body>
+</html>
