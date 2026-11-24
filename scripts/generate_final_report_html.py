@@ -1059,48 +1059,53 @@ A non-bypassable CI workflow was configured in <code>.github/workflows/ci.yml</c
 
 <h3>10.3 GitHub Issues Defect Catalog & Pareto Analysis</h3>
 <p>
-All 22 test-discovered defects were synchronized to GitHub Issues (#3 through #24) via <code>scripts/sync_github_issues.py</code> with custom labels (<code>severity:*</code>, <code>priority:*</code>, <code>type:*</code>) and triaged:
+All 30 test-discovered defects were synchronized to GitHub Issues (#3 through #32) via automated GitHub API integration with custom labels (<code>severity:*</code>, <code>priority:*</code>, <code>type:*</code>) and strictly partitioned by area of discovery across all three team members:
 </p>
+<ul>
+  <li><strong>Jaweria Abdul Hameed (Area 1 Lead — 9 Issues):</strong> Issues #14 (SonarQube S3752), #25 (SonarQube S3776 Cognitive Complexity), #26 (SonarQube S3358/S1940), #27 (White-Box D1 MC-DC Guard), #28 (White-Box D2 Boundary), #29 (White-Box D3 State Gate), #30 (Cosmic Ray Mutant L126), #31 (Custom Business-Rule Flip Mutator), and #32 (Cosmic Ray Decorator Mutant).</li>
+  <li><strong>Mohsin Khan (Area 2 — 9 Issues):</strong> Issues #3 through #11 (REST API Weaknesses W-API-01 through W-API-09, EP/BVA boundary gaps, and PR #1 fix).</li>
+  <li><strong>Muhammad Aun (Area 3 — 12 Issues):</strong> Issues #12, #13, #15 (Security SEC-01, SEC-02, SEC-04), #16, #17 (Performance PERF-01, PERF-02), and #18 through #24 (Accessibility & Usability UA-01 through UA-07).</li>
+</ul>
 
 <!-- Inline SVG Pareto Chart -->
 <div style="text-align: center; margin: 12px 0;" class="avoid-break">
   <svg width="600" height="220" viewBox="0 0 600 220" style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px;">
     <!-- Title -->
-    <text x="300" y="20" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f2942">Defect Distribution Pareto Chart by Testing Category</text>
+    <text x="300" y="20" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f2942">Defect Distribution Pareto Chart by Testing Category (30 Total Defects)</text>
     <!-- Axes -->
     <line x1="50" y1="180" x2="550" y2="180" stroke="#64748b" stroke-width="1.5"/>
     <line x1="50" y1="40" x2="50" y2="180" stroke="#64748b" stroke-width="1.5"/>
     <line x1="550" y1="40" x2="550" y2="180" stroke="#64748b" stroke-width="1.5"/>
     <!-- Bars -->
-    <!-- Bar 1: API (9 defects, 40.9%) -->
-    <rect x="75" y="65" width="60" height="115" fill="#0284c7" rx="3"/>
-    <text x="105" y="60" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">9 (40.9%)</text>
-    <text x="105" y="195" text-anchor="middle" font-size="8" fill="#334155">API Testing</text>
-    <!-- Bar 2: A11y (7 defects, 31.8%) -->
-    <rect x="175" y="90" width="60" height="90" fill="#0369a1" rx="3"/>
-    <text x="205" y="85" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">7 (31.8%)</text>
-    <text x="205" y="195" text-anchor="middle" font-size="8" fill="#334155">Accessibility</text>
-    <!-- Bar 3: Security (3 defects, 13.6%) -->
-    <rect x="275" y="141" width="60" height="39" fill="#0284c7" rx="3"/>
-    <text x="305" y="136" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">3 (13.6%)</text>
-    <text x="305" y="195" text-anchor="middle" font-size="8" fill="#334155">Security</text>
-    <!-- Bar 4: Usability (2 defects, 9.1%) -->
-    <rect x="375" y="154" width="60" height="26" fill="#38bdf8" rx="3"/>
-    <text x="405" y="149" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">2 (9.1%)</text>
-    <text x="405" y="195" text-anchor="middle" font-size="8" fill="#334155">Usability</text>
-    <!-- Bar 5: Static (1 defect, 4.5%) -->
-    <rect x="475" y="167" width="60" height="13" fill="#7dd3fc" rx="3"/>
-    <text x="505" y="162" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">1 (4.5%)</text>
-    <text x="505" y="195" text-anchor="middle" font-size="8" fill="#334155">Static Hotspot</text>
+    <!-- Bar 1: API (9 defects, 30.0%) -->
+    <rect x="70" y="85" width="55" height="95" fill="#0284c7" rx="3"/>
+    <text x="97" y="80" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">9 (30.0%)</text>
+    <text x="97" y="195" text-anchor="middle" font-size="8" fill="#334155">API Testing</text>
+    <!-- Bar 2: Static/White-Box/Mutation (9 defects, 30.0%) -->
+    <rect x="170" y="85" width="55" height="95" fill="#0369a1" rx="3"/>
+    <text x="197" y="80" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">9 (30.0%)</text>
+    <text x="197" y="195" text-anchor="middle" font-size="8" fill="#334155">Static/Unit/Mut</text>
+    <!-- Bar 3: Accessibility (7 defects, 23.3%) -->
+    <rect x="270" y="106" width="55" height="74" fill="#0284c7" rx="3"/>
+    <text x="297" y="101" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">7 (23.3%)</text>
+    <text x="297" y="195" text-anchor="middle" font-size="8" fill="#334155">Accessibility</text>
+    <!-- Bar 4: Security (3 defects, 10.0%) -->
+    <rect x="370" y="148" width="55" height="32" fill="#38bdf8" rx="3"/>
+    <text x="397" y="143" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">3 (10.0%)</text>
+    <text x="397" y="195" text-anchor="middle" font-size="8" fill="#334155">Security</text>
+    <!-- Bar 5: Performance (2 defects, 6.7%) -->
+    <rect x="470" y="159" width="55" height="21" fill="#7dd3fc" rx="3"/>
+    <text x="497" y="154" text-anchor="middle" font-size="9" font-weight="bold" fill="#0f2942">2 (6.7%)</text>
+    <text x="497" y="195" text-anchor="middle" font-size="8" fill="#334155">Performance</text>
     <!-- Cumulative Line -->
-    <polyline points="105,123 205,79 305,60 405,47 505,40" fill="none" stroke="#dc2626" stroke-width="2"/>
-    <circle cx="105" cy="123" r="3" fill="#dc2626"/>
-    <circle cx="205" cy="79" r="3" fill="#dc2626"/>
-    <circle cx="305" cy="60" r="3" fill="#dc2626"/>
-    <circle cx="405" cy="47" r="3" fill="#dc2626"/>
-    <circle cx="505" cy="40" r="3" fill="#dc2626"/>
-    <text x="210" y="73" font-size="8" font-weight="bold" fill="#dc2626">72.7% (Top 2)</text>
-    <text x="510" y="36" font-size="8" font-weight="bold" fill="#dc2626">100%</text>
+    <polyline points="97,138 197,96 297,63 397,49 497,40" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="97" cy="138" r="3" fill="#dc2626"/>
+    <circle cx="197" cy="96" r="3" fill="#dc2626"/>
+    <circle cx="297" cy="63" r="3" fill="#dc2626"/>
+    <circle cx="397" cy="49" r="3" fill="#dc2626"/>
+    <circle cx="497" cy="40" r="3" fill="#dc2626"/>
+    <text x="302" y="56" font-size="8" font-weight="bold" fill="#dc2626">83.3% (Top 3)</text>
+    <text x="502" y="36" font-size="8" font-weight="bold" fill="#dc2626">100%</text>
   </svg>
 </div>
 
@@ -1179,7 +1184,7 @@ All 22 test-discovered defects were synchronized to GitHub Issues (#3 through #2
       <td><strong>Defect Density</strong></td>
       <td>0.0 / KLOC</td>
       <td>Tracking</td>
-      <td><strong>25.88 defects / KLOC (22 / 0.85 KLOC)</strong></td>
+      <td><strong>35.29 defects / KLOC (30 / 0.85 KLOC)</strong></td>
       <td><span class="badge badge-info">CATALOGUED</span></td>
     </tr>
     <tr>
