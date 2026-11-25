@@ -41,3 +41,15 @@ def test_access_requests_ui_and_api_baseline(client):
     results = payload["results"] if isinstance(payload, dict) and "results" in payload else payload
     assert any(item["status"] == RequestStatus.PENDING for item in results)
     assert TemporaryPhysicalAccessRequest.objects.filter(status=RequestStatus.APPROVED).exists()
+
+
+@pytest.mark.django_db
+def test_intentional_pipeline_quality_gate_blocking_demonstration():
+    """Intentional Quality Gate Failure Demonstration for Phase 7 PR #2.
+    This test deliberately fails to prove that GitHub Actions enforces a strict
+    non-bypassable PR gate with ZERO escape hatches (blocking merge on any test failure).
+    """
+    raise AssertionError(
+        "Intentional CI Quality Gate Block: Merge must be blocked by strict pipeline gate without escape hatches."
+    )
+
